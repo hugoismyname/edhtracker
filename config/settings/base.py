@@ -84,6 +84,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "edhtracker.users.apps.UsersConfig",
+    "edhtracker.cards.apps.CardsConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

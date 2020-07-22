@@ -27,7 +27,7 @@
             <a href="#"><img class="avatar" src="{% static 'placeholder-logo.png' %}" alt=""></a>
           </div>
           <ul class="nav-menu">
-            <li class="nav_sets"><a class="nav-menua" href="{% url 'mtg-home' %}">Home</a></li>
+            <li class="nav_sets"><a class="nav-menua" href="{% url 'home' %}">Home</a></li>
             <li class="nav_sets"><a class="nav-menua" href="{% url 'all_sets' %}">Sets</a>
               <ul class="mega_menu">
               {% for set in nav_sets %}
@@ -44,16 +44,16 @@
             {% if user.is_authenticated %}
               <ul class="user-submenu" > 
                 <li><a href="{% url 'profile' %}">My Profile</a></li>
-                <li><a href="{% url 'user-cards' user.username %}">Cards</a></li>
-                <li><a href="{% url 'decks-rec' %}">Decks</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="{% url 'user_cards' user.username %}">Cards</a></li>
+                <li><a href="{% url 'decks_rec' %}">Decks</a></li>
+                <li><a href="{% url 'account_logout' %}">Logout</a></li>
               </ul>
               <a id="user-image"  href="{% url 'profile' %}"><img class="avatar" src="{{user.profile.image.url}}" alt="user-image"></a>
             {% else %}
               <!-- div for javascript event listenrer need to improve solution -->
               <div id="user-image" class="user-submenu"></div>
-              <a class="login-link" href="{% url 'login' %}">Login</a>
-              <a class="login-link" href="{% url 'register' %}">Register</a>
+              <a class="login-link" href="{% url 'account_login' %}">Login</a>
+              <a class="login-link" href="{% url 'account_signup' %}">Register</a>
             {% endif %}
           </ul>
           <div class="burger">
