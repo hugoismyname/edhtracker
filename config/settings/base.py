@@ -44,8 +44,12 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'edhtracker.db'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'edhtracker',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -75,6 +79,7 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    'rest_framework',
 ]
 
 LOCAL_APPS = [
@@ -195,6 +200,7 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "edhtracker.utils.context_processors.settings_context",
+                "edhtracker.utils.context_processors.recent_set_list",
             ],
         },
     }
@@ -285,3 +291,12 @@ SOCIALACCOUNT_ADAPTER = (
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+#django-cors
+# ------------------------------------------------------------------------------
+# https://github.com/adamchainz/django-cors-headers#configuration
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_URLS_REGEX = r'^/api/.*$'
+
+LOGIN_REDIRECT_URL = 'mtg-home'
+LOGIN_URL = 'login'

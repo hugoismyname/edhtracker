@@ -325,3 +325,4 @@ edhtracker/media/
 *.sqlite
 *.sqlite3
 
+MTG_cards_data/

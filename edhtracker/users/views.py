@@ -26,12 +26,8 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         "name",
     ]
 
-    # We already imported user in the View code above,
-    #   remember?
     model = User
 
-    # Send the User Back to Their Own Page after a
-    #   successful Update
     def get_success_url(self):
         return reverse(
             "users:detail",
@@ -39,12 +35,10 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         )
 
     def get_object(self):
-        # Only Get the User Record for the
-        #   User Making the Request
+
         return User.objects.get(
             username=self.request.user.username
         )
-
 
 user_update_view = UserUpdateView.as_view()
 
