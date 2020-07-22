@@ -1,0 +1,18 @@
+.cards-container {
+    display: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card {
+    min-width: 220px;
+    margin: 0 0 1rem;
+    text-align: center;
+}
+.card img {
+    width: 220px;
+    height: 310px;
+}
+.card a {
+    display: block;
+    font-size: 1.1rem;
+}

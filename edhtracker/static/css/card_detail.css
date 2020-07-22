@@ -1,0 +1,56 @@
+.card-detail-main{
+    display: flex;
+    margin-top: 1.5em;
+}
+.card-detail-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 55px;
+    width: 600px;
+}
+.detail-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 125px;
+    font-weight: 600;
+    font-size: 10px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #cbcbcb
+}
+.set{
+    padding: 0 3px 0 0px;
+    border-right: 1px solid #cbcbcb;
+    width: 30px;
+}
+.have{
+    padding-right: 10px;
+}
+.name{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+.type{
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.oracle-text{
+    margin-bottom: 20px;
+    max-width: 380px;
+    line-height: 22px;
+}
+.flavor-text{
+    font-family: "Times New Roman",Times,serif;
+    font-style: italic;
+    margin-bottom: 10px;
+    opacity: .6;
+    max-width: 380px;
+}
+#card_detail{
+    display: flex;
+    flex-direction: column;
+}

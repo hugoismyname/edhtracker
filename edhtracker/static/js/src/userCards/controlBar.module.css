@@ -1,0 +1,87 @@
+.controlBarContainer{
+    display: flex;
+    margin-bottom: 2.5rem;
+    justify-content: left;
+    align-items: center;
+}
+.currentSort{
+    width:150px;
+    border: 1px solid #cbcbcb;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+    position: relative;
+    text-align: left;
+    padding: 12px 35px 12px 15px;
+    z-index: 100;
+}
+.arrows {
+    box-sizing: border-box;
+    position: absolute;
+    right:15px;
+    top: 12.5px;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 14px;
+    height: 16px
+}
+.arrows::after,
+.arrows::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 2px;
+    background: currentColor;
+    border-radius: 4px
+}
+.arrows::before {
+    height: 6px;
+    transform: rotate(45deg);
+    box-shadow: 7px -4px 0;
+    top: 4px;
+    left: 2px
+}
+.arrows::after {
+    height: 12px;
+    box-shadow: -4px 4px 0;
+    right: 4px;
+    bottom: 4px
+}
+.dropdown{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 5px 5px;
+    border-bottom: 1px solid #cbcbcb;
+    border-left: 1px solid #cbcbcb;
+    border-right: 1px solid #cbcbcb;
+    width:150px;
+    left: -1px;
+    top:90%;
+    background-color: white;
+}
+.dropdown label{
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #414141;
+}
+.dropdown label:hover{
+    opacity: .8;
+    background: rgba(0,0,0,.25);
+    transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;
+    color: black;
+}
+.toggleCardDisplay{
+    display: flex;
+    margin-left: 3rem;
+}
+.toggleCardDisplay i {
+    border: 1px solid #cbcbcb;
+    padding: .25em .39em;
+    cursor: pointer;
+}
+.selected {
+    background-color: rgb(241, 241, 241);
+}

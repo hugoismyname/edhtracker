@@ -1,0 +1,44 @@
+.tableHead{
+    display: flex;
+    border-bottom: 1px solid #cbcbcb;
+    font-weight: 600 ;
+}
+.tableRow{
+    width: 100%;
+}
+.tableRow:hover .removeCard{
+    background-image: url(/static/icon-remove-red.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.tableHead li{
+    padding: .5em 1em;
+    margin-right: 1rem;
+}
+.tableRow:nth-child(even) {
+    background-color: rgb(241, 241, 241);
+}
+.tableCount{
+    width: 7.5%;
+}
+.tableCount input {
+    width: 100%;
+}
+.tableDate {
+    width: 10%;
+}
+.tableName {
+    width: 30%;
+}
+.tableType {
+    width: 45%;
+}
+.tableSet{
+    width:7.5%;
+}
+.removeCard{
+    width: 5%;
+}
+.removeCard:hover{
+    cursor: pointer;
+}

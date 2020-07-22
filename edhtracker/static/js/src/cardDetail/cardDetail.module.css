@@ -1,0 +1,25 @@
+.typeHeader{
+    text-align: center;
+    font-size: 36px;
+    margin: 25px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-transform:capitalize
+}
+.switchCards{
+    cursor: pointer;
+    width: 265px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: large;
+}
+.visible{
+    display: flex;
+    flex-direction: column;
+}
+.hidden{
+    display: none;
+}
+h2{
+    width:100%
+}

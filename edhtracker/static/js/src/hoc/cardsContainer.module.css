@@ -1,0 +1,6 @@
+.CardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    z-index: 1;
+}

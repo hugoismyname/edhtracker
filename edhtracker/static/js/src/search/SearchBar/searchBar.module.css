@@ -1,0 +1,66 @@
+.searchContainer{
+    position: relative;
+}
+.searchBar {
+    border: #e68123 3px solid;
+    height: 30px;
+    width: 200px;
+    display: flex;
+    margin-right: 1rem;
+    border-radius: 50px;
+    background: white;
+    padding-left: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+.searchSuggestionsContainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    cursor: default;
+    background: white;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,.75);
+    border-top: 1px solid rgba(0,0,0,.75);
+    z-index: 100;
+    max-height: 1000px;
+    overflow: auto;
+}
+.searchSuggestion{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font: small;
+    padding: 5px;
+    font-size: small;
+    clear: both;
+    min-height: 35px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.searchSuggestion:hover{
+    background-color: rgb(195, 195, 195);
+}
+.searchSuggestion img{
+    width: 50px;
+    max-height: 100%;
+    margin-right: 15px;
+}
+.searchText {
+    border: none;
+    outline: none;
+    background: none;
+    float: left;
+    line-height: 30px;
+}
+.searchButton {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e68123;
+    cursor: pointer;
+    border: none;
+}

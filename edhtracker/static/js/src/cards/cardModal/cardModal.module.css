@@ -1,0 +1,58 @@
+#cardUpdateModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 250px;
+    z-index: 101;
+    padding-bottom: .5em;
+    border-radius: 2px;
+    background: #fff;
+    margin:0 auto;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-150px;
+    margin-top:-150px;
+    background-color: lightgray;
+}
+.closeButton{
+    font-size: 1.2em;
+    border-bottom: 1px solid #e7e1d3;
+    font-weight: 700;
+    width: 96%;
+}
+.closeButton span {
+    cursor: pointer;
+    padding: .5em;
+    width: 10%;
+    display: block;
+}
+.cardQuantity{
+    display: flex;
+    margin: .5em 0;
+}
+.cardQuantity input {
+    font-weight: 600;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    padding-left: .5em;
+    margin-left: .5em;
+    border: 1px solid #e7e1d3;
+}
+.saveButton {
+    padding: .5em 0em;
+    margin: .5em 0;
+    background: #e68123;
+    cursor: pointer;
+    width: 40%;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+}
+h3 {
+    margin: .5em 0;
+}
