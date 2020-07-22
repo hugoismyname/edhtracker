@@ -1,0 +1,20 @@
+{% extends "MTG_cards\base.html" %}
+{% load static %}
+{% block content %} 
+<div>
+    <div>
+        <h2></h2>
+        <ul>
+            {% for set in sets %}
+            <li>
+                <img class="nav_sets_svg" src="{% static '/set_svgs/'%}{{ set.img_url }}.svg" alt="{{ set.name }}" />
+                <a href="{% url 'cards' set.code %}">{{set.name}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+
+    </div>
+</div>
+{% endblock content %}

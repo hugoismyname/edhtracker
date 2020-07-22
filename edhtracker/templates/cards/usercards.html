@@ -1,0 +1,9 @@
+{% extends "MTG_cards\base.html" %}
+{% load static %}
+
+{% block content %}
+    <div id="userCards" data-username={{ user.get_username }}></div>
+{% endblock content %}
+{% block extra_scripts %}
+<script  src="{% static 'jsdist\userCards.js' %}"></script>
+{% endblock extra_scripts %} 

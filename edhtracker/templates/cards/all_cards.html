@@ -1,0 +1,7 @@
+{% extends "MTG_cards\base.html" %}
+{% load static %}
+{% block content %} 
+{% for card in object_list %}
+    <img style="width: 200px; height: 250px;" src="{% static 'card_images/'%}{{card.img_url}}.jpg" alt="{{card.name}}">
+{% endfor %}
+{% endblock content %}

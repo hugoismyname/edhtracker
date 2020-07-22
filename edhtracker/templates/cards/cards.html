@@ -1,0 +1,14 @@
+{% extends "MTG_cards\base.html" %}
+{% load static %}
+{% block extra_styles %}
+  <link rel="stylesheet" href="{% static 'cards.css' %}">
+{% endblock extra_styles %}
+{% block content %} 
+  <div class="set-title-wrapper"> 
+    <h2 class="set-title"><span>{{setName}}</span></h2>
+  </div>
+  <div data-setname={{setCode}} id="allCards"></div>
+{% endblock content %}
+{% block extra_scripts %}
+  <script  src="{% static 'jsdist\cards.js' %}"></script>
+{% endblock extra_scripts %}

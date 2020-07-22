@@ -1,0 +1,10 @@
+{% extends "MTG_cards\base.html" %}
+{% load static %}
+
+{% block content %} 
+    <div id="searchResults" data-searchparam={{searchParam}}></div>
+    <div id="searchBar"></div>
+{% endblock content %}
+{% block extra_scripts %}
+<script  src="{% static 'jsdist\search.js' %}"></script>
+{% endblock extra_scripts %} 

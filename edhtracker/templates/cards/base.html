@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{% static 'main.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic" media="all">
+      {% block extra_styles %}
+      {% endblock extra_styles %}
+      
+      {% if title %}
+          <title>COMMANDER REC- {{ title }}</title>
+      {% else %}
+          <title>COMMANDER REC</title>
+      {% endif %}
+    </head>
+    <body>
+      <div id="overlay"></div>
+      <header>
+        <nav >
+          <div class="logo">
+            <a href="#"><img class="avatar" src="{% static 'placeholder-logo.png' %}" alt=""></a>
+          </div>
+          <ul class="nav-menu">
+            <li class="nav_sets"><a class="nav-menua" href="{% url 'mtg-home' %}">Home</a></li>
+            <li class="nav_sets"><a class="nav-menua" href="{% url 'all_sets' %}">Sets</a>
+              <ul class="mega_menu">
+              {% for set in nav_sets %}
+                <li>
+                  <img class="nav_sets_svg" src="{% static '/set_svgs/'%}{{ set.img_url }}orange.svg" alt="{{ set.name }}" />
+                  <a href="{% url 'cards' set.code %}">{{set.name}}</a>
+                </li>
+              {% endfor %}
+              </ul>
+            </li>
+          </ul>
+          <ul class="site-user">
+            <div id="searchbar"></div>
+            {% if user.is_authenticated %}
+              <ul class="user-submenu" > 
+                <li><a href="{% url 'profile' %}">My Profile</a></li>
+                <li><a href="{% url 'user-cards' user.username %}">Cards</a></li>
+                <li><a href="{% url 'decks-rec' %}">Decks</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+              </ul>
+              <a id="user-image"  href="{% url 'profile' %}"><img class="avatar" src="{{user.profile.image.url}}" alt="user-image"></a>
+            {% else %}
+              <!-- div for javascript event listenrer need to improve solution -->
+              <div id="user-image" class="user-submenu"></div>
+              <a class="login-link" href="{% url 'login' %}">Login</a>
+              <a class="login-link" href="{% url 'register' %}">Register</a>
+            {% endif %}
+          </ul>
+          <div class="burger">
+            <span class="bars"></span>
+            <span class="bars"></span>
+            <span class="bars"></span>
+          </div>
+        </nav>
+      </header>
+      <main class="main-content" >
+        <!-- <img src="{% static 'set_svgs/15th Anniversary Cards-416.svg' %}"/> -->
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+        {% block pagination %}
+        {% endblock pagination %}
+      </main>
+      {% block widgets %}
+      {% endblock widgets %}
+    </body>
+    <script src="{% static 'js\main.js' %}"></script>
+    <script src="{% static 'jsdist\searchBar.js' %}"></script>
+    {% block extra_scripts %}
+    {% endblock extra_scripts %}
+</html>

@@ -1,0 +1,13 @@
+{% extends "MTG_cards\base.html" %}
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/decks_rec.css' %}">
+{% endblock extra_styles %}
+{% block content %} 
+    <h2>COMMANDER RECOMENDATIONS</h2>
+    <p class="description">All commanders ordered by the number of cards you own from the average commander deck.</p>
+    <div id="decksRec" data-username={{ user.get_username }}></div>
+{% endblock content %}
+{% block extra_scripts %}
+<script  src="{% static 'jsdist\decksRec.js' %}"></script>
+{% endblock extra_scripts %} 
