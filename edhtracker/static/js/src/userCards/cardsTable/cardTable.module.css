@@ -7,7 +7,7 @@
     width: 100%;
 }
 .tableRow:hover .removeCard{
-    background-image: url(/static/icon-remove-red.png);
+    background-image: url(/static/img/icon-remove-red.png);
     background-repeat: no-repeat;
     background-position: right;
 }

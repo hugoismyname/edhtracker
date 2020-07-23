@@ -5,9 +5,9 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="{% static 'main.css' %}">
+      {% block bootstrap %}
+      {% endblock bootstrap %}
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic" media="all">
       {% block extra_styles %}
@@ -24,38 +24,37 @@
       <header>
         <nav >
           <div class="logo">
-            <a href="#"><img class="avatar" src="{% static 'placeholder-logo.png' %}" alt=""></a>
+            <a href="#"><img class="avatar" src="{% static 'img/placeholder-logo.png' %}" alt=""></a>
           </div>
-          <ul class="nav-menu">
-            <li class="nav_sets"><a class="nav-menua" href="{% url 'home' %}">Home</a></li>
-            <li class="nav_sets"><a class="nav-menua" href="{% url 'all_sets' %}">Sets</a>
-              <ul class="mega_menu">
+          <div class="nav-menu">
+            <div class="nav_sets"><a class="nav-menua" href="{% url 'home' %}">Home</a></div>
+            <div class="nav_sets"><a class="nav-menua" href="{% url 'all_sets' %}">Sets</a>
+              <div class="mega_menu">
               {% for set in nav_sets %}
-                <li>
+                <div>
                   <img class="nav_sets_svg" src="{% static '/set_svgs/'%}{{ set.img_url }}orange.svg" alt="{{ set.name }}" />
                   <a href="{% url 'cards' set.code %}">{{set.name}}</a>
-                </li>
+                </div>
               {% endfor %}
-              </ul>
-            </li>
-          </ul>
-          <ul class="site-user">
+              </div>
+            </div>
+          </div>
+          <div class="site-user">
             <div id="searchbar"></div>
             {% if user.is_authenticated %}
-              <ul class="user-submenu" > 
-                <li><a href="{% url 'profile' %}">My Profile</a></li>
-                <li><a href="{% url 'user_cards' user.username %}">Cards</a></li>
-                <li><a href="{% url 'decks_rec' %}">Decks</a></li>
-                <li><a href="{% url 'account_logout' %}">Logout</a></li>
-              </ul>
-              <a id="user-image"  href="{% url 'profile' %}"><img class="avatar" src="{{user.profile.image.url}}" alt="user-image"></a>
+              <div class="user-submenu" > 
+                <div><a href="{% url 'user_cards' user.username %}">Cards</a></div>
+                <div><a href="{% url 'decks_rec' %}">Decks</a></div>
+                <div><a href="{% url 'account_logout' %}">Logout</a></div>
+              </div>
+              <a id="user-image"  href="#"><img class="avatar" src="{{user.profile.image.url}}" alt="user-image"></a>
             {% else %}
               <!-- div for javascript event listenrer need to improve solution -->
               <div id="user-image" class="user-submenu"></div>
               <a class="login-link" href="{% url 'account_login' %}">Login</a>
               <a class="login-link" href="{% url 'account_signup' %}">Register</a>
             {% endif %}
-          </ul>
+          </div>
           <div class="burger">
             <span class="bars"></span>
             <span class="bars"></span>
@@ -64,14 +63,6 @@
         </nav>
       </header>
       <main class="main-content" >
-        <!-- <img src="{% static 'set_svgs/15th Anniversary Cards-416.svg' %}"/> -->
-        {% if messages %}
-          {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-              {{ message }}
-            </div>
-          {% endfor %}
-        {% endif %}
         {% block content %}
         {% endblock %}
         {% block pagination %}

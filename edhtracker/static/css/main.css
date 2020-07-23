@@ -136,14 +136,14 @@ nav {
   min-width: 250px;
   display: none;
 }
-.user-submenu li a{
+.user-submenu div a{
   font-size: 1rem;
   padding: .5rem 1rem;
   display: inline-block;
   width: 100%;
   color: #fff;
 }
-.user-submenu li a:hover{
+.user-submenu div a:hover{
 color: #e68123;
 }
 .mega_menu{
@@ -161,7 +161,7 @@ color: #e68123;
   border-top-color: #e68123;
   border-top-style: solid;
 }
-.mega_menu li{
+.mega_menu div{
   display: flex;
   justify-content: space-evenly;
   align-content: center;

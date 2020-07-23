@@ -4,7 +4,6 @@
 .searchBar {
     border: #e68123 3px solid;
     height: 30px;
-    width: 200px;
     display: flex;
     margin-right: 1rem;
     border-radius: 50px;
@@ -54,6 +53,8 @@
     background: none;
     float: left;
     line-height: 30px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
 }
 .searchButton {
     float: right;
@@ -63,4 +64,5 @@
     background: #e68123;
     cursor: pointer;
     border: none;
+    font-size: 18px;
 }
