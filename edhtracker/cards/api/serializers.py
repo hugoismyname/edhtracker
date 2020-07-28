@@ -7,12 +7,10 @@ from rest_framework.fields import CurrentUserDefault
 
 class AddCardsSerializer(serializers.ModelSerializer):
     date_added = serializers.DateTimeField(format="%m-%d-%Y",read_only=True)
-    img_url = serializers.CharField(source='card.img_url',read_only=True)
-    name = serializers.CharField(source='card.name',read_only=True)
-    type_line = serializers.CharField(source='card.type_line',read_only=True)
+
     class Meta:
         model = UserCards
-        fields = ['card','card_count','date_added','img_url','name','type_line']
+        fields = ['card','card_count','date_added']
 
 
 class CardsSerializer(serializers.ModelSerializer):
@@ -45,16 +43,14 @@ class UserCardsSerializer(serializers.ModelSerializer):
     type_line = serializers.CharField(source='card.type_line')
     set = serializers.CharField(source='card.set')
 
-    @staticmethod
-    def setup_eager_loading(queryset):
-        """ Perform necessary eager loading of data. """
-        # select_related for "to-one" relationships
-        queryset = queryset.select_related('card')
+    # @staticmethod
+    # def setup_eager_loading(queryset):
+    #     """ Perform necessary eager loading of data. """
+    #     # select_related for "to-one" relationships
+    #     queryset = queryset.select_related('card')
         
-        return queryset
+    #     return queryset
     
     class Meta:
         model = UserCards
         fields = ['card_count','card_id','date_added','id','img_url','name','type_line','set']
-
-        # read_only_fields = fields

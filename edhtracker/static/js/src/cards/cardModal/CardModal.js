@@ -7,7 +7,6 @@ import {apiAddCard} from '../../userCards'
 function CardModal(props){
   const [cardAmount, setCardAmount] = useState(1)
   const cardId = props.cardId
-
   const handleSubmit = (event) =>{
     event.preventDefault()
     apiAddCard(() =>{},{"card":cardId,"card_count":cardAmount})

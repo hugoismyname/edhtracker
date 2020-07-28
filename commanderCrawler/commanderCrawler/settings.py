@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Scrapy settings for commanderData project
+# Scrapy settings for commanderCrawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -11,21 +9,26 @@
 
 import os
 import sys
+from pathlib import Path
+
 import django
 
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".."))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'EDH_rec_app.settings'
-
+ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
+sys.path.append(str(ROOT_DIR))
+os.environ.setdefault(
+    "DJANGO_SETTINGS_MODULE", "config.settings.local"
+)
 django.setup()
 
-BOT_NAME = 'commanderData'
 
-SPIDER_MODULES = ['commanderData.spiders']
-NEWSPIDER_MODULE = 'commanderData.spiders'
+BOT_NAME = 'commanderCrawler'
+
+SPIDER_MODULES = ['commanderCrawler.spiders']
+NEWSPIDER_MODULE = 'commanderCrawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'commanderData (+http://www.yourdomain.com)'
+#USER_AGENT = 'commanderCrawler (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -56,13 +59,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'commanderData.middlewares.CommanderdataSpiderMiddleware': 543,
+#    'commanderCrawler.middlewares.CommandercrawlerSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'commanderData.middlewares.CommanderdataDownloaderMiddleware': 543,
+#    'commanderCrawler.middlewares.CommandercrawlerDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -74,7 +77,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'commanderData.pipelines.CommanderdataPipeline': 300,
+   'commanderCrawler.pipelines.CommandercrawlerPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

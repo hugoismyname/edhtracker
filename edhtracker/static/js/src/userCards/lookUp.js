@@ -3,10 +3,10 @@ import lookUp from '../lookup/lookup'
 export function apiAddCard(callback,data) {
     lookUp("POST", "/add_card/",callback,data)
 }
-export function apiUserCardsList(username,callback,nextUrl) {
+export function apiUserCardsList(user,callback,nextUrl) {
     let endpoint = '/user_cards/'
-    if (username){
-      endpoint = `/user_cards/?username=${username}`
+    if (user){
+      endpoint = `/user_cards/?user_id=${user}`
     }
     if (nextUrl !== null && nextUrl !== undefined) {
     endpoint = nextUrl.replace("http://localhost:8000/api", "")

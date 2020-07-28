@@ -20,6 +20,7 @@ export function UserCardList(props){
     "isVisible": "none",
     "backdropShow":false}
     )
+    console.log(props)
   const displayModalHandler = (props) =>{
     setCardInfo(
       {"cardId":props.cardId,
@@ -72,9 +73,9 @@ export function UserCardList(props){
           alert("There was an error")
         }
       }
-      apiUserCardsList(props.username,handleCardsLookUp,null)
+      apiUserCardsList(props.user,handleCardsLookUp,null)
     }
-  }, [props.username, cardsDidSet])
+  }, [props.user, cardsDidSet])
   
   const handleLoadNext = (event) => {
     event.preventDefault()
@@ -88,7 +89,7 @@ export function UserCardList(props){
           alert("There was an error")
         }
       }
-      apiUserCardsList(props.username, handleLoadNextResponse,nextUrl)
+      apiUserCardsList(props.user, handleLoadNextResponse,nextUrl)
     }
   }
 

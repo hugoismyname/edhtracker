@@ -10,11 +10,6 @@ from cards.views import HomeView
 
 urlpatterns = [
     path(
-        "",
-        TemplateView.as_view(template_name="pages/home.html"),
-        name="home",
-    ),
-    path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
         name="about",
@@ -27,9 +22,9 @@ urlpatterns = [
         include("edhtracker.users.urls", namespace="users"),
     ),
     path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
     path('', HomeView, name="home"),
     path('', include('cards.urls')),
+    path('', include('cards.api.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

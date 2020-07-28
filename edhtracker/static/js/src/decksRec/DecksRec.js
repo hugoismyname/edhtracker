@@ -4,6 +4,8 @@ import {lookUpDeckRecs} from './index'
 import CardsContainer from '../hoc/CardsContainer'
 import {Card} from '../cards';
 import Classes from './decksRec.module.css'
+import CardModal from '../cards/cardModal/CardModal';
+ 
 
 const e = React.createElement
 const decksRecElement = document.getElementById("decksRec")
@@ -11,6 +13,21 @@ const decksRecElement = document.getElementById("decksRec")
 function DecksRec(props){
     const [commanderData, setCommanderData] = useState([])
     const [commanderDataDidSet, setCommanderDataDidSet] = useState(false)
+    const [cardInfo, setCardInfo] = useState(
+      {"cardName":"",
+      "cardId":"",
+      "isVisible": "none",
+      "backdropShow":false}
+      )
+    const displayModalHandler = (props) =>{
+      setCardInfo(
+        {"cardId":props.cardId,
+        "cardName": props.cardName,
+        "backdropShow":true})
+    }
+    const closeModalHandler = () =>{
+      setCardInfo({"cardName":"", "isVisible": "none","backdropShow":false})
+    }
 
     useEffect(() => {
       if (commanderDataDidSet === false){
@@ -39,7 +56,7 @@ function DecksRec(props){
       <CardsContainer children={commanderData.map((item,index) => {
         return (
           <div className={Classes.cardsOuterWrapper} key={item.id}>
-            <Card card={item} key={item.id}/>
+            <Card displayModal={displayModalHandler} card={item} key={item.id}/>
             <div className={Classes.cardsOwned}><p>{item.cards_owned}</p> out of <p>{item.total_cards}</p></div>
           </div>
         )
@@ -48,6 +65,12 @@ function DecksRec(props){
     return( 
       <React.Fragment>
         {commanderRecs}
+        <CardModal               
+              onClose={closeModalHandler}
+              isVisible={cardInfo["isVisible"]} 
+              cardName={cardInfo["cardName"]} 
+              cardId={cardInfo["cardId"]} 
+              show={cardInfo["backdropShow"]} />
       </React.Fragment>
 
     )

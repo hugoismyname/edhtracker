@@ -29893,7 +29893,7 @@ var userCardsElement = document.getElementById("userCards");
 
 function UserCardsApp(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_2__["UserCardList"], {
-    username: props.username
+    user: props.user
   });
 }
 
@@ -30108,6 +30108,8 @@ function UserCardList(props) {
       cardInfo = _useState12[0],
       setCardInfo = _useState12[1];
 
+  console.log(props);
+
   var displayModalHandler = function displayModalHandler(props) {
     setCardInfo({
       "cardId": props.cardId,
@@ -30179,9 +30181,9 @@ function UserCardList(props) {
         }
       };
 
-      Object(_index__WEBPACK_IMPORTED_MODULE_2__["apiUserCardsList"])(props.username, handleCardsLookUp, null);
+      Object(_index__WEBPACK_IMPORTED_MODULE_2__["apiUserCardsList"])(props.user, handleCardsLookUp, null);
     }
-  }, [props.username, cardsDidSet]);
+  }, [props.user, cardsDidSet]);
 
   var handleLoadNext = function handleLoadNext(event) {
     event.preventDefault();
@@ -30199,7 +30201,7 @@ function UserCardList(props) {
         }
       };
 
-      Object(_index__WEBPACK_IMPORTED_MODULE_2__["apiUserCardsList"])(props.username, handleLoadNextResponse, nextUrl);
+      Object(_index__WEBPACK_IMPORTED_MODULE_2__["apiUserCardsList"])(props.user, handleLoadNextResponse, nextUrl);
     }
   };
 
@@ -30339,11 +30341,11 @@ __webpack_require__.r(__webpack_exports__);
 function apiAddCard(callback, data) {
   Object(_lookup_lookup__WEBPACK_IMPORTED_MODULE_0__["default"])("POST", "/add_card/", callback, data);
 }
-function apiUserCardsList(username, callback, nextUrl) {
+function apiUserCardsList(user, callback, nextUrl) {
   var endpoint = '/user_cards/';
 
-  if (username) {
-    endpoint = "/user_cards/?username=".concat(username);
+  if (user) {
+    endpoint = "/user_cards/?user_id=".concat(user);
   }
 
   if (nextUrl !== null && nextUrl !== undefined) {

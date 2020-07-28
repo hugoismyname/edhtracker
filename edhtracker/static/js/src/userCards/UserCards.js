@@ -7,7 +7,7 @@ const userCardsElement = document.getElementById("userCards")
 
 function UserCardsApp(props){
     return(
-        <UserCardList  username={props.username} />
+        <UserCardList  user={props.user} />
     )
 }
 if(userCardsElement){

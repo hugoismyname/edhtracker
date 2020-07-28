@@ -32,7 +32,7 @@
               <div class="mega_menu">
               {% for set in nav_sets %}
                 <div>
-                  <img class="nav_sets_svg" src="{% static '/set_svgs/'%}{{ set.img_url }}orange.svg" alt="{{ set.name }}" />
+                  <img class="nav_sets_svg" src="{% static '/set_svgs/'%}{{ set.img_url }}.svg" alt="{{ set.name }}" />
                   <a href="{% url 'cards' set.code %}">{{set.name}}</a>
                 </div>
               {% endfor %}

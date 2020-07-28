@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div id="userCards" data-username={{ user.get_username }}></div>
+    <div id="userCards" data-user={{ user_id }}></div>
 {% endblock content %}
 {% block extra_scripts %}
 <script  src="{% static 'jsdist\userCards.js' %}"></script>

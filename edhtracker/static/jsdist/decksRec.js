@@ -29641,6 +29641,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../cards */ "./src/cards/index.js");
 /* harmony import */ var _decksRec_module_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./decksRec.module.css */ "./src/decksRec/decksRec.module.css");
 /* harmony import */ var _decksRec_module_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_decksRec_module_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _cards_cardModal_CardModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../cards/cardModal/CardModal */ "./src/cards/cardModal/CardModal.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -29652,6 +29653,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -29672,6 +29674,32 @@ function DecksRec(props) {
       _useState4 = _slicedToArray(_useState3, 2),
       commanderDataDidSet = _useState4[0],
       setCommanderDataDidSet = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    "cardName": "",
+    "cardId": "",
+    "isVisible": "none",
+    "backdropShow": false
+  }),
+      _useState6 = _slicedToArray(_useState5, 2),
+      cardInfo = _useState6[0],
+      setCardInfo = _useState6[1];
+
+  var displayModalHandler = function displayModalHandler(props) {
+    setCardInfo({
+      "cardId": props.cardId,
+      "cardName": props.cardName,
+      "backdropShow": true
+    });
+  };
+
+  var closeModalHandler = function closeModalHandler() {
+    setCardInfo({
+      "cardName": "",
+      "isVisible": "none",
+      "backdropShow": false
+    });
+  };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (commanderDataDidSet === false) {
@@ -29704,6 +29732,7 @@ function DecksRec(props) {
           className: _decksRec_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.cardsOuterWrapper,
           key: item.id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_4__["Card"], {
+          displayModal: displayModalHandler,
           card: item,
           key: item.id
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -29713,7 +29742,13 @@ function DecksRec(props) {
     });
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, commanderRecs);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, commanderRecs, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards_cardModal_CardModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onClose: closeModalHandler,
+    isVisible: cardInfo["isVisible"],
+    cardName: cardInfo["cardName"],
+    cardId: cardInfo["cardId"],
+    show: cardInfo["backdropShow"]
+  }));
 }
 
 if (decksRecElement) {
@@ -30261,6 +30296,8 @@ function UserCardList(props) {
       cardInfo = _useState12[0],
       setCardInfo = _useState12[1];
 
+  console.log(props);
+
   var displayModalHandler = function displayModalHandler(props) {
     setCardInfo({
       "cardId": props.cardId,
@@ -30332,9 +30369,9 @@ function UserCardList(props) {
         }
       };
 
-      Object(_index__WEBPACK_IMPORTED_MODULE_2__["apiUserCardsList"])(props.username, handleCardsLookUp, null);
+      Object(_index__WEBPACK_IMPORTED_MODULE_2__["apiUserCardsList"])(props.user, handleCardsLookUp, null);
     }
-  }, [props.username, cardsDidSet]);
+  }, [props.user, cardsDidSet]);
 
   var handleLoadNext = function handleLoadNext(event) {
     event.preventDefault();
@@ -30352,7 +30389,7 @@ function UserCardList(props) {
         }
       };
 
-      Object(_index__WEBPACK_IMPORTED_MODULE_2__["apiUserCardsList"])(props.username, handleLoadNextResponse, nextUrl);
+      Object(_index__WEBPACK_IMPORTED_MODULE_2__["apiUserCardsList"])(props.user, handleLoadNextResponse, nextUrl);
     }
   };
 
@@ -30492,11 +30529,11 @@ __webpack_require__.r(__webpack_exports__);
 function apiAddCard(callback, data) {
   Object(_lookup_lookup__WEBPACK_IMPORTED_MODULE_0__["default"])("POST", "/add_card/", callback, data);
 }
-function apiUserCardsList(username, callback, nextUrl) {
+function apiUserCardsList(user, callback, nextUrl) {
   var endpoint = '/user_cards/';
 
-  if (username) {
-    endpoint = "/user_cards/?username=".concat(username);
+  if (user) {
+    endpoint = "/user_cards/?user_id=".concat(user);
   }
 
   if (nextUrl !== null && nextUrl !== undefined) {

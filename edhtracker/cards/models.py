@@ -79,12 +79,10 @@ class UserCards(models.Model):
     card = models.ForeignKey(Card, related_name="card" ,on_delete=models.CASCADE)
     card_count = models.PositiveIntegerField()
     date_added = models.DateTimeField(default=timezone.now)
-    img_url = models.CharField(default='default.jpg', max_length=256)
-    name = models.CharField(max_length=256)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="user",on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
 
 
 class Set(models.Model):
@@ -103,6 +101,11 @@ class Set(models.Model):
     released_at = models.DateField(null=True)
     set_type = models.CharField(default='unknown',max_length=256)
     tcgplayer_id = models.IntegerField(null=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['released_at'])
+        ]
 
     def __str__(self):
         return self.name

@@ -1,9 +1,10 @@
 import scrapy
 import json
 
-from commanderData.items import CommanderdataItem
+from commanderCrawler.items import CommanderdataItem
 
-from MTG_cards.models import Card
+from edhtracker.cards.models import Card
+
 
 class CommanderSpider(scrapy.Spider):
     name = "commander"
