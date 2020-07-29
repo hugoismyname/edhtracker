@@ -19,6 +19,7 @@ class CardsSerializer(serializers.ModelSerializer):
 
         fields = ['colors','id','img_url','name','type_line']
 
+
 class CommanderSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='commander.name',read_only=True)
     img_url = serializers.CharField(source='commander.img_url',read_only=True)

@@ -44,7 +44,7 @@ INSTALLED_APPS += ["debug_toolbar"]  # noqa: F405
 # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#middleware
 MIDDLEWARE += [  # noqa: F405
     'corsheaders.middleware.CorsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware"
+    # "debug_toolbar.middleware.DebugToolbarMiddleware"
 ]
 # https://django-debug-toolbar.readthedocs.io/en/latest/configuration.html
 DEBUG_TOOLBAR_PANELS = [

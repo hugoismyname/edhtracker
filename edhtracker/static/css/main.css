@@ -180,6 +180,7 @@ color: #e68123;
 .nav_sets_svg{
   width:25px;
   max-height: 30px;
+  filter: invert(57%) sepia(92%) saturate(1423%) hue-rotate(346deg) brightness(94%) contrast(90%);
 }
 .nav_sets{
   display: flex;

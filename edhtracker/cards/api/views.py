@@ -23,27 +23,20 @@ def CardsApi(request, *args, **kwargs):
     set_code = request.GET.get('set')
 
     if set_code != None:
-        qs = Card.objects.filter(set__iexact=set_code).exclude(frame_effects__overlap=['showcase','extendedart','inverted']).exclude(border_color="borderless").order_by('name')
-        allcards = CardsSerializer(qs, many=True)
-        wqs = qs.filter(color_lookup="white")
-        uqs = qs.filter(color_lookup="blue")
-        bqs = qs.filter(color_lookup="black")
-        rqs = qs.filter(color_lookup="red")
-        gqs = qs.filter(color_lookup="green")
-        mqs = qs.filter(color_lookup="multicolor")
-        cqs = qs.filter(color_lookup="").exclude(type_line__icontains="land").exclude(type_line__icontains="artifact")
-        aqs = qs.filter(color_lookup="").filter(type_line__icontains="artifact")
-        lqs = qs.filter(type_line__icontains="land")
-        white = CardsSerializer(wqs,many=True)
-        blue = CardsSerializer(uqs,many=True)
-        black = CardsSerializer(bqs,many=True)
-        red = CardsSerializer(rqs,many=True)
-        green = CardsSerializer(gqs,many=True)
-        multicolor = CardsSerializer(mqs,many=True)
-        colorless = CardsSerializer(cqs,many=True)
-        artifact = CardsSerializer(aqs,many=True)
-        lands = CardsSerializer(lqs,many=True)
-        return Response( [white.data,blue.data,black.data,red.data,green.data,multicolor.data,colorless.data,artifact.data,lands.data,allcards.data])
+        allcards = Card.objects.filter(set=set_code).exclude(frame_effects__overlap=['showcase','extendedart','inverted'])
+        allcards = allcards.exclude(border_color="borderless").order_by('name').values('id','img_url','name')
+        white = allcards.filter(color_lookup="white").values('id','img_url','name')
+        blue = allcards.filter(color_lookup="blue").values('id','img_url','name')
+        black = allcards.filter(color_lookup="black").values('id','img_url','name')
+        red = allcards.filter(color_lookup="red").values('id','img_url','name')
+        green = allcards.filter(color_lookup="green").values('id','img_url','name')
+        multicolor = allcards.filter(color_lookup="multicolor").values('id','img_url','name')
+        colorless = allcards.filter(color_lookup="colorless").values('id','img_url','name')
+        artifacts = allcards.filter(color_lookup="artifact").values('id','img_url','name')
+        lands = allcards.filter(color_lookup="land").values('id','img_url','name')
+
+
+        return Response( [white,blue,black,red,green,multicolor,colorless,artifacts,lands,allcards])
     return Response({"no set provided"}, status=404)
 
 @api_view(['GET'])
@@ -170,6 +163,7 @@ def UserCardsListApi(request, *args, **kwargs):
     user_id = request.GET.get('user_id')
     if user_id != None:
         qs = UserCards.objects.filter(user_id=user_id).select_related('card')
+
     return get_paginated_queryset_response(qs,request,UserCardsSerializer,200)
 
 @api_view(['POST','UPDATE'])

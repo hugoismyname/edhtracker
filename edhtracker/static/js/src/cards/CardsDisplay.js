@@ -35,8 +35,8 @@ function CardList(props){
   const [cards, setCards] = useState([])
   const [cardsDidSet, setCardsDidSet] = useState(false)
   const [display, setDisplay] = useState(["visual"])
-  const [color, setColor] = useState("WHITE")
-  const [colorIndex, setColorIndex] = useState(0)
+  const [color, setColor] = useState("ALL CARDS")
+  const [colorIndex, setColorIndex] = useState(9)
   const [cardInfo, setCardInfo] = useState(
     {"cardName":"",
     "cardId":"",

@@ -29302,12 +29302,12 @@ function CardList(props) {
       display = _useState8[0],
       setDisplay = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("WHITE"),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("ALL CARDS"),
       _useState10 = _slicedToArray(_useState9, 2),
       color = _useState10[0],
       setColor = _useState10[1];
 
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(9),
       _useState12 = _slicedToArray(_useState11, 2),
       colorIndex = _useState12[0],
       setColorIndex = _useState12[1];

@@ -63,6 +63,13 @@ class Card(models.Model):
     variation = models.BooleanField()
     variation_of = JSONField(null=True)
 
+    class Meta:
+        indexes = [
+        models.Index(fields=['set']),
+        models.Index(fields=['color_lookup']),
+        models.Index(fields=['color_lookup','set'])
+    ]
+
     def __str__(self):
         return self.name
 

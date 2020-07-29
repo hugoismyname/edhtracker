@@ -9,7 +9,7 @@ def AllSets(request, *args, **kwargs):
     return render(request, "cards/all_sets.html",{'sets':all_sets})
 
 def CardsView(request,setCode, *args, **kwargs):
-    qs = Set.objects.filter(code=setCode).first()
+    qs = get_object_or_404(Set,code=setCode)
     setName = qs.name
     return render(request, "cards/cards.html",{'setCode':setCode,'setName':setName})
 
