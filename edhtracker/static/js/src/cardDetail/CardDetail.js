@@ -22,13 +22,13 @@ function CardDetail(props){
         )
         
     const displayModalHandler = (props) =>{
-    setCardInfo(
-        {"cardId":props.cardId,
-        "cardName": props.cardName,
-        "backdropShow":true})
+        setCardInfo(
+            {"cardId":props.cardId,
+            "cardName": props.cardName,
+            "backdropShow":true})
     }
     const closeModalHandler = () =>{
-    setCardInfo({"cardName":"", "isVisible": "none","backdropShow":false})
+        setCardInfo({"cardName":"", "isVisible": "none","backdropShow":false})
     }
     const changeDisplayHandler = ()=>{
         event.preventDefault()
@@ -51,34 +51,39 @@ function CardDetail(props){
 
     let Cards_list;
 
-    const groupByType = (list,listIndex) =>{
-        return(
-            Object.entries(list).map((subItem,index)=>{
-                return(
-                    <React.Fragment>
-                        <h2 className={Classes.typeHeader}>{subItem[0]}</h2>
-                        <CardsContainer key={index}>
-                            {
-                                subItem[1].map((lastItem)=>{
-                                    return <Card displayModal={displayModalHandler} card={lastItem} key={lastItem.id}/>
-                                })
-                            }
-                        </CardsContainer>
-                    </React.Fragment>
-                )
-            })
-        )
-    }
+    // Accepts the array and key
+    const groupBy = (array, key) => {
+        // Return the end result
+        const groupArray = array.reduce((result, currentValue) => {
+        // If an array already present for key, push it to the array. Else create an array and push the object
+        (result[currentValue[key]] = result[currentValue[key]] || []).push(
+            currentValue
+        );
+        // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
+        return result;
+        }, {}); // empty object is the initial value for result object
+
+        return Object.entries(groupArray).sort((a,b) => b[1]-a[1])
+    };
     if(props.username){
         Cards_list =
         <React.Fragment>
+            {/* link to switch between cards needed or owned. switchcardsshown[2] refers to what link shoulde display */}
             <a className={Classes.switchCards} onClick={changeDisplayHandler}>{switchCardsShown[2]}</a>
+
             {cardsInDeck.map((ownedAndMissing,index)=>{
                 return(
                     <div className={switchCardsShown[index] == true ? Classes.visible : Classes.hidden}>
-                        {ownedAndMissing.map((item)=>{
-                            return(
-                                groupByType(item)
+                        {Object.entries(groupBy(ownedAndMissing,'type')).map((typeList,index)=>{                                  
+                            return (
+                                <React.Fragment key={index}>
+                                    <h2 className={Classes.typeHeader}>{typeList[1][0]}</h2>
+                                    <CardsContainer>
+                                        {typeList[1][1].map((item)=>{
+                                            return <Card displayModal={displayModalHandler} card={item} key={item.id}/>
+                                        })}
+                                    </CardsContainer>
+                                </React.Fragment>
                             )
                         })}
                     </div>
@@ -87,9 +92,17 @@ function CardDetail(props){
         </React.Fragment>
     } else {
         Cards_list =
-        cardsInDeck.map((item)=>{
-            return(
-                groupByType(item)
+        Object.entries(groupBy(cardsInDeck,'type')).map((typeList,index)=>{     
+            console.log(typeList[1])                             
+            return (
+                <React.Fragment key={index}>
+                    <h2 className={Classes.typeHeader}>{typeList[1][0]} </h2>
+                    <CardsContainer>
+                        {typeList[1][1].map((item)=>{
+                            return <Card displayModal={displayModalHandler} card={item} key={item.id}/>
+                        })}
+                    </CardsContainer>
+                </React.Fragment>
             )
         })
     }

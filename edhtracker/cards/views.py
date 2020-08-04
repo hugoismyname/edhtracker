@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from rest_framework.decorators import api_view
 
 from django.views.generic import ListView
 from .models import Card, UserCards, Commander, Set
@@ -15,8 +16,12 @@ def CardsView(request,setCode, *args, **kwargs):
 
 def CardDetailView(request,pk, *args,**kwargs):
     card = Card.objects.filter(id=pk).values('id','img_url','is_commander','type_line','oracle_text','flavor_text','name','set').first()
-    user_card = UserCards.objects.filter(card_id=pk).first()
     set_info = Set.objects.filter(code=card['set']).values('img_url').first()
+    
+    if request.user.is_authenticated:
+        user_card = UserCards.objects.filter(card_id=pk).count()
+    else:
+        user_card = 0
 
     context = {
         'card':card,
@@ -25,15 +30,13 @@ def CardDetailView(request,pk, *args,**kwargs):
         'pk':pk
     }
     return render(request, "cards/card_detail.html",context)
-
 class AllView(ListView):
-    queryset = Card.objects.filter(is_commander=True).exclude(set_type="funny").exclude(set_type="memorabilia").order_by('name').distinct('name')
+    queryset = Card.objects.filter(is_commander=True).filter(layout='flip')
     # model = Card
-    paginate_by = 1000
     template_name = "cards/all_cards.html"
     
     ordering = ['name']
-
+    paginate_by = 500
 def DecksRec(request, *args, **kwargs):
     return render(request, "cards/decks_rec.html")
 
@@ -42,6 +45,7 @@ def HomeView(request, *args, **kwargs):
 
 def SearchView(request, *args, **kwargs):
     searchParam = request.GET.get('searchParam')
+    print(searchParam)
     return render(request, "cards/search.html",{'searchParam':searchParam})
 
 def UserCardsView(request, *args, **kwargs):

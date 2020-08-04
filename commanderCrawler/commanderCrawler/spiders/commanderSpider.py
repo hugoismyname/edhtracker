@@ -24,18 +24,15 @@ class CommanderSpider(scrapy.Spider):
     commanderList = Card.objects.filter(is_commander=True).exclude(set_type="funny").exclude(set_type="memorabilia").order_by('name').distinct('name').values_list('name', flat=True)
 
     # marton stromgald fix
-    # commanderList = ['Marton Stromgald']
-
     
     def parse(self, response):
         for card in self.commanderList:
-            card = card.lower()
+            urlCard = card.lower()
             try:
-                urlCard = card.replace("'","").replace(',', '').replace('"', '').replace('/', '').replace(':', '')
+                urlCard = urlCard.replace("'","").replace(',', '').replace('"', '').replace('/', '').replace(':', '')
                 urlCard = '-'.join(urlCard.split())
             except AttributeError:
                 urlCard = '-'.join(card.split())
-            # marton stromgald returns 404 due to non anscii characters in name
             url = f"https://edhrec-json.s3.amazonaws.com/en/commanders/{urlCard}.json"
             request = scrapy.Request(url,callback=self.parse_api,headers=self.headers,
                                         cb_kwargs=dict(commander=card))

@@ -5,28 +5,26 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
-
 
 from edhtracker.cards.models import Commander
 from edhtracker.cards.models import Card
 
-class CommandercrawlerPipeline(object):
+class CommanderCrawlerPipeline(object):
     def process_item(self, item, spider):
-        commander_query = Card.objects.filter(name__icontains=item['commander'])
-        commander_query = commander_query.filter(is_commander=True)
+        # get all commanders matching name 
+        commander_query = Card.objects.filter(name=item['commander'])
         for card in commander_query:
             try:
                 is_commander_in_db = Commander.objects.get(commander_id=card.id)
-                is_commander_in_db.card_list = item["deckList"]
-                return item
+                is_commander_in_db.card_list = item['deckList']
+                is_commander_in_db.save()
             except Commander.DoesNotExist:
                 commanderDeckList = Commander()
+                # foreign key relation on card
                 commanderDeckList.commander = card
                 commanderDeckList.name = card.name
                 commanderDeckList.img_url = card.img_url
-                commanderDeckList.card_list = item["deckList"]
+                commanderDeckList.card_list = item['deckList']
 
                 commanderDeckList.save()
-                return item
 

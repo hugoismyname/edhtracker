@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 from django.utils import timezone
 from django.contrib.postgres.fields import ArrayField, JSONField
 from django.urls import reverse
@@ -59,15 +60,18 @@ class Card(models.Model):
     tcgplayer_id = models.IntegerField(null=True)
     textless = models.BooleanField()
     toughness = models.CharField(blank=True,null=True,max_length=256)
+    type = models.CharField(blank=True,null=True,max_length=256)
     type_line = models.CharField(blank=True,null=True,max_length=256)
-    variation = models.BooleanField()
-    variation_of = JSONField(null=True)
+    is_variation = models.BooleanField()
 
     class Meta:
         indexes = [
-        models.Index(fields=['set']),
-        models.Index(fields=['color_lookup']),
-        models.Index(fields=['color_lookup','set'])
+            # index for individual sets cards display
+            models.Index(fields=['set','color_lookup','name','id','img_url',],
+                        name='cards_by_set',
+                        condition=Q(is_variation=False)),
+            models.Index(fields=['name','id','img_url','type'],
+                        name='inventory_comparison')
     ]
 
     def __str__(self):
@@ -80,7 +84,7 @@ class Commander(models.Model):
     name = models.CharField(max_length=256)
 
     def __str__(self):
-        return self.commander
+        return self.name
 
 class UserCards(models.Model):
     card = models.ForeignKey(Card, related_name="card" ,on_delete=models.CASCADE)

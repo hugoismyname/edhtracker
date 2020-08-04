@@ -1,4 +1,4 @@
-# -make a commander rec page
+-make a commander rec page
 #     -decks html page 
 #     -react request for decks close to completing
 #         -get all user cards 
@@ -11,25 +11,22 @@
 #                 cards_owned = []
 #                 cards_not_owned = []
 
-# - optomize commander queries lookup
+- optomize commander queries lookup
 #     -add name and img_url to commander fields used a lot
-#     -add card name to usercards database
+    -add indexes where needed
 
 -finish card detail page
-    -has link to commander if is commander
-    -if commander show what cards you own and need
+    # -if commander show what cards you own and need
 
 -rework visual cards
     -on hover display link and card_count
 
-# -re input allcards data 
+-re input allcards data 
 #     -add is commander column
 #     -add imageurl column
         # -add crads to dtabase
 
-# -re work edh_rec commander info
-
-# -rework images
+-rework images
     # -format names correctly
     # -add images for specific sets
     # - resize cards in folder
@@ -55,6 +52,7 @@
     -improve search(display closest match first)
     -highlight words searched
     -dropdown on rigth click not close
+    -display no results if database has no matches
 
 -finish search page
 

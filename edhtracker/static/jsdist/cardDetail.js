@@ -29321,21 +29321,19 @@ function CardDetail(props) {
       Object(_lookUp__WEBPACK_IMPORTED_MODULE_2__["lookUpcardsInDeck"])(handleCardsLookUp, props.pk, props.username);
     }
   }, []);
-  var Cards_list;
+  var Cards_list; // Accepts the array and key
 
-  var groupByType = function groupByType(list, listIndex) {
-    return Object.entries(list).map(function (subItem, index) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.typeHeader
-      }, subItem[0]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        key: index
-      }, subItem[1].map(function (lastItem) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_4__["Card"], {
-          displayModal: displayModalHandler,
-          card: lastItem,
-          key: lastItem.id
-        });
-      })));
+  var groupBy = function groupBy(array, key) {
+    // Return the end result
+    var groupArray = array.reduce(function (result, currentValue) {
+      // If an array already present for key, push it to the array. Else create an array and push the object
+      (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue); // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
+
+      return result;
+    }, {}); // empty object is the initial value for result object
+
+    return Object.entries(groupArray).sort(function (a, b) {
+      return b[1] - a[1];
     });
   };
 
@@ -29346,13 +29344,34 @@ function CardDetail(props) {
     }, switchCardsShown[2]), cardsInDeck.map(function (ownedAndMissing, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: switchCardsShown[index] == true ? _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.visible : _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.hidden
-      }, ownedAndMissing.map(function (item) {
-        return groupByType(item);
+      }, Object.entries(groupBy(ownedAndMissing, 'type')).map(function (typeList, index) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+          key: index
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.typeHeader
+        }, typeList[1][0]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_3__["default"], null, typeList[1][1].map(function (item) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_4__["Card"], {
+            displayModal: displayModalHandler,
+            card: item,
+            key: item.id
+          });
+        })));
       }));
     }));
   } else {
-    Cards_list = cardsInDeck.map(function (item) {
-      return groupByType(item);
+    Cards_list = Object.entries(groupBy(cardsInDeck, 'type')).map(function (typeList, index) {
+      console.log(typeList[1]);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+        key: index
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.typeHeader
+      }, typeList[1][0], " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_3__["default"], null, typeList[1][1].map(function (item) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_4__["Card"], {
+          displayModal: displayModalHandler,
+          card: item,
+          key: item.id
+        });
+      })));
     });
   }
 

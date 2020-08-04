@@ -16,11 +16,13 @@
             <h1 class="name">{{card.name}}</h1>
             <div class="type">{{card.type_line}}</div>
             <div class="oracle-text">{{card.oracle_text}}</div>
-            <div class="flavor-text">{{card.flavor_text}}</div>
+            {% if card.flavor_text %}
+                <div class="flavor-text">{{card.flavor_text}}</div>
+            {% endif %}
         </div>
     </div>
     {% if card.is_commander %}
-        <div id="card_detail" data-username={{ user.get_username }} data-pk={{ pk }}></div>
+        <div id="card_detail" {% if user.is_authenticated %}data-username={ user.get_username }{% endif %} data-pk={{ pk }}></div>
     {% endif %}
 {% endblock content %}
 {% block extra_scripts %}

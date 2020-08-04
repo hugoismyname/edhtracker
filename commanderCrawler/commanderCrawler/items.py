@@ -11,3 +11,5 @@ class CommanderdataItem(scrapy.Item):
     # name = scrapy.Field()
     commander = scrapy.Field()
     deckList = scrapy.Field()
+
+

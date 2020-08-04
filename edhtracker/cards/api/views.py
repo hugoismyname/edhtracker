@@ -1,5 +1,6 @@
-
+from django.db.models import Prefetch
 from django.core import paginator
+from django.shortcuts import get_object_or_404
 
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.pagination import PageNumberPagination
@@ -23,18 +24,17 @@ def CardsApi(request, *args, **kwargs):
     set_code = request.GET.get('set')
 
     if set_code != None:
-        allcards = Card.objects.filter(set=set_code).exclude(frame_effects__overlap=['showcase','extendedart','inverted'])
-        allcards = allcards.exclude(border_color="borderless").order_by('name').values('id','img_url','name')
-        white = allcards.filter(color_lookup="white").values('id','img_url','name')
-        blue = allcards.filter(color_lookup="blue").values('id','img_url','name')
-        black = allcards.filter(color_lookup="black").values('id','img_url','name')
-        red = allcards.filter(color_lookup="red").values('id','img_url','name')
-        green = allcards.filter(color_lookup="green").values('id','img_url','name')
-        multicolor = allcards.filter(color_lookup="multicolor").values('id','img_url','name')
-        colorless = allcards.filter(color_lookup="colorless").values('id','img_url','name')
-        artifacts = allcards.filter(color_lookup="artifact").values('id','img_url','name')
-        lands = allcards.filter(color_lookup="land").values('id','img_url','name')
-
+        allcards = Card.objects.filter(set=set_code).filter(is_variation=False)
+        allcards = allcards.values('id','img_url','name')
+        white = allcards.filter(color_lookup="white").values('id','img_url','name').order_by('name')
+        blue = allcards.filter(color_lookup="blue").values('id','img_url','name').order_by('name')
+        black = allcards.filter(color_lookup="black").values('id','img_url','name').order_by('name')
+        red = allcards.filter(color_lookup="red").values('id','img_url','name').order_by('name')
+        green = allcards.filter(color_lookup="green").values('id','img_url','name').order_by('name')
+        multicolor = allcards.filter(color_lookup="multicolor").values('id','img_url','name').order_by('name')
+        colorless = allcards.filter(color_lookup="colorless").values('id','img_url','name').order_by('name')
+        artifacts = allcards.filter(color_lookup="artifact").values('id','img_url','name').order_by('name')
+        lands = allcards.filter(color_lookup="land").values('id','img_url','name').order_by('name')
 
         return Response( [white,blue,black,red,green,multicolor,colorless,artifacts,lands,allcards])
     return Response({"no set provided"}, status=404)
@@ -43,60 +43,18 @@ def CardsApi(request, *args, **kwargs):
 def CardDetailApi(request,*args,**kwargs):
     pk = request.GET.get('pk')
     username = request.GET.get('username') or None
+    commander_list = Commander.objects.get(commander_id=pk)
+    commander_list = commander_list.card_list
 
-    deck = Commander.objects.filter(commander_id=pk).first()
-    deck_list = (Card.objects
-                    .filter(name__in=deck.card_list)
-                    .exclude(frame_effects__overlap=['showcase','extendedart','inverted'])
-                    .exclude(border_color="borderless").order_by('name')
-                    .distinct('name')
-                    .values('id','img_url','name','type_line'))
-
-    def sort_by_type(card_query):
-        artifacts = []
-        creatures = []
-        enchantments = []
-        instants = []
-        lands = []
-        planeswalkers = []
-        sorceries = []
-        for item in card_query:
-            if 'Creature' in item['type_line']:
-                creatures.append(item)
-            elif 'Artifact' in item['type_line']:
-                artifacts.append(item)
-            elif 'Enchantment' in item['type_line']:
-                enchantments.append(item)
-            elif 'Instant' in item['type_line']:
-                instants.append(item)
-            elif 'Land' in item['type_line']:
-                lands.append(item)
-            elif 'Planeswalker' in item['type_line']:
-                planeswalkers.append(item)
-            elif 'Sorcery' in item['type_line']:
-                sorceries.append(item)
-            else:
-                continue
-
-        deck_data = [
-                {'creatures': CardsSerializer(creatures,many=True).data},
-                {'instants': CardsSerializer(instants,many=True).data},
-                {'sorceries': CardsSerializer(sorceries,many=True).data}, 
-                {'artifacts': CardsSerializer(artifacts,many=True).data},
-                {'enchantments': CardsSerializer(enchantments,many=True).data},
-                {'planeswalkers': CardsSerializer(planeswalkers,many=True).data},
-                {'lands': CardsSerializer(lands,many=True).data}
-        ]
-        return deck_data
-
-    if username:
-        user_list = UserCards.objects.filter(user_id=request.user.id).values_list('name',flat=True)
-        cards_owned = deck_list.filter(name__in=user_list[:1000]).values('id','img_url','name','type_line')
-        cards_needed = deck_list.exclude(name__in=user_list[:1000]).values('id','img_url','name','type_line')
-        return Response([sort_by_type(cards_needed),sort_by_type(cards_owned)], status=200)
+    if username and request.user.is_authenticated:
+        cards_owned_names = UserCards.objects.filter(card__name__in=commander_list).order_by('card__name').distinct('card__name').values_list('card__name',flat=True)
+        cards_owned = Card.objects.filter(name__in=commander_list).filter(name__in=cards_owned_names).order_by('name').distinct('name').values('name','id','img_url','type')
+        cards_needed = Card.objects.filter(name__in=commander_list).exclude(name__in=cards_owned_names).order_by('name').distinct('name').values('name','id','img_url','type')
+        
+        return Response({cards_needed,cards_owned}, status=200)
     else:
-        cards_data = sort_by_type(deck_list)
-        return Response(cards_data, status=200)
+        all_cards = Card.objects.filter(name__in=commander_list).order_by('name','type').distinct('name').values('name','id','img_url','type')
+        return Response(all_cards, status=200)
 
 @api_view(['GET'])
 def DecksRecApi(request,*args,**kwargs):
@@ -123,7 +81,7 @@ def DecksRecApi(request,*args,**kwargs):
             commander_data.append(dict(zip(keys, temp_data)))
             new_commander_data = sorted(commander_data, reverse=True ,key=lambda k: k['cards_owned'])
         
-        return Response(new_commander_data, status=200)
+        return Response(new_commander_data[:100], status=200)
     else:
         return Response({"No content"}, status=204)
 
@@ -161,9 +119,12 @@ def UserCardDelete(request,pk=None,*args,**kwargs):
 def UserCardsListApi(request, *args, **kwargs):
    
     user_id = request.GET.get('user_id')
+    # test query with more cards in usercards
     if user_id != None:
-        qs = UserCards.objects.filter(user_id=user_id).select_related('card')
-
+        qs = UserCards.objects.filter(
+            user_id=user_id).select_related(
+            Prefetch('card',queryset=Card.objects.all().only('img_url','name')))
+        
     return get_paginated_queryset_response(qs,request,UserCardsSerializer,200)
 
 @api_view(['POST','UPDATE'])
