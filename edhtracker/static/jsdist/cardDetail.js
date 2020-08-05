@@ -29340,9 +29340,8 @@ function CardDetail(props) {
       return result;
     }, {}); // empty object is the initial value for result object
 
-    return Object.entries(groupArray).sort(function (a, b) {
-      return b[1] - a[1];
-    });
+    console.log(groupArray);
+    return Object.entries(groupArray).sort();
   };
 
   if (props.username) {
