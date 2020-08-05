@@ -69,7 +69,8 @@ class Card(models.Model):
             # index for individual sets cards display
             models.Index(fields=['set','color_lookup','name','id','img_url',],
                         name='cards_by_set',
-                        condition=Q(is_variation=False)),
+                        condition=Q(is_variation=False)
+                    ),
             models.Index(fields=['name','id','img_url','type'],
                         name='inventory_comparison')
     ]
@@ -83,6 +84,13 @@ class Commander(models.Model):
     img_url = models.CharField(default='default.jpg', max_length=256)
     name = models.CharField(max_length=256)
 
+    class Meta:
+        indexes = [
+            # index for commander rec page
+            models.Index(fields=['name'],
+                        name='commander_rec'
+                )
+        ]
     def __str__(self):
         return self.name
 

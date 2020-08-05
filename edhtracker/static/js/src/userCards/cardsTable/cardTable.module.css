@@ -20,21 +20,27 @@
 }
 .tableCount{
     width: 7.5%;
+    cursor: pointer;
 }
 .tableCount input {
     width: 100%;
+    cursor: pointer;
 }
 .tableDate {
     width: 10%;
+    cursor: pointer;
 }
 .tableName {
     width: 30%;
+    cursor: pointer;
 }
 .tableType {
     width: 45%;
+    cursor: pointer;
 }
 .tableSet{
     width:7.5%;
+    cursor: pointer;
 }
 .removeCard{
     width: 5%;

@@ -35,8 +35,8 @@ function CardList(props){
   const [cards, setCards] = useState([])
   const [cardsDidSet, setCardsDidSet] = useState(false)
   const [display, setDisplay] = useState(["visual"])
-  const [color, setColor] = useState("ALL CARDS")
-  const [colorIndex, setColorIndex] = useState(9)
+  const [color, setColor] = useState({'color': 'ALL CARDS',
+                                      'cards': 9} )
   const [cardInfo, setCardInfo] = useState(
     {"cardName":"",
     "cardId":"",
@@ -56,14 +56,16 @@ function CardList(props){
 
   const changeColorDisplayedHandler = (event,color,index) =>{
     event.preventDefault()
-    setColor(color)
-    setColorIndex(index)
+    setColor({'color': color,
+              'cards': index 
+    })
   }
   useEffect(() => {
     if (cardsDidSet === false){
       const handleCardsLookUp = (response, status) => {
         if (status === 200){
           setCards(response)
+          console.log(response[0])
           setCardsDidSet(true)
         } else {
           alert("There was an error")
@@ -75,7 +77,7 @@ function CardList(props){
   return(
     <React.Fragment>
       <div className={Classes.colorLinkWrapper}>
-          <a onClick={(e) =>{changeColorDisplayedHandler(e,"WHITE",0)}} href="#">WHITE </a>  |  
+          <a onClick={(e) =>{changeColorDisplayedHandler(e,"WHITE",0)}}>WHITE </a>  |  
           <a onClick={(e) =>{changeColorDisplayedHandler(e,"BLUE",1)}}>BLUE </a>  |  
           <a onClick={(e) =>{changeColorDisplayedHandler(e,"BLACK",2)}}>BLACK </a>  |  
           <a onClick={(e) =>{changeColorDisplayedHandler(e,"RED",3)}}>RED </a>  |  
@@ -87,12 +89,12 @@ function CardList(props){
           <a onClick={(e) =>{changeColorDisplayedHandler(e,"ALL CARDS",9)}}>ALL CARDS</a>
       </div>
       <div className="set-title-wrapper"> 
-        <h2 className="set-title"><span>{color}</span></h2>
+        <h2 className="set-title"><span>{color['color']}</span></h2>
       </div>
       {
         cards.map((list,index)=>{
           return(
-            <div className={(index === colorIndex) ? Classes.cardsContainer : Classes.hidden} children={list.map((item,index) => {
+            <div className={(index === color['cards']) ? Classes.cardsContainer : Classes.hidden} children={list.map((item,index) => {
               return <Card displayModal={displayModalHandler} card={item} key={item.id}/>
             })}/>
           )

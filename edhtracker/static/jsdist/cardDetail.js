@@ -219,7 +219,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".cardTable-module__tableHead__3RI7H{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    font-weight: 600 ;\r\n}\r\n.cardTable-module__tableRow__SKMPD{\r\n    width: 100%;\r\n}\r\n.cardTable-module__tableRow__SKMPD:hover .cardTable-module__removeCard__3j7Zp{\r\n    background-image: url(/static/img/icon-remove-red.png);\r\n    background-repeat: no-repeat;\r\n    background-position: right;\r\n}\r\n.cardTable-module__tableHead__3RI7H li{\r\n    padding: .5em 1em;\r\n    margin-right: 1rem;\r\n}\r\n.cardTable-module__tableRow__SKMPD:nth-child(even) {\r\n    background-color: rgb(241, 241, 241);\r\n}\r\n.cardTable-module__tableCount__wCunR{\r\n    width: 7.5%;\r\n}\r\n.cardTable-module__tableCount__wCunR input {\r\n    width: 100%;\r\n}\r\n.cardTable-module__tableDate__312V6 {\r\n    width: 10%;\r\n}\r\n.cardTable-module__tableName__2Wzz4 {\r\n    width: 30%;\r\n}\r\n.cardTable-module__tableType__1hmeB {\r\n    width: 45%;\r\n}\r\n.cardTable-module__tableSet__2KEa-{\r\n    width:7.5%;\r\n}\r\n.cardTable-module__removeCard__3j7Zp{\r\n    width: 5%;\r\n}\r\n.cardTable-module__removeCard__3j7Zp:hover{\r\n    cursor: pointer;\r\n}", ""]);
+exports.push([module.i, ".cardTable-module__tableHead__3RI7H{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    font-weight: 600 ;\r\n}\r\n.cardTable-module__tableRow__SKMPD{\r\n    width: 100%;\r\n}\r\n.cardTable-module__tableRow__SKMPD:hover .cardTable-module__removeCard__3j7Zp{\r\n    background-image: url(/static/img/icon-remove-red.png);\r\n    background-repeat: no-repeat;\r\n    background-position: right;\r\n}\r\n.cardTable-module__tableHead__3RI7H li{\r\n    padding: .5em 1em;\r\n    margin-right: 1rem;\r\n}\r\n.cardTable-module__tableRow__SKMPD:nth-child(even) {\r\n    background-color: rgb(241, 241, 241);\r\n}\r\n.cardTable-module__tableCount__wCunR{\r\n    width: 7.5%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableCount__wCunR input {\r\n    width: 100%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableDate__312V6 {\r\n    width: 10%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableName__2Wzz4 {\r\n    width: 30%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableType__1hmeB {\r\n    width: 45%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableSet__2KEa-{\r\n    width:7.5%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__removeCard__3j7Zp{\r\n    width: 5%;\r\n}\r\n.cardTable-module__removeCard__3j7Zp:hover{\r\n    cursor: pointer;\r\n}", ""]);
 // Exports
 exports.locals = {
 	"tableHead": "cardTable-module__tableHead__3RI7H",
@@ -247,7 +247,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".controlBar-module__controlBarContainer__2yyg1{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-bottom: 2.5rem;\r\n    -webkit-box-pack: left;\r\n        -ms-flex-pack: left;\r\n            justify-content: left;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.controlBar-module__currentSort__9SLRA{\r\n    width:150px;\r\n    border: 1px solid #cbcbcb;\r\n    border-radius: 5px;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    font-size: 13px;\r\n    position: relative;\r\n    text-align: left;\r\n    padding: 12px 35px 12px 15px;\r\n    z-index: 100;\r\n}\r\n.controlBar-module__arrows__bA3U5 {\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    right:15px;\r\n    top: 12.5px;\r\n    display: block;\r\n    -webkit-transform: scale(var(--ggs,1));\r\n            transform: scale(var(--ggs,1));\r\n    width: 14px;\r\n    height: 16px\r\n}\r\n.controlBar-module__arrows__bA3U5::after,\r\n.controlBar-module__arrows__bA3U5::before {\r\n    content: \"\";\r\n    display: block;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    width: 2px;\r\n    background: currentColor;\r\n    border-radius: 4px\r\n}\r\n.controlBar-module__arrows__bA3U5::before {\r\n    height: 6px;\r\n    -webkit-transform: rotate(45deg);\r\n            transform: rotate(45deg);\r\n    -webkit-box-shadow: 7px -4px 0;\r\n            box-shadow: 7px -4px 0;\r\n    top: 4px;\r\n    left: 2px\r\n}\r\n.controlBar-module__arrows__bA3U5::after {\r\n    height: 12px;\r\n    -webkit-box-shadow: -4px 4px 0;\r\n            box-shadow: -4px 4px 0;\r\n    right: 4px;\r\n    bottom: 4px\r\n}\r\n.controlBar-module__dropdown__GonsM{\r\n    position: absolute;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    border-radius: 0 0 5px 5px;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    border-left: 1px solid #cbcbcb;\r\n    border-right: 1px solid #cbcbcb;\r\n    width:150px;\r\n    left: -1px;\r\n    top:90%;\r\n    background-color: white;\r\n}\r\n.controlBar-module__dropdown__GonsM label{\r\n    padding: 8px 15px;\r\n    cursor: pointer;\r\n    color: #414141;\r\n}\r\n.controlBar-module__dropdown__GonsM label:hover{\r\n    opacity: .8;\r\n    background: rgba(0,0,0,.25);\r\n    -webkit-transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    color: black;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-left: 3rem;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP i {\r\n    border: 1px solid #cbcbcb;\r\n    padding: .25em .39em;\r\n    cursor: pointer;\r\n}\r\n.controlBar-module__selected__3G4tN {\r\n    background-color: rgb(241, 241, 241);\r\n}", ""]);
+exports.push([module.i, ".controlBar-module__controlBarContainer__2yyg1{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-bottom: 2.5rem;\r\n    -webkit-box-pack: left;\r\n        -ms-flex-pack: left;\r\n            justify-content: left;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.controlBar-module__currentSort__9SLRA{\r\n    width:150px;\r\n    border: 1px solid #cbcbcb;\r\n    border-radius: 5px;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    font-size: 13px;\r\n    position: relative;\r\n    text-align: left;\r\n    padding: 12px 35px 12px 15px;\r\n    z-index: 100;\r\n}\r\n.controlBar-module__arrows__bA3U5 {\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    right:15px;\r\n    top: 12.5px;\r\n    display: block;\r\n    -webkit-transform: scale(var(--ggs,1));\r\n            transform: scale(var(--ggs,1));\r\n    width: 14px;\r\n    height: 16px\r\n}\r\n.controlBar-module__arrows__bA3U5::after,\r\n.controlBar-module__arrows__bA3U5::before {\r\n    content: \"\";\r\n    display: block;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    width: 2px;\r\n    background: currentColor;\r\n    border-radius: 4px\r\n}\r\n.controlBar-module__arrows__bA3U5::before {\r\n    height: 6px;\r\n    -webkit-transform: rotate(45deg);\r\n            transform: rotate(45deg);\r\n    -webkit-box-shadow: 7px -4px 0;\r\n            box-shadow: 7px -4px 0;\r\n    top: 4px;\r\n    left: 2px\r\n}\r\n.controlBar-module__arrows__bA3U5::after {\r\n    height: 12px;\r\n    -webkit-box-shadow: -4px 4px 0;\r\n            box-shadow: -4px 4px 0;\r\n    right: 4px;\r\n    bottom: 4px\r\n}\r\n.controlBar-module__dropdown__GonsM{\r\n    position: absolute;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    border-radius: 0 0 5px 5px;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    border-left: 1px solid #cbcbcb;\r\n    border-right: 1px solid #cbcbcb;\r\n    width:150px;\r\n    left: -1px;\r\n    top:90%;\r\n    background-color: white;\r\n}\r\n.controlBar-module__dropdown__GonsM label{\r\n    padding: 8px 15px;\r\n    cursor: pointer;\r\n    color: #414141;\r\n}\r\n.controlBar-module__dropdown__GonsM label:hover{\r\n    opacity: .8;\r\n    background: rgba(0,0,0,.25);\r\n    -webkit-transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    color: black;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-left: 3rem;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP i {\r\n    border: 1px solid #cbcbcb;\r\n    padding: .25em .39em;\r\n    cursor: pointer;\r\n}\r\n.controlBar-module__selected__3G4tN {\r\n    background-color: rgb(241, 241, 241);\r\n}\r\n", ""]);
 // Exports
 exports.locals = {
 	"controlBarContainer": "controlBar-module__controlBarContainer__2yyg1",
@@ -29270,16 +29270,19 @@ function CardDetail(props) {
       cardsInDeckDidSet = _useState4[0],
       setCardsInDeckDidSet = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([true, false, "Show Cards Owned"]),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    visible: [true, false],
+    message: "Show Cards Owned"
+  }),
       _useState6 = _slicedToArray(_useState5, 2),
       switchCardsShown = _useState6[0],
       setSwitchCardsShown = _useState6[1];
 
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    "cardName": "",
-    "cardId": "",
-    "isVisible": "none",
-    "backdropShow": false
+    cardName: "",
+    cardId: "",
+    isVisible: "none",
+    backdropShow: false
   }),
       _useState8 = _slicedToArray(_useState7, 2),
       cardInfo = _useState8[0],
@@ -29287,24 +29290,29 @@ function CardDetail(props) {
 
   var displayModalHandler = function displayModalHandler(props) {
     setCardInfo({
-      "cardId": props.cardId,
-      "cardName": props.cardName,
-      "backdropShow": true
+      cardId: props.cardId,
+      cardName: props.cardName,
+      backdropShow: true
     });
   };
 
   var closeModalHandler = function closeModalHandler() {
     setCardInfo({
-      "cardName": "",
-      "isVisible": "none",
-      "backdropShow": false
+      cardName: "",
+      isVisible: "none",
+      backdropShow: false
     });
   };
 
   var changeDisplayHandler = function changeDisplayHandler() {
     event.preventDefault();
-    var message = switchCardsShown[0] ? "Show Cards Needed" : "Show Cards Owned";
-    setSwitchCardsShown([!switchCardsShown[0], !switchCardsShown[1], message]);
+    setSwitchCardsShown(switchCardsShown.visible[0] ? {
+      visible: [false, true],
+      message: "Show Cards Needed"
+    } : {
+      visible: [true, false],
+      message: "Show Cards Owned"
+    });
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -29341,10 +29349,10 @@ function CardDetail(props) {
     Cards_list = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       className: _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.switchCards,
       onClick: changeDisplayHandler
-    }, switchCardsShown[2]), cardsInDeck.map(function (ownedAndMissing, index) {
+    }, switchCardsShown.message), cardsInDeck.map(function (ownedAndMissing, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: switchCardsShown[index] == true ? _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.visible : _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.hidden
-      }, Object.entries(groupBy(ownedAndMissing, 'type')).map(function (typeList, index) {
+        className: switchCardsShown.visible[index] ? _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.visible : _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.hidden
+      }, Object.entries(groupBy(ownedAndMissing, "type")).map(function (typeList, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
           key: index
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -29359,8 +29367,7 @@ function CardDetail(props) {
       }));
     }));
   } else {
-    Cards_list = Object.entries(groupBy(cardsInDeck, 'type')).map(function (typeList, index) {
-      console.log(typeList[1]);
+    Cards_list = Object.entries(groupBy(cardsInDeck, "type")).map(function (typeList, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
         key: index
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -29529,25 +29536,23 @@ function CardList(props) {
       display = _useState8[0],
       setDisplay = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("ALL CARDS"),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    'color': 'ALL CARDS',
+    'cards': 9
+  }),
       _useState10 = _slicedToArray(_useState9, 2),
       color = _useState10[0],
       setColor = _useState10[1];
 
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(9),
-      _useState12 = _slicedToArray(_useState11, 2),
-      colorIndex = _useState12[0],
-      setColorIndex = _useState12[1];
-
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     "cardName": "",
     "cardId": "",
     "isVisible": "none",
     "backdropShow": false
   }),
-      _useState14 = _slicedToArray(_useState13, 2),
-      cardInfo = _useState14[0],
-      setCardInfo = _useState14[1];
+      _useState12 = _slicedToArray(_useState11, 2),
+      cardInfo = _useState12[0],
+      setCardInfo = _useState12[1];
 
   var displayModalHandler = function displayModalHandler(props) {
     setCardInfo({
@@ -29567,8 +29572,10 @@ function CardList(props) {
 
   var changeColorDisplayedHandler = function changeColorDisplayedHandler(event, color, index) {
     event.preventDefault();
-    setColor(color);
-    setColorIndex(index);
+    setColor({
+      'color': color,
+      'cards': index
+    });
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -29576,6 +29583,7 @@ function CardList(props) {
       var handleCardsLookUp = function handleCardsLookUp(response, status) {
         if (status === 200) {
           setCards(response);
+          console.log(response[0]);
           setCardsDidSet(true);
         } else {
           alert("There was an error");
@@ -29590,8 +29598,7 @@ function CardList(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "WHITE", 0);
-    },
-    href: "#"
+    }
   }, "WHITE "), "  |", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "BLUE", 1);
@@ -29632,9 +29639,9 @@ function CardList(props) {
     className: "set-title-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "set-title"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, color))), cards.map(function (list, index) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, color['color']))), cards.map(function (list, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: index === colorIndex ? _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.cardsContainer : _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.hidden,
+      className: index === color['cards'] ? _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.cardsContainer : _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.hidden,
       children: list.map(function (item, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
           displayModal: displayModalHandler,
@@ -30085,7 +30092,7 @@ function ControlBar(props) {
       display: isVisible
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    "data-dbsort": "type_line",
+    "data-dbsort": "set",
     onClick: changeOrderHandler
   }, "Set"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     "data-dbsort": "date_added",
@@ -30141,18 +30148,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function TableHead() {
+function TableHead(props) {
+  var changeOrderHandler = function changeOrderHandler(event) {
+    console.log(event.target.getAttribute('data-dbsort'));
+    props.changeOrder(event.target.getAttribute('data-dbsort'));
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableHead
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "card_count",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableCount
   }, "QTY"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "name",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableName
   }, "NAME"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "set",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableSet
   }, "SET"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "date_added",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableDate
   }, "DATE ADDED"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "type_line",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableType
   }, "TYPE"));
 }
@@ -30325,8 +30347,6 @@ function UserCardList(props) {
       cardInfo = _useState12[0],
       setCardInfo = _useState12[1];
 
-  console.log(props);
-
   var displayModalHandler = function displayModalHandler(props) {
     setCardInfo({
       "cardId": props.cardId,
@@ -30358,7 +30378,6 @@ function UserCardList(props) {
 
   var changeOrder = function changeOrder(props) {
     var cardList = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _toConsumableArray(cards);
-    console.log(props);
 
     if (order === props) {
       cardList.sort(function (a, b) {
@@ -30445,7 +30464,9 @@ function UserCardList(props) {
       })
     });
   } else if (display === "list") {
-    userCards = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_ReactAux__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_2__["TableHead"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    userCards = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_ReactAux__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_2__["TableHead"], {
+      changeOrder: changeOrder
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: cards.map(function (item, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_2__["TableRow"], {
           callbackHandler: handleBackendUpdate,

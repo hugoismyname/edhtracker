@@ -1,19 +1,20 @@
 import React, { useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import {SearchBar} from './index'
 import {Card} from '../cards'
 import {searchCards} from './index'
 import CardsContainer from '../hoc/CardsContainer'
 import {CardModal} from '../cards'
+import Classes from './search.module.css'
 
 const e = React.createElement
 const searchResultsElement = document.getElementById("searchResults")
 
 function Search(props){
     const [cards,setCards] = useState([])
+    const [searchParams, setSearchParams] = useState(props.searchparam)
     const [cardsDidSet, setCardsDidSet] = useState(false)
     const [nextUrl, setNextUrl] = useState(null)
-    const [searchParams, setSearchParams] = useState(props.searchparam)
+    const [message, setMessage] = useState(false)
     const [cardInfo, setCardInfo] = useState(
         {"cardName":"",
         "cardId":"",
@@ -30,8 +31,16 @@ function Search(props){
         setCardInfo({"cardName":"", "isVisible": "none","backdropShow":false})
       }
     function onSearch(props){
-        console.log(props)
-        setSearchParams(props)
+      event.preventDefault()
+        const searchWord = event.target.value
+        
+        if (searchWord.length >= 3 ){
+          setMessage(false)
+          setSearchParams(searchWord)
+          console.log(searchParams)
+          setNextUrl(null)
+          setCardsDidSet(false)
+        }
     }
 
     useEffect(() => {
@@ -41,13 +50,13 @@ function Search(props){
               setNextUrl(response.next)
               setCardsDidSet(true)
               setCards(response.results)
-            } else {
-              alert("There was an error")
+            } else if(status === 204) {
+              setMessage(true)
             }
           }
           searchCards(handleCardsLookUp,nextUrl,searchParams)
         }
-      }, [cardsDidSet,searchParams ,nextUrl])
+      }, [cardsDidSet,message])
 
     const handleLoadNext = (event) => {
         event.preventDefault()
@@ -57,6 +66,7 @@ function Search(props){
               setNextUrl(response.next)
               const newCards = [...cards].concat(response.results)
               setCards(newCards)
+              setCardsDidSet(false)
             } else {
               alert("There was an error")
             }
@@ -67,7 +77,26 @@ function Search(props){
       }
     return(
         <React.Fragment>
-            <SearchBar onSearch={onSearch}/>
+            <div className={Classes.searchBar}>
+              <input className={Classes.searchText} onChange={onSearch}></input>
+              <button className={Classes.searchButton} ><i className="fa fa-search"></i></button>
+            </div>
+            
+            {
+            message != false && 
+              <div className={Classes.orangePaint}>
+                <div className={Classes.paintText} >
+                    <span className={Classes.paintTitle} ><strong>0 Cards Found</strong><br/> Consider Broadening Your Search Criteria.</span>
+                </div>
+              </div>
+            }
+
+            <CardsContainer children={cards.map((item,index) => {
+                return <Card displayModal={displayModalHandler} card={item} key={item.id}/>
+            })}/>
+
+            {nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load next</button>}
+
             <CardModal 
               onClose={closeModalHandler}
               isVisible={cardInfo["isVisible"]} 
@@ -75,10 +104,6 @@ function Search(props){
               cardId={cardInfo["cardId"]} 
               show={cardInfo["backdropShow"]}
             />
-            <CardsContainer children={cards.map((item,index) => {
-                return <Card displayModal={displayModalHandler} card={item} key={item.id}/>
-            })}/>
-            {nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load next</button>}
         </React.Fragment>    )
 }
 if(searchResultsElement){

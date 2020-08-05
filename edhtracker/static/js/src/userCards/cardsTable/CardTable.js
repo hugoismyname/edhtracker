@@ -2,14 +2,18 @@ import React from 'react';
 import Classes from './cardTable.module.css'
 import {apiUserCardsDelete, apiUserCardsUpdate} from '../index'
 
-export function TableHead(){
+export function TableHead(props){
+    const changeOrderHandler = (event) =>{
+        console.log(event.target.getAttribute('data-dbsort'))
+        props.changeOrder(event.target.getAttribute('data-dbsort'))
+    }
     return(
         <ul className={Classes.tableHead}>
-            <li className={Classes.tableCount}>QTY</li>
-            <li className={Classes.tableName}>NAME</li>
-            <li className={Classes.tableSet}>SET</li>
-            <li className={Classes.tableDate}>DATE ADDED</li>
-            <li className={Classes.tableType}>TYPE</li>
+            <li data-dbsort="card_count" onClick={changeOrderHandler} className={Classes.tableCount}>QTY</li>
+            <li data-dbsort="name" onClick={changeOrderHandler} className={Classes.tableName}>NAME</li>
+            <li data-dbsort="set" onClick={changeOrderHandler} className={Classes.tableSet}>SET</li>
+            <li data-dbsort="date_added" onClick={changeOrderHandler} className={Classes.tableDate}>DATE ADDED</li>
+            <li data-dbsort="type_line" onClick={changeOrderHandler} className={Classes.tableType}>TYPE</li>
         </ul>
     )
 }

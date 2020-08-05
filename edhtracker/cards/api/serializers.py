@@ -39,18 +39,10 @@ class CommanderSerializer(serializers.ModelSerializer):
 
 class UserCardsSerializer(serializers.ModelSerializer):
     date_added = serializers.DateTimeField(format="%m-%d-%Y")
-    img_url = serializers.CharField(source='card.img_url',read_only=True)
-    name = serializers.CharField(source='card.name')
-    type_line = serializers.CharField(source='card.type_line')
-    set = serializers.CharField(source='card.set')
-
-    # @staticmethod
-    # def setup_eager_loading(queryset):
-    #     """ Perform necessary eager loading of data. """
-    #     # select_related for "to-one" relationships
-    #     queryset = queryset.select_related('card')
-        
-    #     return queryset
+    img_url = serializers.CharField(source='card__img_url',read_only=True)
+    name = serializers.CharField(source='card__name')
+    type_line = serializers.CharField(source='card__type_line')
+    set = serializers.CharField(source='card__set')
     
     class Meta:
         model = UserCards

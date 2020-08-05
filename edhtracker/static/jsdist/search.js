@@ -210,6 +210,32 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/search/search.module.css":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/search/search.module.css ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".search-module__searchBar__3EO32 {\r\n    border: #e68123 3px solid;\r\n    height: 30px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-left: 1rem;\r\n    margin-bottom: 1rem;\r\n    border-radius: 50px;\r\n    background: white;\r\n    padding-left: .5rem;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width:400px\r\n  }\r\n  .search-module__searchText__yNa8l {\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    float: left;\r\n    line-height: 30px;\r\n    font-family: \"Open Sans\", sans-serif;\r\n    font-size: 1rem;\r\n    width:100%\r\n}\r\n.search-module__searchButton__2XSzr {\r\n    float: right;\r\n    width: 30px;\r\n    height: 30px;\r\n    border-radius: 50%;\r\n    background: #e68123;\r\n    cursor: pointer;\r\n    border: none;\r\n    font-size: 18px;\r\n}\r\n.search-module__orangePaint__JEiup {\r\n  background-image: url(/static/img/notifcation_orange.png);\r\n  width: 100%;\r\n  background-repeat: no-repeat;\r\n  padding: 22px 35px 25px 28px;\r\n  background-size: 100% 100%;\r\n  max-width: 600px;\r\n  margin: 3rem auto 0 auto;\r\n}\r\n.search-module__paintText__12W6E {\r\n  margin-left: 40px;\r\n  color: #fff;\r\n}\r\n.search-module__paintTitle__2qlJJ {\r\n  font-size: 17px;\r\n  font-weight: 300;\r\n  padding-bottom: 4px;\r\n  display: block;\r\n}", ""]);
+// Exports
+exports.locals = {
+	"searchBar": "search-module__searchBar__3EO32",
+	"searchText": "search-module__searchText__yNa8l",
+	"searchButton": "search-module__searchButton__2XSzr",
+	"orangePaint": "search-module__orangePaint__JEiup",
+	"paintText": "search-module__paintText__12W6E",
+	"paintTitle": "search-module__paintTitle__2qlJJ"
+};
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/userCards/cardsTable/cardTable.module.css":
 /*!**************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/userCards/cardsTable/cardTable.module.css ***!
@@ -221,7 +247,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".cardTable-module__tableHead__3RI7H{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    font-weight: 600 ;\r\n}\r\n.cardTable-module__tableRow__SKMPD{\r\n    width: 100%;\r\n}\r\n.cardTable-module__tableRow__SKMPD:hover .cardTable-module__removeCard__3j7Zp{\r\n    background-image: url(/static/img/icon-remove-red.png);\r\n    background-repeat: no-repeat;\r\n    background-position: right;\r\n}\r\n.cardTable-module__tableHead__3RI7H li{\r\n    padding: .5em 1em;\r\n    margin-right: 1rem;\r\n}\r\n.cardTable-module__tableRow__SKMPD:nth-child(even) {\r\n    background-color: rgb(241, 241, 241);\r\n}\r\n.cardTable-module__tableCount__wCunR{\r\n    width: 7.5%;\r\n}\r\n.cardTable-module__tableCount__wCunR input {\r\n    width: 100%;\r\n}\r\n.cardTable-module__tableDate__312V6 {\r\n    width: 10%;\r\n}\r\n.cardTable-module__tableName__2Wzz4 {\r\n    width: 30%;\r\n}\r\n.cardTable-module__tableType__1hmeB {\r\n    width: 45%;\r\n}\r\n.cardTable-module__tableSet__2KEa-{\r\n    width:7.5%;\r\n}\r\n.cardTable-module__removeCard__3j7Zp{\r\n    width: 5%;\r\n}\r\n.cardTable-module__removeCard__3j7Zp:hover{\r\n    cursor: pointer;\r\n}", ""]);
+exports.push([module.i, ".cardTable-module__tableHead__3RI7H{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    font-weight: 600 ;\r\n}\r\n.cardTable-module__tableRow__SKMPD{\r\n    width: 100%;\r\n}\r\n.cardTable-module__tableRow__SKMPD:hover .cardTable-module__removeCard__3j7Zp{\r\n    background-image: url(/static/img/icon-remove-red.png);\r\n    background-repeat: no-repeat;\r\n    background-position: right;\r\n}\r\n.cardTable-module__tableHead__3RI7H li{\r\n    padding: .5em 1em;\r\n    margin-right: 1rem;\r\n}\r\n.cardTable-module__tableRow__SKMPD:nth-child(even) {\r\n    background-color: rgb(241, 241, 241);\r\n}\r\n.cardTable-module__tableCount__wCunR{\r\n    width: 7.5%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableCount__wCunR input {\r\n    width: 100%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableDate__312V6 {\r\n    width: 10%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableName__2Wzz4 {\r\n    width: 30%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableType__1hmeB {\r\n    width: 45%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__tableSet__2KEa-{\r\n    width:7.5%;\r\n    cursor: pointer;\r\n}\r\n.cardTable-module__removeCard__3j7Zp{\r\n    width: 5%;\r\n}\r\n.cardTable-module__removeCard__3j7Zp:hover{\r\n    cursor: pointer;\r\n}", ""]);
 // Exports
 exports.locals = {
 	"tableHead": "cardTable-module__tableHead__3RI7H",
@@ -249,7 +275,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".controlBar-module__controlBarContainer__2yyg1{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-bottom: 2.5rem;\r\n    -webkit-box-pack: left;\r\n        -ms-flex-pack: left;\r\n            justify-content: left;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.controlBar-module__currentSort__9SLRA{\r\n    width:150px;\r\n    border: 1px solid #cbcbcb;\r\n    border-radius: 5px;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    font-size: 13px;\r\n    position: relative;\r\n    text-align: left;\r\n    padding: 12px 35px 12px 15px;\r\n    z-index: 100;\r\n}\r\n.controlBar-module__arrows__bA3U5 {\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    right:15px;\r\n    top: 12.5px;\r\n    display: block;\r\n    -webkit-transform: scale(var(--ggs,1));\r\n            transform: scale(var(--ggs,1));\r\n    width: 14px;\r\n    height: 16px\r\n}\r\n.controlBar-module__arrows__bA3U5::after,\r\n.controlBar-module__arrows__bA3U5::before {\r\n    content: \"\";\r\n    display: block;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    width: 2px;\r\n    background: currentColor;\r\n    border-radius: 4px\r\n}\r\n.controlBar-module__arrows__bA3U5::before {\r\n    height: 6px;\r\n    -webkit-transform: rotate(45deg);\r\n            transform: rotate(45deg);\r\n    -webkit-box-shadow: 7px -4px 0;\r\n            box-shadow: 7px -4px 0;\r\n    top: 4px;\r\n    left: 2px\r\n}\r\n.controlBar-module__arrows__bA3U5::after {\r\n    height: 12px;\r\n    -webkit-box-shadow: -4px 4px 0;\r\n            box-shadow: -4px 4px 0;\r\n    right: 4px;\r\n    bottom: 4px\r\n}\r\n.controlBar-module__dropdown__GonsM{\r\n    position: absolute;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    border-radius: 0 0 5px 5px;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    border-left: 1px solid #cbcbcb;\r\n    border-right: 1px solid #cbcbcb;\r\n    width:150px;\r\n    left: -1px;\r\n    top:90%;\r\n    background-color: white;\r\n}\r\n.controlBar-module__dropdown__GonsM label{\r\n    padding: 8px 15px;\r\n    cursor: pointer;\r\n    color: #414141;\r\n}\r\n.controlBar-module__dropdown__GonsM label:hover{\r\n    opacity: .8;\r\n    background: rgba(0,0,0,.25);\r\n    -webkit-transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    color: black;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-left: 3rem;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP i {\r\n    border: 1px solid #cbcbcb;\r\n    padding: .25em .39em;\r\n    cursor: pointer;\r\n}\r\n.controlBar-module__selected__3G4tN {\r\n    background-color: rgb(241, 241, 241);\r\n}", ""]);
+exports.push([module.i, ".controlBar-module__controlBarContainer__2yyg1{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-bottom: 2.5rem;\r\n    -webkit-box-pack: left;\r\n        -ms-flex-pack: left;\r\n            justify-content: left;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.controlBar-module__currentSort__9SLRA{\r\n    width:150px;\r\n    border: 1px solid #cbcbcb;\r\n    border-radius: 5px;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    font-size: 13px;\r\n    position: relative;\r\n    text-align: left;\r\n    padding: 12px 35px 12px 15px;\r\n    z-index: 100;\r\n}\r\n.controlBar-module__arrows__bA3U5 {\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    right:15px;\r\n    top: 12.5px;\r\n    display: block;\r\n    -webkit-transform: scale(var(--ggs,1));\r\n            transform: scale(var(--ggs,1));\r\n    width: 14px;\r\n    height: 16px\r\n}\r\n.controlBar-module__arrows__bA3U5::after,\r\n.controlBar-module__arrows__bA3U5::before {\r\n    content: \"\";\r\n    display: block;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    width: 2px;\r\n    background: currentColor;\r\n    border-radius: 4px\r\n}\r\n.controlBar-module__arrows__bA3U5::before {\r\n    height: 6px;\r\n    -webkit-transform: rotate(45deg);\r\n            transform: rotate(45deg);\r\n    -webkit-box-shadow: 7px -4px 0;\r\n            box-shadow: 7px -4px 0;\r\n    top: 4px;\r\n    left: 2px\r\n}\r\n.controlBar-module__arrows__bA3U5::after {\r\n    height: 12px;\r\n    -webkit-box-shadow: -4px 4px 0;\r\n            box-shadow: -4px 4px 0;\r\n    right: 4px;\r\n    bottom: 4px\r\n}\r\n.controlBar-module__dropdown__GonsM{\r\n    position: absolute;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    border-radius: 0 0 5px 5px;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    border-left: 1px solid #cbcbcb;\r\n    border-right: 1px solid #cbcbcb;\r\n    width:150px;\r\n    left: -1px;\r\n    top:90%;\r\n    background-color: white;\r\n}\r\n.controlBar-module__dropdown__GonsM label{\r\n    padding: 8px 15px;\r\n    cursor: pointer;\r\n    color: #414141;\r\n}\r\n.controlBar-module__dropdown__GonsM label:hover{\r\n    opacity: .8;\r\n    background: rgba(0,0,0,.25);\r\n    -webkit-transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    color: black;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-left: 3rem;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP i {\r\n    border: 1px solid #cbcbcb;\r\n    padding: .25em .39em;\r\n    cursor: pointer;\r\n}\r\n.controlBar-module__selected__3G4tN {\r\n    background-color: rgb(241, 241, 241);\r\n}\r\n", ""]);
 // Exports
 exports.locals = {
 	"controlBarContainer": "controlBar-module__controlBarContainer__2yyg1",
@@ -29304,25 +29330,23 @@ function CardList(props) {
       display = _useState8[0],
       setDisplay = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("ALL CARDS"),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    'color': 'ALL CARDS',
+    'cards': 9
+  }),
       _useState10 = _slicedToArray(_useState9, 2),
       color = _useState10[0],
       setColor = _useState10[1];
 
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(9),
-      _useState12 = _slicedToArray(_useState11, 2),
-      colorIndex = _useState12[0],
-      setColorIndex = _useState12[1];
-
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     "cardName": "",
     "cardId": "",
     "isVisible": "none",
     "backdropShow": false
   }),
-      _useState14 = _slicedToArray(_useState13, 2),
-      cardInfo = _useState14[0],
-      setCardInfo = _useState14[1];
+      _useState12 = _slicedToArray(_useState11, 2),
+      cardInfo = _useState12[0],
+      setCardInfo = _useState12[1];
 
   var displayModalHandler = function displayModalHandler(props) {
     setCardInfo({
@@ -29342,8 +29366,10 @@ function CardList(props) {
 
   var changeColorDisplayedHandler = function changeColorDisplayedHandler(event, color, index) {
     event.preventDefault();
-    setColor(color);
-    setColorIndex(index);
+    setColor({
+      'color': color,
+      'cards': index
+    });
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -29351,6 +29377,7 @@ function CardList(props) {
       var handleCardsLookUp = function handleCardsLookUp(response, status) {
         if (status === 200) {
           setCards(response);
+          console.log(response[0]);
           setCardsDidSet(true);
         } else {
           alert("There was an error");
@@ -29365,8 +29392,7 @@ function CardList(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "WHITE", 0);
-    },
-    href: "#"
+    }
   }, "WHITE "), "  |", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "BLUE", 1);
@@ -29407,9 +29433,9 @@ function CardList(props) {
     className: "set-title-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "set-title"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, color))), cards.map(function (list, index) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, color['color']))), cards.map(function (list, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: index === colorIndex ? _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.cardsContainer : _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.hidden,
+      className: index === color['cards'] ? _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.cardsContainer : _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.hidden,
       children: list.map(function (item, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
           displayModal: displayModalHandler,
@@ -29844,8 +29870,8 @@ function SearchBar() {
         if (status === 200) {
           setCardsDidSet(true);
           setCards(response.results);
-        } else {
-          alert("There was an error");
+        } else if (status === 204) {
+          setCards([]);
         }
       };
 
@@ -29985,9 +30011,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index */ "./src/search/index.js");
-/* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../cards */ "./src/cards/index.js");
+/* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../cards */ "./src/cards/index.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index */ "./src/search/index.js");
 /* harmony import */ var _hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hoc/CardsContainer */ "./src/hoc/CardsContainer.js");
+/* harmony import */ var _search_module_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./search.module.css */ "./src/search/search.module.css");
+/* harmony import */ var _search_module_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_search_module_css__WEBPACK_IMPORTED_MODULE_5__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -30024,30 +30052,35 @@ function Search(props) {
       cards = _useState2[0],
       setCards = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.searchparam),
       _useState4 = _slicedToArray(_useState3, 2),
-      cardsDidSet = _useState4[0],
-      setCardsDidSet = _useState4[1];
+      searchParams = _useState4[0],
+      setSearchParams = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      nextUrl = _useState6[0],
-      setNextUrl = _useState6[1];
+      cardsDidSet = _useState6[0],
+      setCardsDidSet = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.searchparam),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState8 = _slicedToArray(_useState7, 2),
-      searchParams = _useState8[0],
-      setSearchParams = _useState8[1];
+      nextUrl = _useState8[0],
+      setNextUrl = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      message = _useState10[0],
+      setMessage = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     "cardName": "",
     "cardId": "",
     "isVisible": "none",
     "backdropShow": false
   }),
-      _useState10 = _slicedToArray(_useState9, 2),
-      cardInfo = _useState10[0],
-      setCardInfo = _useState10[1];
+      _useState12 = _slicedToArray(_useState11, 2),
+      cardInfo = _useState12[0],
+      setCardInfo = _useState12[1];
 
   var displayModalHandler = function displayModalHandler(props) {
     setCardInfo({
@@ -30066,8 +30099,16 @@ function Search(props) {
   };
 
   function onSearch(props) {
-    console.log(props);
-    setSearchParams(props);
+    event.preventDefault();
+    var searchWord = event.target.value;
+
+    if (searchWord.length >= 3) {
+      setMessage(false);
+      setSearchParams(searchWord);
+      console.log(searchParams);
+      setNextUrl(null);
+      setCardsDidSet(false);
+    }
   }
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -30077,14 +30118,14 @@ function Search(props) {
           setNextUrl(response.next);
           setCardsDidSet(true);
           setCards(response.results);
-        } else {
-          alert("There was an error");
+        } else if (status === 204) {
+          setMessage(true);
         }
       };
 
-      Object(_index__WEBPACK_IMPORTED_MODULE_2__["searchCards"])(handleCardsLookUp, nextUrl, searchParams);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["searchCards"])(handleCardsLookUp, nextUrl, searchParams);
     }
-  }, [cardsDidSet, searchParams, nextUrl]);
+  }, [cardsDidSet, message]);
 
   var handleLoadNext = function handleLoadNext(event) {
     event.preventDefault();
@@ -30097,26 +30138,34 @@ function Search(props) {
           var newCards = _toConsumableArray(cards).concat(response.results);
 
           setCards(newCards);
+          setCardsDidSet(false);
         } else {
           alert("There was an error");
         }
       };
 
-      Object(_index__WEBPACK_IMPORTED_MODULE_2__["searchCards"])(handleLoadNextResponse, nextUrl, searchParams);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["searchCards"])(handleLoadNextResponse, nextUrl, searchParams);
     }
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_2__["SearchBar"], {
-    onSearch: onSearch
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_3__["CardModal"], {
-    onClose: closeModalHandler,
-    isVisible: cardInfo["isVisible"],
-    cardName: cardInfo["cardName"],
-    cardId: cardInfo["cardId"],
-    show: cardInfo["backdropShow"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _search_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.searchBar
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: _search_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.searchText,
+    onChange: onSearch
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: _search_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.searchButton
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-search"
+  }))), message != false && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _search_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.orangePaint
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _search_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.paintText
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: _search_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.paintTitle
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "0 Cards Found"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Consider Broadening Your Search Criteria."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     children: cards.map(function (item, index) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_2__["Card"], {
         displayModal: displayModalHandler,
         card: item,
         key: item.id
@@ -30125,7 +30174,13 @@ function Search(props) {
   }), nextUrl !== null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: handleLoadNext,
     className: "btn btn-outline-primary"
-  }, "Load next"));
+  }, "Load next"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_2__["CardModal"], {
+    onClose: closeModalHandler,
+    isVisible: cardInfo["isVisible"],
+    cardName: cardInfo["cardName"],
+    cardId: cardInfo["cardId"],
+    show: cardInfo["backdropShow"]
+  }));
 }
 
 if (searchResultsElement) {
@@ -30133,6 +30188,35 @@ if (searchResultsElement) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Search);
+
+/***/ }),
+
+/***/ "./src/search/search.module.css":
+/*!**************************************!*\
+  !*** ./src/search/search.module.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!../../node_modules/postcss-loader/src??postcss!./search.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/search/search.module.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+
+module.exports = content.locals || {};
 
 /***/ }),
 
@@ -30235,7 +30319,7 @@ function ControlBar(props) {
       display: isVisible
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    "data-dbsort": "type_line",
+    "data-dbsort": "set",
     onClick: changeOrderHandler
   }, "Set"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     "data-dbsort": "date_added",
@@ -30291,18 +30375,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function TableHead() {
+function TableHead(props) {
+  var changeOrderHandler = function changeOrderHandler(event) {
+    console.log(event.target.getAttribute('data-dbsort'));
+    props.changeOrder(event.target.getAttribute('data-dbsort'));
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableHead
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "card_count",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableCount
   }, "QTY"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "name",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableName
   }, "NAME"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "set",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableSet
   }, "SET"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "date_added",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableDate
   }, "DATE ADDED"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    "data-dbsort": "type_line",
+    onClick: changeOrderHandler,
     className: _cardTable_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.tableType
   }, "TYPE"));
 }
@@ -30475,8 +30574,6 @@ function UserCardList(props) {
       cardInfo = _useState12[0],
       setCardInfo = _useState12[1];
 
-  console.log(props);
-
   var displayModalHandler = function displayModalHandler(props) {
     setCardInfo({
       "cardId": props.cardId,
@@ -30508,7 +30605,6 @@ function UserCardList(props) {
 
   var changeOrder = function changeOrder(props) {
     var cardList = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _toConsumableArray(cards);
-    console.log(props);
 
     if (order === props) {
       cardList.sort(function (a, b) {
@@ -30595,7 +30691,9 @@ function UserCardList(props) {
       })
     });
   } else if (display === "list") {
-    userCards = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_ReactAux__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_2__["TableHead"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    userCards = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_ReactAux__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_2__["TableHead"], {
+      changeOrder: changeOrder
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: cards.map(function (item, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_2__["TableRow"], {
           callbackHandler: handleBackendUpdate,

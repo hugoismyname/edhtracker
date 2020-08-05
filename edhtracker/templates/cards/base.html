@@ -43,8 +43,8 @@
             <div id="searchbar"></div>
             {% if user.is_authenticated %}
               <div class="user-submenu" > 
-                <div><a href="{% url 'user_cards' user.username %}">Cards</a></div>
-                <div><a href="{% url 'decks_rec' %}">Decks</a></div>
+                <div><a href="{% url 'user_cards' user.username %}">My Cards</a></div>
+                <div><a href="{% url 'decks_rec' %}">Commander Rec</a></div>
                 <div><a href="{% url 'account_logout' %}">Logout</a></div>
               </div>
               <a id="user-image"  href="#"><img class="avatar" src="{{user.profile.image.url}}" alt="user-image"></a>

@@ -13,7 +13,7 @@
 
 - optomize commander queries lookup
 #     -add name and img_url to commander fields used a lot
-    -add indexes where needed
+    # -add indexes where needed
 
 -finish card detail page
     # -if commander show what cards you own and need
@@ -38,6 +38,7 @@
 
 -rework cards owned
     -add column for card in decks, cards not in deck and total cards
+    -add total cards
 
 -miscallenous addons
     -login redirect when trying to add cards
@@ -46,15 +47,11 @@
     -create a banner
     - usercards card_count wont update when switching visual mode
 
--cards and search need different endpoints
-
 -searchbar
     -improve search(display closest match first)
     -highlight words searched
     -dropdown on rigth click not close
     -display no results if database has no matches
-
--finish search page
 
 -finsih home page
 
@@ -63,7 +60,8 @@
     -when not logged in div not displayed search throws error. for now creating a hidden div
 
 
-version 2
-    -rename apps to be pep8 compliant all lower case no dash
+VERSION 2
+    -use black fro code formating
     -break project up into smaller apps 
     -solitaire card display
+    -show only ome hundred popular commanders first then if user wants show rest(speeds up rec)

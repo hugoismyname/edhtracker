@@ -29159,8 +29159,8 @@ function SearchBar() {
         if (status === 200) {
           setCardsDidSet(true);
           setCards(response.results);
-        } else {
-          alert("There was an error");
+        } else if (status === 204) {
+          setCards([]);
         }
       };
 

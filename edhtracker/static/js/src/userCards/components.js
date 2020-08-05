@@ -20,7 +20,6 @@ export function UserCardList(props){
     "isVisible": "none",
     "backdropShow":false}
     )
-    console.log(props)
   const displayModalHandler = (props) =>{
     setCardInfo(
       {"cardId":props.cardId,
@@ -39,7 +38,6 @@ export function UserCardList(props){
     setCards(filteredCards)
   }
   const changeOrder = (props,cardList = [...cards]) =>{
-    console.log(props)
     if(order === props){
       cardList.sort((a, b) => (a[props] < b[props]) ? 1 : -1)
       setOrder(`-${props}`)
@@ -104,7 +102,7 @@ export function UserCardList(props){
   }else if(display === "list"){
       userCards = 
       <Aux>
-          <TableHead/>
+          <TableHead changeOrder={changeOrder}/>
           <CardsContainer children={cards.map((item,index) => {
               return <TableRow callbackHandler={handleBackendUpdate} onDelete={deleteCard} card={item} key={item.id}/>
           })}/>

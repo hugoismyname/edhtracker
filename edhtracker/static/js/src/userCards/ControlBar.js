@@ -43,7 +43,7 @@ function ControlBar(props){
                 {sortParam}
                 <i className={Classes.arrows}></i>
                 <div className={Classes.dropdown} style={{display: isVisible}} >
-                    <label data-dbsort="type_line" onClick={changeOrderHandler}>Set</label>
+                    <label data-dbsort="set" onClick={changeOrderHandler}>Set</label>
                     <label data-dbsort="date_added" onClick={changeOrderHandler}>Added</label>
                     <label data-dbsort="card_count" onClick={changeOrderHandler}>Quantity</label>
                     <label data-dbsort="name" onClick={changeOrderHandler}>Card Name</label>
@@ -56,6 +56,7 @@ function ControlBar(props){
                 <li className={displayClass["list"]}><i onClick={() => changeDisplayHandler("list")} className="fa fa-th-list"></i></li>
             </ul>
         </div>
+        
     )
 }
 
