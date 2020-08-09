@@ -1,20 +1,25 @@
 {% extends "cards\base.html" %}
 {% load static %}
-{% block content %} 
-<div>
-    <div>
-        <h2></h2>
-        <ul>
-            {% for set in sets %}
-            <li>
-                <img class="nav_sets_svg" src="{% static '/set_svgs/'%}{{ set.img_url }}.svg" alt="{{ set.name }}" />
-                <a href="{% url 'cards' set.code %}">{{set.name}}</a>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div>
 
-    </div>
+{% block extra_styles %} 
+    <link rel="stylesheet" href="{% static 'css/all_sets.css' %}" />
+{% endblock extra_styles %} 
+
+{% block content %} 
+{% regroup all_sets by set_type as set_list%}
+<div class='set-type-container'>
+
+{%for set_type in set_list%}
+    <ul class="set-type">
+        <h2>{{ set_type.grouper }}</h2>
+        {%for set in set_type.list %}
+        <li>
+            <img class ='set-svg' src="{% static '/set_svgs/'%}{{ set.img_url }}.svg" alt="{{ set.name }}">
+            <a href="{% url 'cards' set.code %}">{{set.name}}</a>
+        </li>
+        {%endfor%}
+    
+    </ul>
+{%endfor%}
 </div>
 {% endblock content %}
