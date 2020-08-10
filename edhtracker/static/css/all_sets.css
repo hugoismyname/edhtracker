@@ -1,23 +1,59 @@
 .set-type-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    max-height: 7000px;
+    margin-top: 5rem;
 }
 .set-type{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 2rem 4rem 1rem;
     max-width: 50%;
-    min-width: 250px;
     list-style: none;
 }
 .set-type h2{
     color: #e68123;
     background-color: black;
     text-align: center;
+    text-transform: capitalize;
+    font-size: x-large;
+    margin-bottom: 2rem;
+    width:100%;
 }
+.set-type li{
+    display: flex;
+    align-items: center;
+    margin: .75rem 0 .75rem 2rem;
+}
+.set-type a{
+    text-decoration: none;
+    font-size: large;
+    font-weight: 600;
+    color: #0e5b93;
+}
+.set-type a:hover{
+    color: #e68123;
 
-.set-svg{
-    width:25px;
-    margin-right: 2rem;
 }
+.set-svg{
+    width:35px;
+    margin-right: 3rem;
+}
+@media only screen and (max-width: 768px) {
+    .set-type-container{
+        max-height: 100%;
+    }
+    .set-type{
+        max-width: 100%;
+    }
+    .set-type li{
+        padding-left: 25%;
+    }
+  }
+  @media only screen and (max-width: 375px) {
+    .set-type li{
+        padding-left: 12.5%;
+    }
+  }

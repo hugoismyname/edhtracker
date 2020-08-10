@@ -11,8 +11,9 @@ def AllSets(request, *args, **kwargs):
     all_sets = (
         Set.objects.exclude(digital=True)
         .exclude(set_type="token")
+        .exclude(set_type="promo")
         .values("code", "id", "img_url", "name", "released_at", "set_type")
-        .order_by("set_type")
+        .order_by("set_type", "-released_at")
     )
 
     return render(request, "cards/all_sets.html", {"all_sets": all_sets})
