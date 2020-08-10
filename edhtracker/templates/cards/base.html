@@ -22,17 +22,17 @@
 
 <body>
   <div id="overlay"></div>
-  <div class='container'>
+  <div class='nav-container'>
     <nav>
       <a class="logo" href="#">
         <img class="avatar" src="{% static 'img/placeholder-logo.png' %}" alt="" />
       </a>
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">Home</a>
+          <a class="nav-links" href="{% url 'home' %}">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'all_sets' %}">Sets</a>
+          <a class="nav-links" href="{% url 'all_sets' %}">SETS</a>
           <ul class="mega-menu">
             {% for set in nav_sets %}
             <li class='sets-item'>
@@ -43,31 +43,45 @@
           </ul>
         </li>
       </ul>
+      <div id="searchbar"></div>
       <div class="site-user">
-        <div id="searchbar"></div>
         {% if user.is_authenticated %}
+        <a id="user-image" href="#"><img class="avatar" src="{% static '/img/puppy.jpg'%}" alt="user-image" /></a>
         <div class="user-submenu">
-          <div>
-            <a href="{% url 'user_cards' user.username %}">My Cards</a>
-          </div>
-          <div><a href="{% url 'decks_rec' %}">Commander Rec</a></div>
-          <div><a href="{% url 'account_logout' %}">Logout</a></div>
+          <ul class="menu-ul">
+            <li>
+              <a href="{% url 'user_cards' user.username %}">MY CARDS</a>
+            </li>
+            <li><a href="{% url 'decks_rec' %}">COMMANDER REC</a></li>
+            <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
+          </ul>
         </div>
-        <a id="user-image" href="#"><img class="avatar" src="{{user.profile.image.url}}" alt="user-image" /></a>
         {% else %}
-        <!-- div for javascript event listenrer need to improve solution -->
-        <div id="user-image" class="user-submenu"></div>
-        <a class="login-link" href="{% url 'account_login' %}">Login</a>
-        <a class="login-link" href="{% url 'account_signup' %}">Register</a>
+        <a class="login-link" href="{% url 'account_login' %}">LOGIN</a>
+        <a class="login-link" href="{% url 'account_signup' %}">REGISTER</a>
         {% endif %}
       </div>
-      <div class="burger">
+      <div id="burger">
         <span class="bars"></span>
         <span class="bars"></span>
         <span class="bars"></span>
       </div>
     </nav>
   </div >
+  <div id="responsive-menu" class="">
+    <ul class="menu-ul">
+      <li><a href="{% url 'home' %}">HOME</a></li>
+      <li><a href="{% url 'all_sets' %}">Sets</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'user_cards' user.username %}">MY CARDS</a></li>
+      <li><a href="{% url 'decks_rec' %}">COMMANDER REC</a></li>
+      <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
+      {% else %}
+      <li><a href="{% url 'account_login' %}">LOGIN</a></li>
+      <li><a href="{% url 'account_signup' %}">REGISTER</a></li>
+      {% endif %}
+    </ul>
+  </div>
   <main class="main-content">
     {% block content %} {% endblock %}
     {% block pagination %}

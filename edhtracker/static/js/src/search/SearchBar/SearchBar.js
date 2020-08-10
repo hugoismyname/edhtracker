@@ -46,7 +46,7 @@ export function SearchBar(){
       }, [cardsDidSet,searchParams])
 
     return(
-    <div className={Classes.searchContainer}>
+    <div className={Classes.searchContainer} >
         <form className={Classes.searchBar} action="/search/" method="get" autoComplete="off" >
             <input onChange={dropdDownSearchHandler} onBlur={closeSearchSuggestion} name="searchParam" type="text" className={Classes.searchText} placeholder="Search.." />
             <button className={Classes.searchButton} ><i className="fa fa-search"></i></button>

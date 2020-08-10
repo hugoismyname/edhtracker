@@ -1,15 +1,22 @@
 const userImage = document.getElementById('user-image')
+const burger = document.getElementById('burger')
+const responsiveMenu = document.getElementById('responsive-menu')
 const subMenu = document.querySelector('.user-submenu')
 
-userImage.addEventListener("mouseover", function(){
-    subMenu.style.display = 'flex'
-})
-userImage.addEventListener("mouseout", function(){
-    subMenu.style.display = 'none'
-})
-subMenu.addEventListener("mouseover", function(){
-    subMenu.style.display = 'flex'
-})
-subMenu.addEventListener("mouseout", function(){
-    subMenu.style.display = 'none'
+if (userImage){
+    userImage.addEventListener("mouseover", function(){
+        subMenu.classList.toggle('visible') 
+    })
+    userImage.addEventListener("mouseout", function(){
+        subMenu.classList.toggle('visible')
+    })
+    subMenu.addEventListener("mouseover", function(){
+        subMenu.classList.toggle('visible') 
+    })
+    subMenu.addEventListener("mouseout", function(){
+        subMenu.classList.toggle('visible')
+    })
+}
+burger.addEventListener("click", function(){
+    responsiveMenu.classList.toggle('visible-burger-menu')
 })
