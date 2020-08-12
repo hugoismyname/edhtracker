@@ -53,12 +53,16 @@
               <a href="{% url 'user_cards' user.username %}">MY CARDS</a>
             </li>
             <li><a href="{% url 'decks_rec' %}">COMMANDER REC</a></li>
-            <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
+            <li>        
+              <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                <button class="logout" type="submit">LOG OUT</button>
+              </form>
+            </li>
           </ul>
         </div>
         {% else %}
-        <a class="login-link" href="{% url 'account_login' %}">LOGIN</a>
-        <a class="login-link" href="{% url 'account_signup' %}">REGISTER</a>
+        <a class="btn" href="{% url 'account_login' %}"><span class="inner">LOG IN</span></a>
         {% endif %}
       </div>
       <div id="burger">
@@ -71,11 +75,16 @@
   <div id="responsive-menu" class="">
     <ul class="menu-ul">
       <li><a href="{% url 'home' %}">HOME</a></li>
-      <li><a href="{% url 'all_sets' %}">Sets</a></li>
+      <li><a href="{% url 'all_sets' %}">SETS</a></li>
       {% if user.is_authenticated %}
       <li><a href="{% url 'user_cards' user.username %}">MY CARDS</a></li>
       <li><a href="{% url 'decks_rec' %}">COMMANDER REC</a></li>
-      <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
+      <li>
+        <form method="post" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+          <button class="logout" type="submit">LOG OUT</button>
+        </form>
+      </li>
       {% else %}
       <li><a href="{% url 'account_login' %}">LOGIN</a></li>
       <li><a href="{% url 'account_signup' %}">REGISTER</a></li>

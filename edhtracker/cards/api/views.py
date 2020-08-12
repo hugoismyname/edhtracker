@@ -203,12 +203,24 @@ def SearchViewApi(request, *args, **kwargs):
 @permission_classes([IsAuthenticated])
 def UserCardCreate(request, *args, **kwargs):
     serializer = AddCardsSerializer(data=request.data or None)
+    print(request.user)
     if serializer.is_valid():
-        serializer.save(user=request.user)
+        card = (
+            UserCards.objects.filter(user_id=request.user)
+            .filter(card_id=request.data["card"])
+            .exists()
+        )
+        if card:
+            new_card = UserCards.objects.get(
+                user_id=request.user, card_id=request.data["card"]
+            )
+            new_card.card_count = new_card.card_count + request.data["card_count"]
+            new_card.save()
+        else:
+            serializer.save(user=request.user)
         return Response(serializer.data, status=201)
     else:
-        Response({"error"}, status=500)
-        print("not valid")
+        return Response({"error"}, status=500)
 
 
 @api_view(["POST", "DELETE", "GET"])
@@ -239,7 +251,6 @@ def UserCardsListApi(request, *args, **kwargs):
             "card__set",
             "card__type_line",
         )
-
     return get_paginated_queryset_response(qs, request, UserCardsSerializer, 200)
 
 

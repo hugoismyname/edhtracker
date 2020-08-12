@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {Card} from '../cards'
 import {searchCards} from './index'
 import CardsContainer from '../hoc/CardsContainer'
-import {CardModal} from '../cards'
 import Classes from './search.module.css'
 
 const e = React.createElement
@@ -15,21 +14,7 @@ function Search(props){
     const [cardsDidSet, setCardsDidSet] = useState(false)
     const [nextUrl, setNextUrl] = useState(null)
     const [message, setMessage] = useState(false)
-    const [cardInfo, setCardInfo] = useState(
-        {"cardName":"",
-        "cardId":"",
-        "isVisible": "none",
-        "backdropShow":false}
-        )
-      const displayModalHandler = (props) =>{
-        setCardInfo(
-          {"cardId":props.cardId,
-          "cardName": props.cardName,
-          "backdropShow":true})
-      }
-      const closeModalHandler = () =>{
-        setCardInfo({"cardName":"", "isVisible": "none","backdropShow":false})
-      }
+   
     function onSearch(props){
       event.preventDefault()
         const searchWord = event.target.value
@@ -92,18 +77,11 @@ function Search(props){
             }
 
             <CardsContainer children={cards.map((item,index) => {
-                return <Card displayModal={displayModalHandler} card={item} key={item.id}/>
+                return <Card card={item} key={item.id}/>
             })}/>
 
             {nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load next</button>}
 
-            <CardModal 
-              onClose={closeModalHandler}
-              isVisible={cardInfo["isVisible"]} 
-              cardName={cardInfo["cardName"]} 
-              cardId={cardInfo["cardId"]} 
-              show={cardInfo["backdropShow"]}
-            />
         </React.Fragment>    )
 }
 if(searchResultsElement){

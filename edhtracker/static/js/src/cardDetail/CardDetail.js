@@ -4,7 +4,6 @@ import { lookUpcardsInDeck } from "./lookUp";
 import CardsContainer from "../hoc/CardsContainer";
 import { Card } from "../cards";
 import Classes from "./cardDetail.module.css";
-import CardModal from "../cards/cardModal/CardModal";
 
 const e = React.createElement;
 const cardDetailElement = document.getElementById("card_detail");
@@ -16,23 +15,7 @@ function CardDetail(props) {
     visible: [true, false],
     message: "Show Cards Owned",
   });
-  const [cardInfo, setCardInfo] = useState({
-    cardName: "",
-    cardId: "",
-    isVisible: "none",
-    backdropShow: false,
-  });
 
-  const displayModalHandler = (props) => {
-    setCardInfo({
-      cardId: props.cardId,
-      cardName: props.cardName,
-      backdropShow: true,
-    });
-  };
-  const closeModalHandler = () => {
-    setCardInfo({ cardName: "", isVisible: "none", backdropShow: false });
-  };
   const changeDisplayHandler = () => {
     event.preventDefault();
     setSwitchCardsShown(
@@ -103,7 +86,6 @@ function CardDetail(props) {
                         {typeList[1][1].map((item) => {
                           return (
                             <Card
-                              displayModal={displayModalHandler}
                               card={item}
                               key={item.id}
                             />
@@ -129,7 +111,6 @@ function CardDetail(props) {
               {typeList[1][1].map((item) => {
                 return (
                   <Card
-                    displayModal={displayModalHandler}
                     card={item}
                     key={item.id}
                   />
@@ -145,13 +126,6 @@ function CardDetail(props) {
   return (
     <React.Fragment>
       {Cards_list}
-      <CardModal
-        onClose={closeModalHandler}
-        isVisible={cardInfo["isVisible"]}
-        cardName={cardInfo["cardName"]}
-        cardId={cardInfo["cardId"]}
-        show={cardInfo["backdropShow"]}
-      />
     </React.Fragment>
   );
 }

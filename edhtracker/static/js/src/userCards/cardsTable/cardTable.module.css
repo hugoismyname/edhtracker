@@ -1,6 +1,7 @@
 .tableHead{
     display: flex;
     border-bottom: 1px solid #cbcbcb;
+    list-style: none;
     font-weight: 600 ;
 }
 .tableRow{

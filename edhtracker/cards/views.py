@@ -46,7 +46,7 @@ def CardDetailView(request, pk, *args, **kwargs):
         user_card = UserCards.objects.filter(card_id=pk).count()
     else:
         user_card = 0
-
+    print(user_card)
     context = {"card": card, "set_info": set_info, "user_card": user_card, "pk": pk}
     return render(request, "cards/card_detail.html", context)
 

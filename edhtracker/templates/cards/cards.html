@@ -4,9 +4,7 @@
   <link rel="stylesheet" href="{% static 'css/cards.css' %}">
 {% endblock extra_styles %}
 {% block content %} 
-  <div class="set-title-wrapper"> 
-    <h2 class="set-title"><span>{{setName}}</span></h2>
-  </div>
+  <h2 class="set-title"><span>{{setName}}</span></h2>
   <div data-setname={{setCode}} id="allCards"></div>
 {% endblock content %}
 {% block extra_scripts %}

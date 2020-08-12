@@ -7,13 +7,14 @@
 {% endblock bootstrap %}
 
 {% block content %}
-<div class="container">
+<!-- do not want to use messages since i disable two step logout -->
+<!-- <div class="container">
   {% if messages %}
       {% for message in messages %}
           <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
       {% endfor %}
   {% endif %}
-</div> 
+</div>  -->
 <div class="row p-5 mt-5">
   <div class="col-md-6 offset-md-3">
     {% block inner %}{% endblock %}

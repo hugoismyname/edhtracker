@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import Classes from './cardModal.module.css'
-import Aux from '../../hoc/ReactAux'
 import Backdrop from '../../UI/Backdrop'
 import {apiAddCard} from '../../userCards'
 
@@ -19,7 +18,7 @@ function CardModal(props){
   }
 
   return(
-    <Aux>
+    <React.Fragment>
       <Backdrop clicked={props.onClose} show={props.show}></Backdrop>
       <form style={{ display: props.isVisible}} id={Classes.cardUpdateModal}>
         <div className={Classes.closeButton}><span onClick={props.onClose}>x</span></div>
@@ -30,7 +29,7 @@ function CardModal(props){
         </div>
         <button onClick={handleSubmit} type="submit" className={Classes.saveButton}>ADD CARD</button>
       </form>
-    </Aux>
+    </React.Fragment>
     
   )
 }

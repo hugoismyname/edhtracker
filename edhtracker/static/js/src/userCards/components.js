@@ -4,9 +4,6 @@ import {apiUserCardsList} from './index';
 import {Card} from '../cards';
 import {TableHead, TableRow} from './index'
 import CardsContainer from '../hoc/CardsContainer';
-import Aux from '../hoc/ReactAux'
-import {CardModal} from '../cards'
-
 
 export function UserCardList(props){
   const [cards, setCards] = useState([])
@@ -14,21 +11,7 @@ export function UserCardList(props){
   const [nextUrl, setNextUrl] = useState(null)
   const [display, setDisplay] = useState(["visual"])
   const [order, setOrder] = useState("date_added")
-  const [cardInfo, setCardInfo] = useState(
-    {"cardName":"",
-    "cardId":"",
-    "isVisible": "none",
-    "backdropShow":false}
-    )
-  const displayModalHandler = (props) =>{
-    setCardInfo(
-      {"cardId":props.cardId,
-      "cardName": props.cardName,
-      "backdropShow":true})
-  }
-  const closeModalHandler = () =>{
-    setCardInfo({"cardName":"", "isVisible": "none","backdropShow":false})
-  }
+
   const changeDisplayFormat = (props) =>{
       setDisplay(props)
   }
@@ -92,34 +75,27 @@ export function UserCardList(props){
   }
 
   let userCards = <CardsContainer children={cards.map((item,index) => {
-      return <Card displayModal={displayModalHandler} onAdd={handleBackendUpdate} card={item} key={item.id}/>
+      return <Card card={item} key={item.id}/>
   })}/>  ;
 
   if (display === "visual"){
       userCards = <CardsContainer children={cards.map((item,index) => {
-          return <Card displayModal={displayModalHandler} onAdd={handleBackendUpdate} card={item} key={item.id}/>
+          return <Card card={item} key={item.id}/>
       })}/>  
   }else if(display === "list"){
       userCards = 
-      <Aux>
+      <React.Fragment>
           <TableHead changeOrder={changeOrder}/>
           <CardsContainer children={cards.map((item,index) => {
               return <TableRow callbackHandler={handleBackendUpdate} onDelete={deleteCard} card={item} key={item.id}/>
           })}/>
-      </Aux>
+      </React.Fragment>
   }
   return(
-      <Aux> 
+      <React.Fragment> 
           <ControlBar changeOrder={changeOrder} switchDisplay={changeDisplayFormat} />
-          <CardModal 
-            onClose={closeModalHandler}
-            isVisible={cardInfo["isVisible"]} 
-            cardName={cardInfo["cardName"]} 
-            cardId={cardInfo["cardId"]} 
-            show={cardInfo["backdropShow"]}
-          />
           {userCards}
           {nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load next</button>}         
-      </Aux>
+      </React.Fragment>
   )
 }

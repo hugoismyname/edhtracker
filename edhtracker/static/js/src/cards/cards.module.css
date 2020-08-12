@@ -1,25 +1,32 @@
 .cardsContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: space-evenly;
     z-index: 1;
 }
 .colorLinkWrapper{
     max-width: 1200px;
-    margin-bottom: 25px;
+    margin: .5rem 0;
     text-align: center;
+    padding:0 1rem;
 }
 .colorLinkWrapper a{
     color: #be630e;
     cursor: pointer;
-    margin: 0px 2px;    
+    margin: 1.5rem .75rem;    
     text-decoration: underline;
     transition: color .25s ease-in-out;
-    line-height: 1.5em;
-    font-size: 1.2rem;
+    font-size:large;
 }
 .colorLinkWrapper a:hover{
     color:black;
+}
+.colorLinkWrapper span{
+    border-right: 1px solid;
+    padding:.3rem 0 0rem 0;
+}
+.colorTitle{
+    margin-bottom: 3.5rem;
 }
 .cardWrapper {
     width: 265px;
@@ -36,38 +43,110 @@
 }
 .editCard{
     position: absolute;
-    background-color: rgba(0,0,0,0.5);
+    background: rgba(11,23,35,.80);
     width: 100%;
-    height: 20%;
-    bottom: 5px;
-    justify-content: center;
+    height:370px;
     align-items: center;
-    border-bottom-left-radius: 15%;
-    border-bottom-right-radius: 15%;
-    display: none;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    padding:7.5%;
+}
+.editCard a{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 80%;
+    text-align: left;
+    height: 5rem;
 }
 .cardWrapper:hover .editCard{
     display:flex;
-    transition-duration: 2s;
 }
 .editCard:hover {
     display:flex;
-    transition-duration: 2s;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.qty{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.minus{
+    cursor: pointer;
+    color: #b62d3b;
+    font-size: 4rem;
+    line-height: 2rem;
+    padding-bottom: 5px;
+}
+.count {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    width:1.5rem;
+    margin: 0 .5rem 0 1rem;
+    line-height: 2rem;
+
+}
+.plus{
+    cursor: pointer;
+    color: #72e474;
+    font-size: 3rem; 
+    line-height: 2rem;
+ 
+}
+.buttonWrapper{
+    position: relative;
+    width:100%;
 }
 .addCardButton{
     padding: .8em 0em;
     background: #e68123;
     cursor: pointer;
-    width: 70%;
+    width: 100%;
     color: #fff;
-    font: 700 1em "Open Sans";
     border-width: 1px;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.addCardButton:hover{
+    background: #fa9435;
+
+}
+.cardAdded{
+    position: absolute;
+    top:100%;
+    left:0;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #72e474;
+    text-align: center;
+    margin-top: .5rem;
 }
 .card a {
     display: block;
     font-size: 1.1rem;
 }
+
 /* Card-update Modal */
 #card-update-modal {
     display: none;

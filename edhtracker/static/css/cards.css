@@ -14,7 +14,7 @@ h2 {
     text-transform: uppercase;
     color: #212121;
     text-align: center;
-    margin: 20px 0;
+    margin: 2rem 0;
     position: relative;
 }
 h2 span {
@@ -22,5 +22,5 @@ h2 span {
     position: relative;
     /* background: url(../static/background.jpg) 0 0 repeat; */
     background-color: #fff;
-    padding: 0 20px;
+    padding: 0 2rem;
 }
