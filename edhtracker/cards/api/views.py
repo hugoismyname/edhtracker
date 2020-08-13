@@ -243,13 +243,14 @@ def UserCardsListApi(request, *args, **kwargs):
     if user_id != None:
         qs = UserCards.objects.filter(user_id=user_id).select_related("card")
         qs = qs.values(
-            "card",
+            "card_id",
             "card_count",
             "date_added",
             "card__name",
             "card__img_url",
             "card__set",
             "card__type_line",
+            "id",
         )
     return get_paginated_queryset_response(qs, request, UserCardsSerializer, 200)
 

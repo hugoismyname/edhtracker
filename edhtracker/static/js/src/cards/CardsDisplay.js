@@ -1,8 +1,14 @@
 import React,{useEffect,useState} from 'react';
 import ReactDOM from 'react-dom';
+
+
 import {apiCardsLookUp} from './lookUp';
+import {apiAddCard, apiUserCardsUpdate} from '../userCards'
+
+
 import Classes from './cards.module.css';
-import {apiAddCard} from '../userCards'
+import CardsContainer from '../hoc/CardsContainer'
+
 
 
 const e = React.createElement
@@ -10,28 +16,85 @@ const allCardsElement = document.getElementById("allCards")
 
 
 export function Card(props){
+  // ['card_id], ['card_count'] refers to cards in a users inventory, both usercards and normal cards have
+  // ['id'] values. important to check first for card_id to determine wether its usercard or not
   const [cardId, setCardId] = useState(props.card['card_id'] ? props.card['card_id'] : props.card['id'] )
+  const [cardAmount, setCardAmount] = useState(props.card['card_count'] ? props.card['card_count'] : 1)
   const [message, setMessage] = useState(false)
-  const [cardAmount, setCardAmount] = useState(1)
 
-  const addCard = (event) =>{
-    setMessage(true)
-    setTimeout( () => {
-      setMessage(false);
-    }, 500);
-
-    apiAddCard(() =>{},{"card":cardId,"card_count":cardAmount})
+  const addCard = () =>{
+    const handleBackend = (response,status) =>{
+      if(status === 201){
+        setMessage('Card added to your inventory')
+        setTimeout( () => {
+          setMessage(false);
+        }, 5000);
+      }else {
+        setMessage('An error occured')
+        setTimeout( () => {
+          setMessage(false);
+        }, 5000);
+      }
+    }
+    apiAddCard(handleBackend,{"card":cardId,"card_count":cardAmount})
   }
+
+  const updateCard = (cardAmount) =>{
+    console.log(cardAmount)
+    const handleBackendUpdate = (response,status) =>{
+      if(status === 204){
+      }else {
+        setMessage('An error occured')
+        setTimeout( () => {
+          setMessage(false);
+        }, 5000); 
+      }
+    }
+    apiUserCardsUpdate(handleBackendUpdate,props.card['id'],{"card_count":cardAmount})
+  }
+
   const changeInput = (event) =>{
     if(event.target.innerText == '+'){
+      const newCardAmount = parseInt(cardAmount) + 1
       setCardAmount(parseInt(cardAmount) + 1)
+      if(props.card['card_id']){
+        updateCard(newCardAmount)
+      }
     }else if(event.target.innerText == '-' && cardAmount != 1 ){
+      const newCardAmount = parseInt(cardAmount) - 1
       setCardAmount(parseInt(cardAmount) - 1)
+      if(props.card['card_id']){
+        updateCard(newCardAmount)
+      }
     }
   }
-  const handleChange = (event) =>{
-    setCardAmount(event.target.value)
+
+  let editCard;
+
+  if(props.card['card_id']){
+    editCard =       
+    <div className={Classes.userQty}>
+      <div onClick={changeInput} className={Classes.userMinus}>-</div>
+      <div className={Classes.userCount} >{cardAmount}</div>
+      <div onClick={changeInput} className={Classes.userPlus}>+</div>
+    </div>
+  }else{
+    editCard =
+    <React.Fragment>
+      <div className={Classes.qty}>
+        <div onClick={changeInput} className={Classes.minus}>-</div>
+        <div className={Classes.count} >{cardAmount}</div>
+        <div onClick={changeInput} className={Classes.plus}>+</div>
+      </div>
+      <div className={Classes.buttonWrapper}>
+        <button onClick={addCard} value={cardId} className={Classes.addCardButton} >ADD CARD</button>
+        {message && 
+          <span className={Classes.cardAdded}>{message}</span>
+        }
+      </div>
+    </React.Fragment> 
   }
+
   return(
     <React.Fragment>
       <div className={Classes.cardWrapper} >
@@ -40,17 +103,7 @@ export function Card(props){
           <a href={`/card_detail/${cardId}`}>
             {props.card['name']}
           </a>
-          <div className={Classes.qty}>
-            <div onClick={changeInput} className={Classes.minus}>-</div>
-            <input className={Classes.count} onChange={handleChange} type="number" value={cardAmount} min="1" max="99"  maxLength="3" />
-            <div onClick={changeInput} className={Classes.plus}>+</div>
-          </div>
-          <div className={Classes.buttonWrapper}>
-            <button onClick={addCard} value={cardId} className={Classes.addCardButton} >ADD CARD</button>
-            {message && 
-              <span className={Classes.cardAdded}> Card Added To Inventory.</span>
-            }
-          </div>
+          {editCard}
         </div>
       </div>
     </React.Fragment>

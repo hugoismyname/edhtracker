@@ -166,7 +166,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".cards-module__cardsContainer__3WO1Q{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -ms-flex-wrap: wrap;\r\n        flex-wrap: wrap;\r\n    -webkit-box-pack: space-evenly;\r\n        -ms-flex-pack: space-evenly;\r\n            justify-content: space-evenly;\r\n    z-index: 1;\r\n}\r\n.cards-module__colorLinkWrapper__vja4n{\r\n    max-width: 1200px;\r\n    margin: .5rem 0;\r\n    text-align: center;\r\n    padding:0 1rem;\r\n}\r\n.cards-module__colorLinkWrapper__vja4n a{\r\n    color: #be630e;\r\n    cursor: pointer;\r\n    margin: 1.5rem .75rem;    \r\n    text-decoration: underline;\r\n    -webkit-transition: color .25s ease-in-out;\r\n    transition: color .25s ease-in-out;\r\n    font-size:large;\r\n}\r\n.cards-module__colorLinkWrapper__vja4n a:hover{\r\n    color:black;\r\n}\r\n.cards-module__colorLinkWrapper__vja4n span{\r\n    border-right: 1px solid;\r\n    padding:.3rem 0 0rem 0;\r\n}\r\n.cards-module__colorTitle__2tBi4{\r\n    margin-bottom: 3.5rem;\r\n}\r\n.cards-module__cardWrapper__bxxJB {\r\n    width: 265px;\r\n    margin: 1rem .25rem 0 .25rem;\r\n    text-align: center;\r\n    position: relative;\r\n    margin: 8px 17px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n}\r\n.cards-module__cardWrapper__bxxJB img {\r\n    width: 265px;\r\n    height:370px;\r\n}\r\n.cards-module__editCard__3IRor{\r\n    position: absolute;\r\n    background: rgba(11,23,35,.80);\r\n    width: 100%;\r\n    height:370px;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    border-radius: 5%;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    padding:7.5%;\r\n}\r\n.cards-module__editCard__3IRor a{\r\n    width: 100%;\r\n    font-size: 1.5rem;\r\n    font-weight: 700;\r\n    text-decoration: none;\r\n    color: #fff;\r\n    margin-bottom: 80%;\r\n    text-align: left;\r\n    height: 5rem;\r\n}\r\n.cards-module__cardWrapper__bxxJB:hover .cards-module__editCard__3IRor{\r\n    display:-webkit-box;\r\n    display:-ms-flexbox;\r\n    display:flex;\r\n}\r\n.cards-module__editCard__3IRor:hover {\r\n    display:-webkit-box;\r\n    display:-ms-flexbox;\r\n    display:flex;\r\n}\r\n/* Chrome, Safari, Edge, Opera */\r\ninput::-webkit-outer-spin-button,\r\ninput::-webkit-inner-spin-button {\r\n  -webkit-appearance: none;\r\n  margin: 0;\r\n}\r\n\r\n/* Firefox */\r\ninput[type=number] {\r\n  -moz-appearance: textfield;\r\n}\r\n.cards-module__qty__2h44P{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: baseline;\r\n        -ms-flex-pack: baseline;\r\n            justify-content: baseline;\r\n    width: 100%;\r\n    margin-bottom: 5%;\r\n}\r\n.cards-module__minus__1-1xc{\r\n    cursor: pointer;\r\n    color: #b62d3b;\r\n    font-size: 4rem;\r\n    line-height: 2rem;\r\n    padding-bottom: 5px;\r\n}\r\n.cards-module__count__3R4kM {\r\n    color: #fff;\r\n    font-size: 2rem;\r\n    font-weight: 600;\r\n    background-color: transparent;\r\n    border: none;\r\n    width:1.5rem;\r\n    margin: 0 .5rem 0 1rem;\r\n    line-height: 2rem;\r\n\r\n}\r\n.cards-module__plus__2cnIb{\r\n    cursor: pointer;\r\n    color: #72e474;\r\n    font-size: 3rem; \r\n    line-height: 2rem;\r\n \r\n}\r\n.cards-module__buttonWrapper__2VcJU{\r\n    position: relative;\r\n    width:100%;\r\n}\r\n.cards-module__addCardButton__2i075{\r\n    padding: .8em 0em;\r\n    background: #e68123;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    color: #fff;\r\n    border-width: 1px;\r\n    border-radius: 4px;\r\n    font-size: 1.5rem;\r\n    font-weight: 600;\r\n}\r\n.cards-module__addCardButton__2i075:hover{\r\n    background: #fa9435;\r\n\r\n}\r\n.cards-module__cardAdded__357W0{\r\n    position: absolute;\r\n    top:100%;\r\n    left:0;\r\n    width: 100%;\r\n    font-size: 1.5rem;\r\n    font-weight: 700;\r\n    text-decoration: none;\r\n    color: #72e474;\r\n    text-align: center;\r\n    margin-top: .5rem;\r\n}\r\n.cards-module__card__PE0bu a {\r\n    display: block;\r\n    font-size: 1.1rem;\r\n}\r\n\r\n/* Card-update Modal */\r\n#cards-module__card-update-modal__2kiNo {\r\n    display: none;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    height: auto;\r\n    width: 250px;\r\n    z-index: 101;\r\n    padding-bottom: .5em;\r\n    border-radius: 2px;\r\n    background: #fff;\r\n    margin:0 auto;\r\n    position:fixed;\r\n    left:50%;\r\n    top:50%;\r\n    margin-left:-150px;\r\n    margin-top:-150px;\r\n}\r\n.cards-module__close-button__2hOwg{\r\n    font-size: 1.2em;\r\n    border-bottom: 1px solid #e7e1d3;\r\n    font-weight: 700;\r\n    width: 96%;\r\n}\r\n.cards-module__close-button__2hOwg span {\r\n    cursor: pointer;\r\n    padding: .5em;\r\n    width: 10%;\r\n    display: block;\r\n}\r\n.cards-module__card-quantity__3QHQX{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin: .5em 0;\r\n}\r\n.cards-module__card-quantity__3QHQX input {\r\n    font-weight: 600;\r\n    font-size: 13px;\r\n    text-align: left;\r\n    cursor: pointer;\r\n    padding-left: .5em;\r\n    margin-left: .5em;\r\n    border: 1px solid #e7e1d3;\r\n}\r\n.cards-module__save-button__3cf7h {\r\n    padding: .5em 0em;\r\n    margin: .5em 0;\r\n    background: #e68123;\r\n    cursor: pointer;\r\n    width: 40%;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    border-radius: 5px;\r\n}\r\nh3 {\r\n    margin: .5em 0;\r\n}\r\n.cards-module__visible__3jk4x{\r\n    display: block;\r\n}\r\n.cards-module__hidden__O1wSR{\r\n    display: none;\r\n}", ""]);
+exports.push([module.i, ".cards-module__cardsContainer__3WO1Q{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -ms-flex-wrap: wrap;\r\n        flex-wrap: wrap;\r\n    -webkit-box-pack: space-evenly;\r\n        -ms-flex-pack: space-evenly;\r\n            justify-content: space-evenly;\r\n    z-index: 1;\r\n}\r\n.cards-module__colorLinkWrapper__vja4n{\r\n    max-width: 1200px;\r\n    margin: .5rem 0;\r\n    text-align: center;\r\n    padding:0 1rem;\r\n}\r\n.cards-module__colorLinkWrapper__vja4n a{\r\n    color: #be630e;\r\n    cursor: pointer;\r\n    margin: 1.5rem .75rem;    \r\n    text-decoration: underline;\r\n    -webkit-transition: color .25s ease-in-out;\r\n    transition: color .25s ease-in-out;\r\n    font-size:large;\r\n}\r\n.cards-module__colorLinkWrapper__vja4n a:hover{\r\n    color:black;\r\n}\r\n.cards-module__colorLinkWrapper__vja4n span{\r\n    border-right: 1px solid;\r\n    padding:.3rem 0 0rem 0;\r\n}\r\n.cards-module__colorTitle__2tBi4{\r\n    margin-bottom: 3.5rem;\r\n}\r\n.cards-module__cardWrapper__bxxJB {\r\n    width: 265px;\r\n    margin: 1rem .25rem 0 .25rem;\r\n    text-align: center;\r\n    position: relative;\r\n    margin: 8px 17px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n}\r\n.cards-module__cardWrapper__bxxJB img {\r\n    width: 265px;\r\n    height:370px;\r\n}\r\n/* Add or remove cards styling */\r\n.cards-module__editCard__3IRor{\r\n    position: absolute;\r\n    background: rgba(11,23,35,.80);\r\n    width: 100%;\r\n    height:370px;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    border-radius: 5%;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    padding:7.5%;\r\n}\r\n.cards-module__editCard__3IRor a{\r\n    width: 100%;\r\n    font-size: 1.5rem;\r\n    font-weight: 700;\r\n    text-decoration: none;\r\n    color: #fff;\r\n    margin-bottom: 80%;\r\n    text-align: left;\r\n    height: 5rem;\r\n}\r\n.cards-module__cardWrapper__bxxJB:hover .cards-module__editCard__3IRor{\r\n    display:-webkit-box;\r\n    display:-ms-flexbox;\r\n    display:flex;\r\n}\r\n.cards-module__editCard__3IRor:hover {\r\n    display:-webkit-box;\r\n    display:-ms-flexbox;\r\n    display:flex;\r\n}\r\n.cards-module__qty__2h44P{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: baseline;\r\n        -ms-flex-pack: baseline;\r\n            justify-content: baseline;\r\n    width: 100%;\r\n    margin-bottom: 5%;\r\n}\r\n.cards-module__minus__1-1xc{\r\n    cursor: pointer;\r\n    color: #b62d3b;\r\n    font-size: 4rem;\r\n    line-height: 2rem;\r\n    padding-bottom: 5px;\r\n}\r\n.cards-module__count__3R4kM {\r\n    color: #fff;\r\n    font-size: 2rem;\r\n    font-weight: 600;\r\n    width:1.5rem;\r\n    margin: 0 .5rem 0 1rem;\r\n    line-height: 2rem;\r\n}\r\n.cards-module__plus__2cnIb{\r\n    cursor: pointer;\r\n    color: #72e474;\r\n    font-size: 3rem; \r\n    line-height: 2rem;\r\n \r\n}\r\n.cards-module__buttonWrapper__2VcJU{\r\n    position: relative;\r\n    width:100%;\r\n}\r\n.cards-module__addCardButton__2i075{\r\n    padding: .8em 0em;\r\n    background: #e68123;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    color: #fff;\r\n    border-width: 1px;\r\n    border-radius: 4px;\r\n    font-size: 1.5rem;\r\n    font-weight: 600;\r\n}\r\n.cards-module__addCardButton__2i075:hover{\r\n    background: #fa9435;\r\n\r\n}\r\n.cards-module__cardAdded__357W0{\r\n    position: absolute;\r\n    top:100%;\r\n    left:0;\r\n    width: 100%;\r\n    font-size: 1.5rem;\r\n    font-weight: 700;\r\n    text-decoration: none;\r\n    color: #72e474;\r\n    text-align: center;\r\n    margin-top: .5rem;\r\n}\r\n.cards-module__card__PE0bu a {\r\n    display: block;\r\n    font-size: 1.1rem;\r\n}\r\n/* Styling for card overlay in user inventory */\r\n.cards-module__userQty__1slAw{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: space-evenly;\r\n        -ms-flex-pack: space-evenly;\r\n            justify-content: space-evenly;\r\n    width: 100%;\r\n    margin-bottom: 5%;\r\n}\r\n.cards-module__userMinus__NV_BE{\r\n    cursor: pointer;\r\n    color: #b62d3b;\r\n    font-size: 8rem;\r\n    line-height: 4rem;\r\n    padding-bottom: 5px;\r\n}\r\n.cards-module__userCount__3ki49 {\r\n    color: #fff;\r\n    width:15%;\r\n    font-size: 4rem;\r\n    font-weight: 600;\r\n    line-height: 4rem;\r\n    text-align: center;\r\n}\r\n.cards-module__userPlus__kF-V9{\r\n    cursor: pointer;\r\n    color: #72e474;\r\n    font-size: 6rem; \r\n    line-height: 4rem;\r\n \r\n}\r\n.cards-module__buttonWrapper__2VcJU{\r\n    position: relative;\r\n    width:100%;\r\n}\r\n.cards-module__addCardButton__2i075{\r\n    padding: .8em 0em;\r\n    background: #e68123;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    color: #fff;\r\n    border-width: 1px;\r\n    border-radius: 4px;\r\n    font-size: 1.5rem;\r\n    font-weight: 600;\r\n}\r\n.cards-module__addCardButton__2i075:hover{\r\n    background: #fa9435;\r\n\r\n}\r\n.cards-module__cardAdded__357W0{\r\n    position: absolute;\r\n    top:100%;\r\n    left:0;\r\n    width: 100%;\r\n    font-size: 1.5rem;\r\n    font-weight: 700;\r\n    text-decoration: none;\r\n    color: #72e474;\r\n    text-align: center;\r\n    margin-top: .5rem;\r\n}\r\n.cards-module__card__PE0bu a {\r\n    display: block;\r\n    font-size: 1.1rem;\r\n}\r\n.cards-module__visible__3jk4x{\r\n    display: block;\r\n}\r\n.cards-module__hidden__O1wSR{\r\n    display: none;\r\n}", ""]);
 // Exports
 exports.locals = {
 	"cardsContainer": "cards-module__cardsContainer__3WO1Q",
@@ -182,10 +182,10 @@ exports.locals = {
 	"addCardButton": "cards-module__addCardButton__2i075",
 	"cardAdded": "cards-module__cardAdded__357W0",
 	"card": "cards-module__card__PE0bu",
-	"card-update-modal": "cards-module__card-update-modal__2kiNo",
-	"close-button": "cards-module__close-button__2hOwg",
-	"card-quantity": "cards-module__card-quantity__3QHQX",
-	"save-button": "cards-module__save-button__3cf7h",
+	"userQty": "cards-module__userQty__1slAw",
+	"userMinus": "cards-module__userMinus__NV_BE",
+	"userCount": "cards-module__userCount__3ki49",
+	"userPlus": "cards-module__userPlus__kF-V9",
 	"visible": "cards-module__visible__3jk4x",
 	"hidden": "cards-module__hidden__O1wSR"
 };
@@ -254,7 +254,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".controlBar-module__controlBarContainer__2yyg1{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-bottom: 2.5rem;\r\n    -webkit-box-pack: left;\r\n        -ms-flex-pack: left;\r\n            justify-content: left;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.controlBar-module__currentSort__9SLRA{\r\n    width:150px;\r\n    border: 1px solid #cbcbcb;\r\n    border-radius: 5px;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    font-size: 13px;\r\n    position: relative;\r\n    text-align: left;\r\n    padding: 12px 35px 12px 15px;\r\n    z-index: 100;\r\n}\r\n.controlBar-module__arrows__bA3U5 {\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    right:15px;\r\n    top: 12.5px;\r\n    display: block;\r\n    -webkit-transform: scale(var(--ggs,1));\r\n            transform: scale(var(--ggs,1));\r\n    width: 14px;\r\n    height: 16px\r\n}\r\n.controlBar-module__arrows__bA3U5::after,\r\n.controlBar-module__arrows__bA3U5::before {\r\n    content: \"\";\r\n    display: block;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    width: 2px;\r\n    background: currentColor;\r\n    border-radius: 4px\r\n}\r\n.controlBar-module__arrows__bA3U5::before {\r\n    height: 6px;\r\n    -webkit-transform: rotate(45deg);\r\n            transform: rotate(45deg);\r\n    -webkit-box-shadow: 7px -4px 0;\r\n            box-shadow: 7px -4px 0;\r\n    top: 4px;\r\n    left: 2px\r\n}\r\n.controlBar-module__arrows__bA3U5::after {\r\n    height: 12px;\r\n    -webkit-box-shadow: -4px 4px 0;\r\n            box-shadow: -4px 4px 0;\r\n    right: 4px;\r\n    bottom: 4px\r\n}\r\n.controlBar-module__dropdown__GonsM{\r\n    position: absolute;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    border-radius: 0 0 5px 5px;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    border-left: 1px solid #cbcbcb;\r\n    border-right: 1px solid #cbcbcb;\r\n    width:150px;\r\n    left: -1px;\r\n    top:90%;\r\n    background-color: white;\r\n}\r\n.controlBar-module__dropdown__GonsM label{\r\n    padding: 8px 15px;\r\n    cursor: pointer;\r\n    color: #414141;\r\n}\r\n.controlBar-module__dropdown__GonsM label:hover{\r\n    opacity: .8;\r\n    background: rgba(0,0,0,.25);\r\n    -webkit-transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    color: black;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-left: 3rem;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP i {\r\n    border: 1px solid #cbcbcb;\r\n    padding: .25em .39em;\r\n    cursor: pointer;\r\n}\r\n.controlBar-module__selected__3G4tN {\r\n    background-color: rgb(241, 241, 241);\r\n}\r\n", ""]);
+exports.push([module.i, ".controlBar-module__controlBarContainer__2yyg1{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-bottom: 2.5rem;\r\n    -webkit-box-pack: left;\r\n        -ms-flex-pack: left;\r\n            justify-content: left;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.controlBar-module__currentSort__9SLRA{\r\n    width:150px;\r\n    border: 1px solid #cbcbcb;\r\n    border-radius: 5px;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    font-size: 13px;\r\n    position: relative;\r\n    text-align: left;\r\n    padding: 12px 35px 12px 15px;\r\n}\r\n.controlBar-module__arrows__bA3U5 {\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    right:15px;\r\n    top: 12.5px;\r\n    display: block;\r\n    -webkit-transform: scale(var(--ggs,1));\r\n            transform: scale(var(--ggs,1));\r\n    width: 14px;\r\n    height: 16px\r\n}\r\n.controlBar-module__arrows__bA3U5::after,\r\n.controlBar-module__arrows__bA3U5::before {\r\n    content: \"\";\r\n    display: block;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    position: absolute;\r\n    width: 2px;\r\n    background: currentColor;\r\n    border-radius: 4px\r\n}\r\n.controlBar-module__arrows__bA3U5::before {\r\n    height: 6px;\r\n    -webkit-transform: rotate(45deg);\r\n            transform: rotate(45deg);\r\n    -webkit-box-shadow: 7px -4px 0;\r\n            box-shadow: 7px -4px 0;\r\n    top: 4px;\r\n    left: 2px\r\n}\r\n.controlBar-module__arrows__bA3U5::after {\r\n    height: 12px;\r\n    -webkit-box-shadow: -4px 4px 0;\r\n            box-shadow: -4px 4px 0;\r\n    right: 4px;\r\n    bottom: 4px\r\n}\r\n.controlBar-module__dropdown__GonsM{\r\n    position: absolute;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    border-radius: 0 0 5px 5px;\r\n    border-bottom: 1px solid #cbcbcb;\r\n    border-left: 1px solid #cbcbcb;\r\n    border-right: 1px solid #cbcbcb;\r\n    width:150px;\r\n    left: -1px;\r\n    top:90%;\r\n    background-color: white;\r\n}\r\n.controlBar-module__dropdown__GonsM label{\r\n    padding: 8px 15px;\r\n    cursor: pointer;\r\n    color: #414141;\r\n}\r\n.controlBar-module__dropdown__GonsM label:hover{\r\n    opacity: .8;\r\n    background: rgba(0,0,0,.25);\r\n    -webkit-transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    transition: color .25s ease-out,background .25s ease-out,opacity .25s ease-out;\r\n    color: black;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    margin-left: 3rem;\r\n}\r\n.controlBar-module__toggleCardDisplay__1E7LP i {\r\n    border: 1px solid #cbcbcb;\r\n    padding: .25em .39em;\r\n    cursor: pointer;\r\n}\r\n.controlBar-module__selected__3G4tN {\r\n    background-color: rgb(241, 241, 241);\r\n}\r\n", ""]);
 // Exports
 exports.locals = {
 	"controlBarContainer": "controlBar-module__controlBarContainer__2yyg1",
@@ -29437,9 +29437,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _lookUp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lookUp */ "./src/cards/lookUp.js");
-/* harmony import */ var _cards_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cards.module.css */ "./src/cards/cards.module.css");
-/* harmony import */ var _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_cards_module_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _userCards__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../userCards */ "./src/userCards/index.js");
+/* harmony import */ var _userCards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../userCards */ "./src/userCards/index.js");
+/* harmony import */ var _cards_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cards.module.css */ "./src/cards/cards.module.css");
+/* harmony import */ var _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_cards_module_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hoc/CardsContainer */ "./src/hoc/CardsContainer.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -29457,81 +29458,130 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var e = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var allCardsElement = document.getElementById("allCards");
 function Card(props) {
+  // ['card_id], ['card_count'] refers to cards in a users inventory, both usercards and normal cards have
+  // ['id'] values. important to check first for card_id to determine wether its usercard or not
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.card['card_id'] ? props.card['card_id'] : props.card['id']),
       _useState2 = _slicedToArray(_useState, 2),
       cardId = _useState2[0],
       setCardId = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.card['card_count'] ? props.card['card_count'] : 1),
       _useState4 = _slicedToArray(_useState3, 2),
-      message = _useState4[0],
-      setMessage = _useState4[1];
+      cardAmount = _useState4[0],
+      setCardAmount = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      cardAmount = _useState6[0],
-      setCardAmount = _useState6[1];
+      message = _useState6[0],
+      setMessage = _useState6[1];
 
-  var addCard = function addCard(event) {
-    setMessage(true);
-    setTimeout(function () {
-      setMessage(false);
-    }, 500);
-    Object(_userCards__WEBPACK_IMPORTED_MODULE_4__["apiAddCard"])(function () {}, {
+  var addCard = function addCard() {
+    var handleBackend = function handleBackend(response, status) {
+      if (status === 201) {
+        setMessage('Card added to your inventory');
+        setTimeout(function () {
+          setMessage(false);
+        }, 5000);
+      } else {
+        setMessage('An error occured');
+        setTimeout(function () {
+          setMessage(false);
+        }, 5000);
+      }
+    };
+
+    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiAddCard"])(handleBackend, {
       "card": cardId,
+      "card_count": cardAmount
+    });
+  };
+
+  var updateCard = function updateCard(cardAmount) {
+    console.log(cardAmount);
+
+    var handleBackendUpdate = function handleBackendUpdate(response, status) {
+      if (status === 204) {} else {
+        setMessage('An error occured');
+        setTimeout(function () {
+          setMessage(false);
+        }, 5000);
+      }
+    };
+
+    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiUserCardsUpdate"])(handleBackendUpdate, props.card['id'], {
       "card_count": cardAmount
     });
   };
 
   var changeInput = function changeInput(event) {
     if (event.target.innerText == '+') {
+      var newCardAmount = parseInt(cardAmount) + 1;
       setCardAmount(parseInt(cardAmount) + 1);
+
+      if (props.card['card_id']) {
+        updateCard(newCardAmount);
+      }
     } else if (event.target.innerText == '-' && cardAmount != 1) {
+      var _newCardAmount = parseInt(cardAmount) - 1;
+
       setCardAmount(parseInt(cardAmount) - 1);
+
+      if (props.card['card_id']) {
+        updateCard(_newCardAmount);
+      }
     }
   };
 
-  var handleChange = function handleChange(event) {
-    setCardAmount(event.target.value);
-  };
+  var editCard;
+
+  if (props.card['card_id']) {
+    editCard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.userQty
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      onClick: changeInput,
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.userMinus
+    }, "-"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.userCount
+    }, cardAmount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      onClick: changeInput,
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.userPlus
+    }, "+"));
+  } else {
+    editCard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.qty
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      onClick: changeInput,
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.minus
+    }, "-"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.count
+    }, cardAmount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      onClick: changeInput,
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.plus
+    }, "+")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.buttonWrapper
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: addCard,
+      value: cardId,
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.addCardButton
+    }, "ADD CARD"), message && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.cardAdded
+    }, message)));
+  }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.cardWrapper
+    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.cardWrapper
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "/static/card_images/".concat(props.card['img_url'], ".jpg"),
     alt: props.card['name']
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.editCard
+    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.editCard
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/card_detail/".concat(cardId)
-  }, props.card['name']), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.qty
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    onClick: changeInput,
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.minus
-  }, "-"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.count,
-    onChange: handleChange,
-    type: "number",
-    value: cardAmount,
-    min: "1",
-    max: "99",
-    maxLength: "3"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    onClick: changeInput,
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.plus
-  }, "+")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.buttonWrapper
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: addCard,
-    value: cardId,
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.addCardButton
-  }, "ADD CARD"), message && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.cardAdded
-  }, " Card Added To Inventory.")))));
+  }, props.card['name']), editCard)));
 }
 
 function CardList(props) {
@@ -29576,7 +29626,7 @@ function CardList(props) {
     }
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.colorLinkWrapper
+    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.colorLinkWrapper
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "WHITE", 0);
@@ -29618,11 +29668,11 @@ function CardList(props) {
       changeColorDisplayedHandler(e, "ALL CARDS", 9);
     }
   }, "ALL CARDS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.colorTitle
+    className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.colorTitle
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, color['color'])), cards.map(function (list, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: index,
-      className: index === color['cards'] ? _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.cardsContainer : _cards_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.hidden,
+      className: index === color['cards'] ? _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.cardsContainer : _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.hidden,
       children: list.map(function (item, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
           card: item,
