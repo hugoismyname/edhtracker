@@ -75,12 +75,12 @@ export function UserCardList(props){
   }
 
   let userCards = <CardsContainer children={cards.map((item,index) => {
-      return <Card card={item} key={item.id}/>
+      return <Card card={item} onDelete={deleteCard} key={item.id}/>
   })}/>  ;
 
   if (display === "visual"){
       userCards = <CardsContainer children={cards.map((item,index) => {
-          return <Card card={item} key={item.id}/>
+          return <Card card={item} onDelete={deleteCard} key={item.id}/>
       })}/>  
   }else if(display === "list"){
       userCards = 

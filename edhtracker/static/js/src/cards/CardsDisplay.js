@@ -1,14 +1,10 @@
 import React,{useEffect,useState} from 'react';
 import ReactDOM from 'react-dom';
 
-
 import {apiCardsLookUp} from './lookUp';
 import {apiAddCard, apiUserCardsUpdate} from '../userCards'
 
-
 import Classes from './cards.module.css';
-import CardsContainer from '../hoc/CardsContainer'
-
 
 
 const e = React.createElement
@@ -29,6 +25,19 @@ export function Card(props){
         setTimeout( () => {
           setMessage(false);
         }, 5000);
+      }else {
+        setMessage('An error occured')
+        setTimeout( () => {
+          setMessage(false);
+        }, 5000);
+      }
+    }
+    apiAddCard(handleBackend,{"card":cardId,"card_count":cardAmount})
+  }
+  const deleteCard = () =>{
+    const handleBackend = (response,status) =>{
+      if(status === 201){
+
       }else {
         setMessage('An error occured')
         setTimeout( () => {
@@ -72,12 +81,21 @@ export function Card(props){
   let editCard;
 
   if(props.card['card_id']){
-    editCard =       
-    <div className={Classes.userQty}>
-      <div onClick={changeInput} className={Classes.userMinus}>-</div>
-      <div className={Classes.userCount} >{cardAmount}</div>
-      <div onClick={changeInput} className={Classes.userPlus}>+</div>
-    </div>
+    editCard =
+    <React.Fragment>
+      <div className={Classes.userQty}>
+        <div onClick={changeInput} className={Classes.userMinus}>-</div>
+        <div className={Classes.userCount} >{cardAmount}</div>
+        <div onClick={changeInput} className={Classes.userPlus}>+</div>
+
+      </div>
+      <div className={Classes.buttonWrapper}>
+        <button onClick={deleteCard} value={cardId} className={Classes.removeButton} >REMOVE CARD</button>
+        {message && 
+          <span className={Classes.cardAdded}>{message}</span>
+        }
+      </div>
+    </React.Fragment>
   }else{
     editCard =
     <React.Fragment>
