@@ -57,7 +57,6 @@ nav {
 .nav-list {
   display: flex;
   list-style: none;
-  width:50%;
   margin-left: 5%;
 }
 .nav-item{
@@ -129,7 +128,7 @@ nav {
 }
 /* search bar pluis user nav */
 #searchbar{
-  min-width: 25%;
+  width: 25%;
 }
 .site-user {
   display: flex;
@@ -292,13 +291,6 @@ body {
   #responsive-menu{
     display: none;
   }
-  .nav-list {
-  width:25%;
-  }
-  #searchbar{
-    min-width: 40%;
-  }
-
 }
 @media only screen and (max-width: 450px) {
   body {
@@ -326,7 +318,7 @@ body {
   #searchbar{
     order: 5;
     margin:0 auto 1rem auto;
-    min-width: 90%;
+    width: 100%;
   }
   .container{
     border-bottom: #e68123 2px solid;

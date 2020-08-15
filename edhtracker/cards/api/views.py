@@ -1,6 +1,6 @@
 from django.db.models import Prefetch
 from django.core import paginator
-from django.shortcuts import get_object_or_404
+from django.core.exceptions import ObjectDoesNotExist
 
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.pagination import PageNumberPagination
@@ -226,11 +226,11 @@ def UserCardCreate(request, *args, **kwargs):
 @api_view(["POST", "DELETE", "GET"])
 @permission_classes([IsAuthenticated])
 def UserCardDelete(request, pk=None, *args, **kwargs):
-    qs = UserCards.objects.filter(id=pk)
-    if not qs.exists():
+    try:
+        qs = UserCards.objects.get(id=pk)
+    except ObjectDoesNotExist:
         return Response({"message": "You cannot delete this card"}, status=401)
-    obj = qs.first()
-    obj.delete()
+    qs.delete()
     return Response({"message": "Card Removed"}, status=200)
 
 

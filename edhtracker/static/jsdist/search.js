@@ -203,7 +203,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".searchBar-module__searchContainer__3esFZ{\r\n    position: relative;\r\n    min-width: 50%;\r\n\r\n}\r\n.searchBar-module__searchBar__2-He9 {\r\n    border: #e68123 3px solid;\r\n    height: 30px;\r\n    margin-right: 1rem;\r\n    border-radius: 50px;\r\n    background: white;\r\n    padding-left: .5rem;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    \r\n  }\r\n.searchBar-module__searchSuggestionsContainer__35-aW{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    position: absolute;\r\n    top: 30px;\r\n    left: 5px;\r\n    cursor: default;\r\n    background: white;\r\n    -webkit-box-shadow: 5px 5px 5px 0 rgba(0,0,0,.75);\r\n            box-shadow: 5px 5px 5px 0 rgba(0,0,0,.75);\r\n    border-top: 1px solid rgba(0,0,0,.75);\r\n    z-index: 100;\r\n    max-height: 1000px;\r\n    overflow: auto;\r\n}\r\n.searchBar-module__searchSuggestion__1DG0H{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: left;\r\n        -ms-flex-pack: left;\r\n            justify-content: left;\r\n    font: small;\r\n    padding: 5px;\r\n    font-size: small;\r\n    clear: both;\r\n    min-height: 35px;\r\n    cursor: pointer;\r\n    overflow: hidden;\r\n}\r\n.searchBar-module__searchSuggestion__1DG0H:hover{\r\n    background-color: rgb(195, 195, 195);\r\n}\r\n.searchBar-module__searchSuggestion__1DG0H img{\r\n    width: 50px;\r\n    max-height: 100%;\r\n    margin-right: 15px;\r\n}\r\n.searchBar-module__searchText__9W5Bg {\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    float: left;\r\n    line-height: 30px;\r\n    font-family: \"Open Sans\", sans-serif;\r\n    font-size: 1rem;\r\n}\r\n.searchBar-module__searchButton__2zojB {\r\n    float: right;\r\n    width: 30px;\r\n    height: 30px;\r\n    border-radius: 50%;\r\n    background: #e68123;\r\n    cursor: pointer;\r\n    border: none;\r\n    font-size: 18px;\r\n}", ""]);
+exports.push([module.i, ".searchBar-module__searchContainer__3esFZ{\r\n    position: relative;\r\n    width:100%;\r\n}\r\n.searchBar-module__searchBar__2-He9 {\r\n    border: #e68123 3px solid;\r\n    height: 30px;\r\n    margin-right: 1rem;\r\n    border-radius: 50px;\r\n    background: white;\r\n    padding-left: .5rem;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n  }\r\n.searchBar-module__searchSuggestionsContainer__35-aW{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    position: absolute;\r\n    top: 30px;\r\n    left: 5px;\r\n    cursor: default;\r\n    background: white;\r\n    -webkit-box-shadow: 5px 5px 5px 0 rgba(0,0,0,.75);\r\n            box-shadow: 5px 5px 5px 0 rgba(0,0,0,.75);\r\n    border-top: 1px solid rgba(0,0,0,.75);\r\n    z-index: 100;\r\n    max-height: 1000px;\r\n    overflow: auto;\r\n}\r\n.searchBar-module__searchSuggestion__1DG0H{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: left;\r\n        -ms-flex-pack: left;\r\n            justify-content: left;\r\n    font: small;\r\n    padding: 5px;\r\n    font-size: small;\r\n    clear: both;\r\n    min-height: 35px;\r\n    cursor: pointer;\r\n    overflow: hidden;\r\n}\r\n.searchBar-module__searchSuggestion__1DG0H:hover{\r\n    background-color: rgb(195, 195, 195);\r\n}\r\n.searchBar-module__searchSuggestion__1DG0H img{\r\n    width: 50px;\r\n    max-height: 100%;\r\n    margin-right: 15px;\r\n}\r\n.searchBar-module__searchText__9W5Bg {\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    float: left;\r\n    line-height: 30px;\r\n    font-family: \"Open Sans\", sans-serif;\r\n    font-size: 1rem;\r\n}\r\n.searchBar-module__searchButton__2zojB {\r\n    float: right;\r\n    width: 30px;\r\n    height: 30px;\r\n    border-radius: 50%;\r\n    background: #e68123;\r\n    cursor: pointer;\r\n    border: none;\r\n    font-size: 18px;\r\n}", ""]);
 // Exports
 exports.locals = {
 	"searchContainer": "searchBar-module__searchContainer__3esFZ",
@@ -29331,19 +29331,8 @@ function Card(props) {
   };
 
   var deleteCard = function deleteCard() {
-    var handleBackend = function handleBackend(response, status) {
-      if (status === 201) {} else {
-        setMessage('An error occured');
-        setTimeout(function () {
-          setMessage(false);
-        }, 5000);
-      }
-    };
-
-    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiAddCard"])(handleBackend, {
-      "card": cardId,
-      "card_count": cardAmount
-    });
+    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiUserCardsDelete"])(props.callbackHandler, props.card['id']);
+    props.onDelete(props.card['id']);
   };
 
   var updateCard = function updateCard(cardAmount) {
@@ -30629,7 +30618,9 @@ function UserCardList(props) {
 
   var handleBackendUpdate = function handleBackendUpdate(response, status) {
     // backend api response handler
-    if (status === 204) {} else if (status === 200) {} else {
+    if (status === 204) {} else if (status === 200) {
+      return;
+    } else {
       alert("An error occured please try again");
     }
   };
@@ -30674,6 +30665,7 @@ function UserCardList(props) {
     children: cards.map(function (item, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_3__["Card"], {
         card: item,
+        callbackHandler: handleBackendUpdate,
         onDelete: deleteCard,
         key: item.id
       });
@@ -30685,6 +30677,7 @@ function UserCardList(props) {
       children: cards.map(function (item, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_3__["Card"], {
           card: item,
+          callbackHandler: handleBackendUpdate,
           onDelete: deleteCard,
           key: item.id
         });

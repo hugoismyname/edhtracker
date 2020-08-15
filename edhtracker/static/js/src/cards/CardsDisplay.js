@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import ReactDOM from 'react-dom';
 
 import {apiCardsLookUp} from './lookUp';
-import {apiAddCard, apiUserCardsUpdate} from '../userCards'
+import {apiAddCard, apiUserCardsUpdate,apiUserCardsDelete} from '../userCards'
 
 import Classes from './cards.module.css';
 
@@ -35,18 +35,9 @@ export function Card(props){
     apiAddCard(handleBackend,{"card":cardId,"card_count":cardAmount})
   }
   const deleteCard = () =>{
-    const handleBackend = (response,status) =>{
-      if(status === 201){
-
-      }else {
-        setMessage('An error occured')
-        setTimeout( () => {
-          setMessage(false);
-        }, 5000);
-      }
-    }
-    apiAddCard(handleBackend,{"card":cardId,"card_count":cardAmount})
-  }
+    apiUserCardsDelete(props.callbackHandler,props.card['id'])
+    props.onDelete(props.card['id'])
+}
 
   const updateCard = (cardAmount) =>{
     console.log(cardAmount)

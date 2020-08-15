@@ -1,7 +1,6 @@
 .searchContainer{
     position: relative;
-    min-width: 50%;
-
+    width:100%;
 }
 .searchBar {
     border: #e68123 3px solid;
@@ -13,7 +12,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
   }
 .searchSuggestionsContainer{
     display: flex;

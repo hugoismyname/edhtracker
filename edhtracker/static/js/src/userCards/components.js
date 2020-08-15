@@ -35,14 +35,15 @@ export function UserCardList(props){
 
   const handleBackendUpdate = (response, status) =>{
     // backend api response handler
-   if(status === 204){
-
+    if(status === 204){
+ 
     }else if(status === 200){
-
+      return
     }else {
       alert("An error occured please try again")
     }
   }
+  
   useEffect(() => {
     if (cardsDidSet === false){
       const handleCardsLookUp = (response, status) => {
@@ -75,12 +76,12 @@ export function UserCardList(props){
   }
 
   let userCards = <CardsContainer children={cards.map((item,index) => {
-      return <Card card={item} onDelete={deleteCard} key={item.id}/>
+      return <Card card={item} callbackHandler={handleBackendUpdate} onDelete={deleteCard} key={item.id}/>
   })}/>  ;
 
   if (display === "visual"){
       userCards = <CardsContainer children={cards.map((item,index) => {
-          return <Card card={item} onDelete={deleteCard} key={item.id}/>
+          return <Card card={item} callbackHandler={handleBackendUpdate} onDelete={deleteCard} key={item.id}/>
       })}/>  
   }else if(display === "list"){
       userCards = 

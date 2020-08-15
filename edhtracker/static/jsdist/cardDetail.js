@@ -29500,19 +29500,8 @@ function Card(props) {
   };
 
   var deleteCard = function deleteCard() {
-    var handleBackend = function handleBackend(response, status) {
-      if (status === 201) {} else {
-        setMessage('An error occured');
-        setTimeout(function () {
-          setMessage(false);
-        }, 5000);
-      }
-    };
-
-    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiAddCard"])(handleBackend, {
-      "card": cardId,
-      "card_count": cardAmount
-    });
+    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiUserCardsDelete"])(props.callbackHandler, props.card['id']);
+    props.onDelete(props.card['id']);
   };
 
   var updateCard = function updateCard(cardAmount) {
@@ -30399,7 +30388,9 @@ function UserCardList(props) {
 
   var handleBackendUpdate = function handleBackendUpdate(response, status) {
     // backend api response handler
-    if (status === 204) {} else if (status === 200) {} else {
+    if (status === 204) {} else if (status === 200) {
+      return;
+    } else {
       alert("An error occured please try again");
     }
   };
@@ -30444,6 +30435,7 @@ function UserCardList(props) {
     children: cards.map(function (item, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_3__["Card"], {
         card: item,
+        callbackHandler: handleBackendUpdate,
         onDelete: deleteCard,
         key: item.id
       });
@@ -30455,6 +30447,7 @@ function UserCardList(props) {
       children: cards.map(function (item, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_3__["Card"], {
           card: item,
+          callbackHandler: handleBackendUpdate,
           onDelete: deleteCard,
           key: item.id
         });
