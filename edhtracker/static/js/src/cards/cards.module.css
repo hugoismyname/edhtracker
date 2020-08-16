@@ -40,6 +40,8 @@
 .cardWrapper img {
     width: 265px;
     height:370px;
+    border-radius: 13px;
+
 }
 /* Add or remove cards styling */
 .editCard{
@@ -49,7 +51,7 @@
     height:370px;
     align-items: center;
     border-radius: 5%;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding:7.5%;
 }
@@ -62,6 +64,10 @@
     margin-bottom: 80%;
     text-align: left;
     height: 5rem;
+}
+.editCard a:hover{
+    color: #e68123;
+    font-size: 1.60rem;
 }
 .cardWrapper:hover .editCard{
     display:flex;

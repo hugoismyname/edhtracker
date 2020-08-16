@@ -1,5 +1,4 @@
-import {UserCardList} from './components';
-import ControlBar from './ControlBar'
+import ControlBar from './cardsTable/ControlBar'
 import {apiAddCard,apiUserCardsList,apiUserCardsDelete, apiUserCardsUpdate} from './lookUp';
 import {TableHead, TableRow} from './cardsTable'
 
@@ -11,5 +10,4 @@ export {
     ControlBar,
     TableHead,
     TableRow,
-    UserCardList
 }

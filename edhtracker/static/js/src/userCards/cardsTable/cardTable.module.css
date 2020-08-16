@@ -1,51 +1,84 @@
 .tableHead{
     display: flex;
-    border-bottom: 1px solid #cbcbcb;
+    justify-content: left;
     list-style: none;
-    font-weight: 600 ;
+}
+.columnHeader{
+    cursor: pointer;
+    color: wheat;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 .tableRow{
     width: 100%;
+    color: #464948;
+    font-size: 1.3rem;
+    background-color: #efede7;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    position: relative;
 }
 .tableRow:hover .removeCard{
     background-image: url(/static/img/icon-remove-red.png);
     background-repeat: no-repeat;
-    background-position: right;
-}
-.tableHead li{
-    padding: .5em 1em;
-    margin-right: 1rem;
+    background-position: 0 0;
 }
 .tableRow:nth-child(even) {
-    background-color: rgb(241, 241, 241);
+    background-color: #f6f4ee;
+}
+.tableRow:first-child{
+    border-radius: 5px 5px 0 0;
+}
+.tableRow:last-child {
+    border-radius: 0 0 5px 5px;
 }
 .tableCount{
     width: 7.5%;
-    cursor: pointer;
+    margin-right: 2rem;
+    padding-left: 1rem;
 }
 .tableCount input {
-    width: 100%;
-    cursor: pointer;
+    background: rgba(255,255,255,.85);
+    color: #2b2a2a;
+    cursor: text;
+    padding: 4px 4px 4px 8px;
+    height: 40px;
+    width:50px;
+    outline: 0;
+    display: block;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
 }
 .tableDate {
     width: 10%;
-    cursor: pointer;
 }
 .tableName {
     width: 30%;
-    cursor: pointer;
+}
+.tableRow a{   
+    color: #e68123;
+    font-size: 1.6rem;
+    text-decoration: none;
 }
 .tableType {
     width: 45%;
-    cursor: pointer;
 }
 .tableSet{
     width:7.5%;
-    cursor: pointer;
 }
 .removeCard{
-    width: 5%;
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 47px;
+    height: 100%;
+    opacity: .4;
+    border-radius: 0 5px 0 0;
 }
 .removeCard:hover{
     cursor: pointer;
+    opacity: 1;
 }

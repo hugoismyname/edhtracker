@@ -6,7 +6,7 @@ function ControlBar(props){
     const wrapperRef = useRef(null);
     const [displayClass, setDisplayClass] = useState({"visual":Classes.selected,"list":null});
     const [isVisible, setIsVisible] = useState('none');
-    const [sortParam, setSortParam] = useState('default')
+    const [sortParam, setSortParam] = useState('Added')
 
     const changeDisplayHandler = (display) =>{
         display === "visual" ? setDisplayClass({"visual":Classes.selected,"list":null}) :
