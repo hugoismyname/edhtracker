@@ -11,43 +11,43 @@
 }
 .detail-head{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width:12.5rem;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    width:30%;
     letter-spacing: 2px;
-    border-bottom: 1px solid #cbcbcb
+    border-bottom: 1px solid #cbcbcb;
+    margin-bottom: .5rem;
 }
 .set{
-    padding: 0 3px 0 0px;
-    border-right: 1px solid #cbcbcb;
     width: 30px;
 }
 .have{
-    padding-right: 10px;
+    padding:.75rem;
+    margin-left: 1rem;
+    border-left: 1px solid #cbcbcb;
+    font-weight: 600;
+    font-size: 1.3rem;
+    height: 100%;
 }
 .name{
     font-size: 5rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     text-shadow: 0 5px 15px rgba(0,0,0,.15);
 }
 .type{
-    font-size: 12px;
+    font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 .oracle-text{
     margin-bottom: 20px;
     max-width: 380px;
-    line-height: 22px;
+    font-size: 1.5rem;
 }
 .flavor-text{
     font-family: "Times New Roman",Times,serif;
     font-style: italic;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     opacity: .6;
     max-width: 380px;
 }

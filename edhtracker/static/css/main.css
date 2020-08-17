@@ -8,7 +8,6 @@ html{
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
   /* background: url(../static/background.jpg) 0 0 repeat; */
-  height: 100%;
 }
 #overlay {
   position: fixed; 
@@ -277,12 +276,10 @@ text-align: center;
   padding-top: 75px;
   max-width: 1200px;
   margin: 0 auto;
-  height: 100%;
 }
 body {
   position: relative;
   margin-top: 1rem;
-  height:100%;
 }
 .visible{
   transform: translateX(-270px);
