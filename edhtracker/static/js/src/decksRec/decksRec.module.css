@@ -6,7 +6,8 @@
 }
 .cardsOwned{
     display: flex;
-    margin: 0 5px;
+    margin: 0 1rem;
+    font-size: 1.5rem;
 }
 .cardsOwned p{
     margin: 0 5px;

@@ -7,7 +7,8 @@
     <div class="card-detail-main">
         <div class="card-detail-img">
             <img width=265; src="{% static 'card_images/'%}{{card.img_url}}.jpg" alt="{{card.name}}">
-        </div>
+            <a href="#all-versions">ALL VERSIONS</a>
+        </div>    
         <div class="card-detail-info">
             <div class="detail-head">
                 <img class="set" src="{% static '/set_svgs/'%}{{ set_info.img_url }}.svg" alt="{{ set.name }}" />
@@ -24,6 +25,23 @@
     {% if card.is_commander %}
         <div id="card_detail" {% if user.is_authenticated %}data-username={ user.get_username }{% endif %} data-pk={{ pk }}></div>
     {% endif %}
+    <div id="all-versions" class="version-header">
+        <h3>All Versions</h3>
+    </div>
+    <div class="versions-container">
+    {% for version in all_versions %}
+        <a href='/card_detail/{{version.id}}'>
+            <div class='item'>
+                <img width=150; height=225; src="{% static 'card_images/'%}{{version.img_url}}.jpg" alt="{{version.name}}">
+                <div class="item-info">
+                    <div class="item-name">{{version.name}}</div>
+                    <div class="item-set">Set: {{version.set}}</div>
+                    <div class="item-artist">Artist: {{version.artist}}</div>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
 {% endblock content %}
 {% block extra_scripts %}
 <script  src="{% static 'jsdist\cardDetail.js' %}"></script>

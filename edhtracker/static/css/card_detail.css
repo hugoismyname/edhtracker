@@ -3,6 +3,20 @@
     flex-wrap: wrap;
     margin: 1.5rem 0;
 }
+.card-detail-img{
+    display: flex;
+    flex-direction: column;
+}
+.card-detail-img a{
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+    font-size: large;
+}
+.card-detail-img a:hover{
+    color: #e68123;
+}
 .card-detail-info{
     display: flex;
     flex-direction: column;
@@ -11,7 +25,7 @@
 }
 .detail-head{
     display: flex;
-    width:30%;
+    width:160px;
     letter-spacing: 2px;
     border-bottom: 1px solid #cbcbcb;
     margin-bottom: .5rem;
@@ -55,9 +69,74 @@
     display: flex;
     flex-direction: column;
 }
-@media only screen and (max-width: 1100px) {
+.version-header{
+    position: relative;
+    padding-left: 2.5rem;
+    margin: 4rem 0 2rem 0;
+}
+.version-header h3{
+    position: relative;
+    z-index: 2;
+    background: #f9fbfc;
+    width: 118px;
+    font-size: 2rem;
+}
+.version-header::after {
+    position: absolute;
+    content: '';
+    z-index: 1;
+    bottom: 50%;
+    margin-bottom: -2px;
+    height: 2px;
+    left: 0;
+    right: 0;
+    background: #373d47;
+}
+.versions-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin:0 1rem;
+}
+.versions-container a{
+    text-decoration: none;
+    color:black;
+    width: 25%;
+    min-width: 275px;}
+.item{
+    display: flex;
+
+    border-radius: 7px;
+    padding:1rem;
+    margin:0 .75rem 3rem 1.5rem ;
+    box-shadow:3px 3px 5px 6px #ccc;
+}  
+.item-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-name{
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.item-set{
+    font-size: 1.1rem;
+}
+.item-artist{
+    font-weight: bold;
+    margin-top: 100%;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
     .card-detail-img{
         margin-left: 2.5rem;
+    }
+    .version-header{
+        margin: 4rem 1rem 2rem 1rem;
     }
 }
 @media only screen and (max-width: 450px) {
@@ -78,5 +157,6 @@
     }
     .name{
         font-size: 3.75rem;
+        margin-top: 1rem;
     }
 }

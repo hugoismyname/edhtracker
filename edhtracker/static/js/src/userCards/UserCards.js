@@ -103,7 +103,7 @@ export function UserCardList(props){
   }
   return(
       <React.Fragment> 
-          <ControlBar changeOrder={changeOrder} switchDisplay={changeDisplayFormat} />
+          <ControlBar changeOrder={changeOrder} switchDisplay={changeDisplayFormat} totalCards={cards.length} />
           {userCards}
           {nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load next</button>}         
       </React.Fragment>

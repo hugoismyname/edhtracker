@@ -11,25 +11,7 @@ const cardDetailElement = document.getElementById("card_detail");
 function CardDetail(props) {
   const [cardsInDeck, setCardsInDeck] = useState([]);
   const [cardsInDeckDidSet, setCardsInDeckDidSet] = useState(false);
-  const [switchCardsShown, setSwitchCardsShown] = useState({
-    visible: [true, false],
-    message: "Show Cards Owned",
-  });
 
-  const changeDisplayHandler = () => {
-    event.preventDefault();
-    setSwitchCardsShown(
-      switchCardsShown.visible[0]
-        ? {
-            visible: [false, true],
-            message: "Show Cards Needed",
-          }
-        : {
-            visible: [true, false],
-            message: "Show Cards Owned",
-          }
-    );
-  };
   useEffect(() => {
     if (cardsInDeckDidSet === false) {
       const handleCardsLookUp = (response, status) => {
@@ -63,25 +45,18 @@ function CardDetail(props) {
   if (props.username) {
     Cards_list = (
       <React.Fragment>
-        {/* link to switch between cards needed or owned. switchcardsshown[2] refers to what link shoulde display */}
-        <a className={Classes.switchCards} onClick={changeDisplayHandler}>
-          {switchCardsShown.message}
-        </a>
 
         {cardsInDeck.map((ownedAndMissing, index) => {
           return (
-            <div
-              className={
-                switchCardsShown.visible[index]
-                  ? Classes.visible
-                  : Classes.hidden
-              }
-            >
+            <div>
               {Object.entries(groupBy(ownedAndMissing, "type")).map(
                 (typeList, index) => {
                   return (
                     <React.Fragment key={index}>
-                      <h2 className={Classes.typeHeader}>{typeList[1][0]}</h2>
+                      <div>
+                        <h2 className={Classes.typeHeader}>{typeList[1][0]}</h2>
+                        <div className={Classes.tabber}><span>Needed</span><span>Owned</span></div>
+                      </div>
                       <CardsContainer>
                         {typeList[1][1].map((item) => {
                           return (

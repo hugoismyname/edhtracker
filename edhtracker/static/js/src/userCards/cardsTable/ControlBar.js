@@ -39,22 +39,28 @@ function ControlBar(props){
 
     return(
         <div className={Classes.controlBarContainer}>
-            <div className={Classes.currentSort} onClick={displayDropdown} ref={wrapperRef}>
-                {sortParam}
-                <i className={Classes.arrows}></i>
-                <div className={Classes.dropdown} style={{display: isVisible}} >
-                    <label data-dbsort="set" onClick={changeOrderHandler}>Set</label>
-                    <label data-dbsort="date_added" onClick={changeOrderHandler}>Added</label>
-                    <label data-dbsort="card_count" onClick={changeOrderHandler}>Quantity</label>
-                    <label data-dbsort="name" onClick={changeOrderHandler}>Card Name</label>
-                    <label data-dbsort="type_line" onClick={changeOrderHandler}>Type</label>
+            <div className={Classes.leftWrapper}>
+                <h3>{props.totalCards} Cards</h3>
+            </div>
+            <div className={Classes.rightWrapper}>
+                <div className={Classes.currentSort} onClick={displayDropdown} ref={wrapperRef}>
+                    {sortParam}
+                    <i className={Classes.arrows}></i>
+                    <div className={Classes.dropdown} style={{display: isVisible}} >
+                        <label data-dbsort="set" onClick={changeOrderHandler}>Set</label>
+                        <label data-dbsort="date_added" onClick={changeOrderHandler}>Added</label>
+                        <label data-dbsort="card_count" onClick={changeOrderHandler}>Quantity</label>
+                        <label data-dbsort="name" onClick={changeOrderHandler}>Card Name</label>
+                        <label data-dbsort="type_line" onClick={changeOrderHandler}>Type</label>
+                    </div>
                 </div>
+
+                <ul className={Classes.toggleCardDisplay}>
+                    <li className={displayClass["visual"]}><i onClick={() => changeDisplayHandler("visual")} className="fa fa-th-large" ></i></li>
+                    <li className={displayClass["list"]}><i onClick={() => changeDisplayHandler("list")} className="fa fa-th-list"></i></li>
+                </ul>            
             </div>
 
-            <ul className={Classes.toggleCardDisplay}>
-                <li className={displayClass["visual"]}><i onClick={() => changeDisplayHandler("visual")} className="fa fa-th-large" ></i></li>
-                <li className={displayClass["list"]}><i onClick={() => changeDisplayHandler("list")} className="fa fa-th-list"></i></li>
-            </ul>
         </div>
         
     )

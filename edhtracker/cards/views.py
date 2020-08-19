@@ -40,24 +40,26 @@ def CardDetailView(request, pk, *args, **kwargs):
         )
         .first()
     )
-    set_info = Set.objects.filter(code=card["set"]).values("img_url").first()
+    if card:
+        all_versions = Card.objects.filter(name=card["name"]).values(
+            "artist", "id", "img_url", "name", "set",
+        )
+        set_info = Set.objects.filter(code=card["set"]).values("img_url").first()
 
-    if request.user.is_authenticated:
-        user_card = UserCards.objects.filter(card_id=pk).count()
+        if request.user.is_authenticated:
+            user_card = UserCards.objects.filter(card_id=pk).count()
+        else:
+            user_card = 0
+        context = {
+            "all_versions": all_versions,
+            "card": card,
+            "set_info": set_info,
+            "user_card": user_card,
+            "pk": pk,
+        }
+        return render(request, "cards/card_detail.html", context)
     else:
-        user_card = 0
-    print(user_card)
-    context = {"card": card, "set_info": set_info, "user_card": user_card, "pk": pk}
-    return render(request, "cards/card_detail.html", context)
-
-
-class AllView(ListView):
-    queryset = Card.objects.filter(is_commander=True).filter(layout="flip")
-    # model = Card
-    template_name = "cards/all_cards.html"
-
-    ordering = ["name"]
-    paginate_by = 500
+        return redirect("/")
 
 
 def DecksRec(request, *args, **kwargs):
