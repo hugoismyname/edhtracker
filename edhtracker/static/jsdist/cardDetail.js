@@ -118,13 +118,16 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".cardDetail-module__typeHeader__1U1uu{\r\n    text-align: center;\r\n    font-size: 36px;\r\n    margin: 25px;\r\n    font-weight: 500;\r\n    line-height: 1.1;\r\n    text-transform:capitalize\r\n}\r\n.cardDetail-module__switchCards__xuBFY{\r\n    cursor: pointer;\r\n    width: 265px;\r\n    text-align: center;\r\n    margin-top: 10px;\r\n    font-size: large;\r\n}\r\n.cardDetail-module__visible__2bUeU{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n}\r\n.cardDetail-module__hidden__EN_W4{\r\n    display: none;\r\n}\r\nh2{\r\n    width:100%\r\n}\r\n", ""]);
+exports.push([module.i, ".cardDetail-module__typeHeader__1U1uu{\r\n    text-align: center;\r\n    font-size: 36px;\r\n    margin: 25px;\r\n    font-weight: 500;\r\n    line-height: 1.1;\r\n    text-transform:capitalize;\r\n    color: #333333;\r\n}\r\n.cardDetail-module__switchCards__xuBFY{\r\n    cursor: pointer;\r\n    width: 265px;\r\n    text-align: center;\r\n    margin-top: 10px;\r\n    font-size: large;\r\n}\r\n.cardDetail-module__visible__2bUeU{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n}\r\n.cardDetail-module__hidden__EN_W4{\r\n    display: none;\r\n}\r\n.cardDetail-module__cardsHeader__13RUU{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -ms-flex-wrap: wrap;\r\n        flex-wrap: wrap;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n}\r\n.cardDetail-module__cardsHeader__13RUU span{\r\n\tborder-radius:6px;\r\n\tborder:1px solid #dcdcdc;\r\n\tcursor:pointer;\r\n\tfont-family:Arial;\r\n\tfont-size:1.5rem;\r\n\tfont-weight:bold;\r\n\tpadding:.6rem 2.25rem;\r\n\ttext-decoration:none;\r\n    text-shadow:0px 1px 0px #ffffff;\r\n    margin-right: 1rem;\r\n}\r\n\r\n.cardDetail-module__active__18mbe{\r\n    background:-webkit-gradient(linear, left top, left bottom, color-stop(5%, #ff922b), to(#e68123));\r\n    background:linear-gradient(to bottom, #ff922b 5%, #e68123 100%);\r\n    background-color:#ff922b;\r\n    color:white;\r\n}\r\n.cardDetail-module__active__18mbe:hover {\r\n\tbackground:-webkit-gradient(linear, left top, left bottom, color-stop(5%, #e68123), to(#ff922b));\r\n\tbackground:linear-gradient(to bottom, #e68123 5%, #ff922b 100%);\r\n\tbackground-color:#e68123;\r\n}\r\n.cardDetail-module__inactive__1bf3I{\r\n    background:-webkit-gradient(linear, left top, left bottom, color-stop(5%, #ededed), to(#dfdfdf));\r\n    background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);\r\n    background-color:#ededed;\r\n    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;\r\n            box-shadow:inset 0px 1px 0px 0px #ffffff;\r\n    color:#777777;\r\n}\r\n.cardDetail-module__inactive__1bf3I:hover {\r\n\tbackground:-webkit-gradient(linear, left top, left bottom, color-stop(5%, #dfdfdf), to(#ededed));\r\n\tbackground:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);\r\n\tbackground-color:#dfdfdf;\r\n}\r\n@media only screen and (max-width: 450px) {\r\n    .cardDetail-module__typeHeader__1U1uu{\r\n        width: 100%;\r\n        margin: 15px;\r\n    }\r\n    .cardDetail-module__cardsHeader__13RUU{\r\n        margin-bottom: 1rem;\r\n    }\r\n}", ""]);
 // Exports
 exports.locals = {
 	"typeHeader": "cardDetail-module__typeHeader__1U1uu",
 	"switchCards": "cardDetail-module__switchCards__xuBFY",
 	"visible": "cardDetail-module__visible__2bUeU",
-	"hidden": "cardDetail-module__hidden__EN_W4"
+	"hidden": "cardDetail-module__hidden__EN_W4",
+	"cardsHeader": "cardDetail-module__cardsHeader__13RUU",
+	"active": "cardDetail-module__active__18mbe",
+	"inactive": "cardDetail-module__inactive__1bf3I"
 };
 module.exports = exports;
 
@@ -29279,6 +29282,19 @@ function CardDetail(props) {
       cardsInDeckDidSet = _useState4[0],
       setCardsInDeckDidSet = _useState4[1];
 
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([true, false]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      switchCardsShown = _useState6[0],
+      setSwitchCardsShown = _useState6[1];
+
+  var switchCards = function switchCards(event) {
+    if (event.target.innerText == 'Owned') {
+      setSwitchCardsShown([false, true]);
+    } else if (event.target.innerText == 'Needed') {
+      setSwitchCardsShown([true, false]);
+    }
+  };
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (cardsInDeckDidSet === false) {
       var handleCardsLookUp = function handleCardsLookUp(response, status) {
@@ -29304,20 +29320,28 @@ function CardDetail(props) {
       return result;
     }, {}); // empty object is the initial value for result object
 
-    console.log(groupArray);
     return Object.entries(groupArray).sort();
   };
 
   if (props.username) {
     Cards_list = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, cardsInDeck.map(function (ownedAndMissing, index) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, Object.entries(groupBy(ownedAndMissing, "type")).map(function (typeList, index) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: switchCardsShown[index] ? _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.visible : _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.hidden,
+        key: index
+      }, Object.entries(groupBy(ownedAndMissing, "type")).map(function (typeList, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
           key: index
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.cardsHeader
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
           className: _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.typeHeader
-        }, typeList[1][0]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.tabber
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Needed"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Owned"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_3__["default"], null, typeList[1][1].map(function (item) {
+        }, typeList[1][0]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: switchCardsShown[1] ? _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.active : _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.inactive,
+          onClick: switchCards
+        }, "Owned"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: switchCardsShown[0] ? _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.active : _cardDetail_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.inactive,
+          onClick: switchCards
+        }, "Needed")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_CardsContainer__WEBPACK_IMPORTED_MODULE_3__["default"], null, typeList[1][1].map(function (item) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards__WEBPACK_IMPORTED_MODULE_4__["Card"], {
             card: item,
             key: item.id

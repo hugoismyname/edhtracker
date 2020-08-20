@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+
 import { lookUpcardsInDeck } from "./lookUp";
 import CardsContainer from "../hoc/CardsContainer";
 import { Card } from "../cards";
@@ -11,15 +12,14 @@ const cardDetailElement = document.getElementById("card_detail");
 function CardDetail(props) {
   const [cardsInDeck, setCardsInDeck] = useState([]);
   const [cardsInDeckDidSet, setCardsInDeckDidSet] = useState(false);
-  const [switchCardsShown, setSwitchCardsShown] = useState([true, false]);
 
-  const switchCards = (event) => {
-    if(event.target.innerText == 'Owned'){
-      setSwitchCardsShown([false,true])
-    }else if(event.target.innerText == 'Needed'){
-      setSwitchCardsShown([true,false])
-    }
-  };
+  const switchCards = (event) =>{
+      if(event.target.innerText == 'OWNED'){
+        setCardsInDeck(cardsInDeck[1])
+      }else if(event.target.innerText == 'NEEDED'){
+        setCardsInDeck(cardsInDeck[0])
+      }
+  }
   useEffect(() => {
     if (cardsInDeckDidSet === false) {
       const handleCardsLookUp = (response, status) => {
@@ -35,7 +35,6 @@ function CardDetail(props) {
   }, []);
 
   let Cards_list;
-
   // Accepts the array and key
   const groupBy = (array, key) => {
     // Return the end result
@@ -52,17 +51,17 @@ function CardDetail(props) {
   if (props.username) {
     Cards_list = (
       <React.Fragment>
+
         {cardsInDeck.map((ownedAndMissing, index) => {
           return (
-            <div className={switchCardsShown[index] ? Classes.visible: Classes.hidden} key={index}>
+            <div>
               {Object.entries(groupBy(ownedAndMissing, "type")).map(
                 (typeList, index) => {
                   return (
                     <React.Fragment key={index}>
                       <div className={Classes.cardsHeader}>
                         <h2 className={Classes.typeHeader}>{typeList[1][0]}</h2>
-                        <span className={switchCardsShown[1] ? Classes.active : Classes.inactive } onClick={switchCards}>Owned</span>
-                        <span className={switchCardsShown[0] ? Classes.active : Classes.inactive } onClick={switchCards}>Needed</span>
+                        <span onClick={switchCards}>OWNED</span><span onClick={switchCards}>NEEDED</span>
                       </div>
                       <CardsContainer>
                         {typeList[1][1].map((item) => {

@@ -99,14 +99,16 @@ def CardsApi(request, *args, **kwargs):
 @api_view(["GET"])
 def CardDetailApi(request, *args, **kwargs):
     pk = request.GET.get("pk")
-    username = request.GET.get("username") or None
+    user = request.user or None
     commander_list = Commander.objects.get(commander_id=pk)
     commander_list = commander_list.card_list
 
-    if username and request.user.is_authenticated:
-        cards_owned_names = UserCards.objects.filter(
-            card__name__in=commander_list
-        ).order_by("card__name")
+    if user and request.user.is_authenticated:
+        cards_owned_names = (
+            UserCards.objects.filter(user_id=user)
+            .filter(card__name__in=commander_list)
+            .order_by("card__name")
+        )
         cards_owned_names = cards_owned_names.distinct("card__name").values_list(
             "card__name", flat=True
         )
@@ -122,14 +124,14 @@ def CardDetailApi(request, *args, **kwargs):
 
         cards_needed = Card.objects.filter(name__in=commander_list).exclude(
             # remove this only for testing
-            name__in=cards_owned_names[:50]
+            name__in=cards_owned_names
         )
         cards_needed = (
             cards_needed.order_by("name")
             .distinct("name")
             .values("name", "id", "img_url", "type")
         )
-
+        print(cards_owned)
         return Response({cards_needed, cards_owned}, status=200)
     else:
         all_cards = (

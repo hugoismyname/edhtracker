@@ -40,7 +40,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 400;
 }
 /* logo */
 .logo {
@@ -137,7 +136,12 @@ nav {
 }
 .site-user a{
   text-decoration: none;
-  font-size: 1.5rem;
+}
+.site-user span{
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: 1.5rem;
 }
 #user-image{
   display: flex;
@@ -160,7 +164,6 @@ nav {
 /* user drop down menu  */
 .user-submenu {
   position: fixed;
-  right: 0;
   top:8rem;
   bottom: 0;
   right: -270px;
@@ -215,10 +218,9 @@ color: #e68123;
 /* responsive menu */
 #responsive-menu{
   position: fixed;
-  left:0;
   top:11.8rem;
   bottom: 0;
-  left: -270px;
+  left: -272px;
   width: 270px;
   z-index: 50;
   background: black;
@@ -236,10 +238,11 @@ color: #e68123;
   font-size: large;
   font-weight: 600;
   padding: 1.5rem 5rem 1.5rem 3.5rem;
-  border-bottom: 1.5px solid #1a1a1a;
 }
 .menu-ul li{
   display:flex;
+  width: 100%;
+  border-bottom: 1.5px solid #1a1a1a;
 }
 .logout{
   text-decoration: none;
@@ -249,7 +252,6 @@ color: #e68123;
   padding: 1.5rem 5rem 1.5rem 3.5rem;
   background-color: black;
   border: none;
-  border-bottom: 1.5px solid #1a1a1a;
   cursor: pointer;
 }
 .btn{
@@ -269,11 +271,18 @@ text-align: center;
 .btn:hover{
   color: #fff;
   background: #fa9435;
-
+}
+/* site-banner */
+.site-banner{
+  width: 100%;
+  height: 300px;
+  background-image:url('/static/img/karn.png');
+  margin-top: 7.5rem;
+  margin-bottom: 2rem;
+  background-position: 100% 0;
 }
 /* main body */
 .main-content {
-  padding-top: 75px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -287,19 +296,17 @@ body {
 .visible-burger-menu{
   transform: translateX(270px);
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 1024px) {
   #responsive-menu{
     display: none;
   }
-}
-@media only screen and (max-width: 450px) {
   body {
     margin-top: 6rem;
   }
   nav{
     height: 12rem;
     flex-wrap: wrap;
-    justify-items: start;
   }
   .nav-list {
     display:none;
@@ -317,8 +324,8 @@ body {
   }
   #searchbar{
     order: 5;
-    margin:0 auto 1rem auto;
-    width: 100%;
+    margin:0 20% 1rem 20%;
+    width: 60%;
   }
   .container{
     border-bottom: #e68123 2px solid;
@@ -326,5 +333,12 @@ body {
   #responsive-menu{
     display: flex;
     flex-direction: column;
+  }
+}
+@media only screen and (max-width: 640px) {
+  #searchbar{
+    order: 5;
+    margin:0 auto 1rem auto;
+    width: 100%;
   }
 }

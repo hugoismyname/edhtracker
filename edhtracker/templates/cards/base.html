@@ -46,7 +46,7 @@
       <div id="searchbar"></div>
       <div class="site-user">
         {% if user.is_authenticated %}
-        <a id="user-image" href="#"><img class="avatar" src="{% static '/img/puppy.jpg'%}" alt="user-image" /></a>
+        <a id="user-image" href="#"><span>{{user.username}}</span> <img class="avatar" src="{% static '/img/puppy.jpg'%}" alt="user-image" /></a>
         <div class="user-submenu">
           <ul class="menu-ul">
             <li>
@@ -91,6 +91,7 @@
       {% endif %}
     </ul>
   </div>
+  <div class='site-banner'></div>
   <main class="main-content">
     {% block content %} {% endblock %}
     {% block pagination %}
