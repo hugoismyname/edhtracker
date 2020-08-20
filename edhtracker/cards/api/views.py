@@ -254,7 +254,7 @@ def UserCardsListApi(request, *args, **kwargs):
             "card__type_line",
             "id",
         )
-    return get_paginated_queryset_response(qs, request, UserCardsSerializer, 200)
+    return get_paginated_queryset_response(qs, request, UserCardsSerializer, 100)
 
 
 @api_view(["POST", "UPDATE"])

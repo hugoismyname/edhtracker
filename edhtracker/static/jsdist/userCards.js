@@ -29889,6 +29889,11 @@ function UserCardList(props) {
       order = _useState10[0],
       setOrder = _useState10[1];
 
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      total = _useState12[0],
+      setTotal = _useState12[1];
+
   var changeDisplayFormat = function changeDisplayFormat(props) {
     setDisplay(props);
   };
@@ -29939,6 +29944,7 @@ function UserCardList(props) {
         if (status === 200) {
           setNextUrl(response.next);
           setCards(response.results);
+          setTotal(response.count);
           setCardsDidSet(true);
         } else {
           alert("There was an error");
@@ -30009,10 +30015,10 @@ function UserCardList(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cardsTable_ControlBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     changeOrder: changeOrder,
     switchDisplay: changeDisplayFormat,
-    totalCards: cards.length
+    totalCards: total
   }), userCards, nextUrl !== null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: handleLoadNext,
-    className: "btn btn-outline-primary"
+    className: "btn next"
   }, "Load next"));
 }
 

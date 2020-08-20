@@ -18,6 +18,7 @@ export function UserCardList(props){
   const [nextUrl, setNextUrl] = useState(null)
   const [display, setDisplay] = useState(["visual"])
   const [order, setOrder] = useState("date_added")
+  const [total, setTotal] = useState(0)
 
   const changeDisplayFormat = (props) =>{
       setDisplay(props)
@@ -57,6 +58,7 @@ export function UserCardList(props){
         if (status === 200){
           setNextUrl(response.next)
           setCards(response.results)
+          setTotal(response.count)
           setCardsDidSet(true)
         } else {
           alert("There was an error")
@@ -103,9 +105,9 @@ export function UserCardList(props){
   }
   return(
       <React.Fragment> 
-          <ControlBar changeOrder={changeOrder} switchDisplay={changeDisplayFormat} totalCards={cards.length} />
+          <ControlBar changeOrder={changeOrder} switchDisplay={changeDisplayFormat} totalCards={total} />
           {userCards}
-          {nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load next</button>}         
+          {nextUrl !== null && <button onClick={handleLoadNext} className='btn next'>Load next</button>}         
       </React.Fragment>
   )
 }

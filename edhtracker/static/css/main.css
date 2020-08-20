@@ -277,7 +277,7 @@ text-align: center;
   width: 100%;
   height: 300px;
   background-image:url('/static/img/karn.png');
-  margin-top: 7.5rem;
+  margin-top: 8rem;
   margin-bottom: 2rem;
   background-position: 100% 0;
 }
@@ -301,8 +301,8 @@ body {
   #responsive-menu{
     display: none;
   }
-  body {
-    margin-top: 6rem;
+  .site-banner{
+    margin-top: 12rem;
   }
   nav{
     height: 12rem;
