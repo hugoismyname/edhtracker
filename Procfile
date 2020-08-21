@@ -1,1 +1,1 @@
-web: gunicorn edhtracker.wsgi --log-file -
+web: gunicorn edhtracker.config.wsgi --log-file -
