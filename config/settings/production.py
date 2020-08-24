@@ -2,11 +2,9 @@ from .base import *  # noqa
 from .base import env
 
 # GENERAL
-DEBUG = False
 # ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
+DEBUG = False
 SECRET_KEY = env("DJANGO_SECRET_KEY")
-# https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["edhtracker.com"])
 
 # DATABASES
@@ -17,6 +15,7 @@ DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)  # no
 
 # CACHES
 # ------------------------------------------------------------------------------
+REDIS_URL = env.str("REDIS_URL", default=None)
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
@@ -63,8 +62,6 @@ COLLECTFAST_STRATEGY = "collectfast.strategies.filesystem.FileSystemStrategy"
 
 # MEDIA
 # ------------------------------------------------------------------------------
-
-# TODO in later extensions
 
 # TEMPLATES
 # ------------------------------------------------------------------------------
