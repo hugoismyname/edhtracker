@@ -8,3 +8,5 @@ Collectfast==2.2.0  # https://github.com/antonagestam/collectfast
 django-anymail[mailgun]==7.1.0
 django-redis==4.11.0  # https://github.com/jazzband/django-redis
 django-heroku
+django-cors-headers==3.4.0 # https://github.com/adamchainz/django-cors-headers#configuration
+
