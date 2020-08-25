@@ -154,3 +154,5 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+# Activate Django-Heroku.
+django_heroku.settings(locals())
