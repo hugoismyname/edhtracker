@@ -10,7 +10,6 @@ import django_heroku
 # edhtracker/
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 APPS_DIR = BASE_DIR / "edhtracker"
-print(APPS_DIR)
 env = environ.Env()
 
 ENV_FILE = BASE_DIR / ".env"
@@ -198,7 +197,6 @@ TEMPLATES = [
         },
     }
 ]
-print(str(APPS_DIR / "templates"))
 # https://docs.djangoproject.com/en/dev/ref/settings/#form-renderer
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
