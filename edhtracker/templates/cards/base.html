@@ -36,7 +36,7 @@
           <ul class="mega-menu">
             {% for set in nav_sets %}
             <li class='sets-item'>
-              <img class="nav-sets-svg" src="{% static '/set_svgs/'%}{{ set.img_url }}.svg" alt="{{ set.name }}" />
+              <img class="nav-sets-svg" src="{% static 'set_svgs/'%}{{ set.img_url }}.svg" alt="{{ set.name }}" />
                 <a href="{% url 'cards' set.code %}">{{set.name}}</a>
             </li>
             {% endfor %}
