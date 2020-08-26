@@ -1,4 +1,4 @@
-{% extends "cards\base.html" %}
+{% extends "cards/base.html" %}
 {% load static %}
 {% block extra_styles %}
     <link rel="stylesheet" href="{% static 'css/usercards.css' %}">
@@ -8,5 +8,5 @@
     <div id="userCards" data-user={{ user_id }}></div>
 {% endblock content %}
 {% block extra_scripts %}
-<script  src="{% static 'jsdist\userCards.js' %}"></script>
+<script  src="{% static 'jsdist/userCards.js' %}"></script>
 {% endblock extra_scripts %} 
