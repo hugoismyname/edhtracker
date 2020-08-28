@@ -81,6 +81,7 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "rest_framework",
+    "storages",
 ]
 
 LOCAL_APPS = [
@@ -286,3 +287,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_URLS_REGEX = r"^/api/.*$"
 
 LOGIN_REDIRECT_URL = "home"
+
