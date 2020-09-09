@@ -45,11 +45,11 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("DB_NAME"),
-        "USER": env("DB_USER"),
-        "PASSWORD": env("DB_PASSWORD"),
-        "HOST": "",
-        "PORT": "",
+        "NAME": "edhtracker",
+        "USER": "postgres",
+        "PASSWORD": env("DB_PASSWORD_LOCAL"),
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
