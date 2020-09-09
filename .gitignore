@@ -357,3 +357,5 @@ yarn-error.log*
 MTG_cards_data/
 card_images/
 set_svgs/
+
+dump.sql
