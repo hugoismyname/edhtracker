@@ -36,7 +36,6 @@ INSTALLED_APPS = [  # noqa: F405
 INSTALLED_APPS += ["debug_toolbar"]  # noqa: F405
 # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#middleware
 MIDDLEWARE += [  # noqa: F405
-    "corsheaders.middleware.CorsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 # https://django-debug-toolbar.readthedocs.io/en/latest/configuration.html
@@ -71,21 +70,4 @@ INSTALLED_APPS += ["django_extensions"]  # noqa: F405
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-DEFAULT_RENDERER_CLASSES = [
-    "rest_framework.renderers.JSONRenderer",
-]
 
-DEFAULT_AUTHENTICATION_CLASSES = [
-    "rest_framework.authentication.SessionAuthentication",
-]
-
-if DEBUG:
-    DEFAULT_RENDERER_CLASSES += [
-        "rest_framework.renderers.BrowsableAPIRenderer",
-    ]
-    DEFAULT_AUTHENTICATION_CLASSES += ["config.rest_api.dev.Devauthentication"]
-
-REST_FRAMEWORK = {
-    "DEFAULT_RENDERER_CLASSES": DEFAULT_RENDERER_CLASSES,
-    "DEFAULT_AUTHENTICATION_CLASSES": DEFAULT_AUTHENTICATION_CLASSES,
-}

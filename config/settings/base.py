@@ -136,6 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -288,3 +289,21 @@ CORS_URLS_REGEX = r"^/api/.*$"
 
 LOGIN_REDIRECT_URL = "home"
 
+DEFAULT_RENDERER_CLASSES = [
+    "rest_framework.renderers.JSONRenderer",
+]
+
+DEFAULT_AUTHENTICATION_CLASSES = [
+    "rest_framework.authentication.SessionAuthentication",
+]
+
+if DEBUG:
+    DEFAULT_RENDERER_CLASSES += [
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ]
+    DEFAULT_AUTHENTICATION_CLASSES += ["config.rest_api.dev.Devauthentication"]
+
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": DEFAULT_RENDERER_CLASSES,
+    "DEFAULT_AUTHENTICATION_CLASSES": DEFAULT_AUTHENTICATION_CLASSES,
+}
