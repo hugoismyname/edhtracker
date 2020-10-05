@@ -29025,13 +29025,13 @@ __webpack_require__.r(__webpack_exports__);
 function getCookie(name) {
   var cookieValue = null;
 
-  if (document.cookie && document.cookie !== '') {
-    var cookies = document.cookie.split(';');
+  if (document.cookie && document.cookie !== "") {
+    var cookies = document.cookie.split(";");
 
     for (var i = 0; i < cookies.length; i++) {
       var cookie = cookies[i].trim(); // Does this cookie string begin with the name we want?
 
-      if (cookie.substring(0, name.length + 1) === name + '=') {
+      if (cookie.substring(0, name.length + 1) === name + "=") {
         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
         break;
       }
@@ -29049,15 +29049,15 @@ function lookUp(method, endpoint, callback, data) {
   }
 
   var xhr = new XMLHttpRequest();
-  var url = "http://localhost:8000/api".concat(endpoint);
+  var url = "http://edhtracker.herokuapp.com/api".concat(endpoint);
   xhr.responseType = "json";
-  var csrftoken = getCookie('csrftoken');
+  var csrftoken = getCookie("csrftoken");
   xhr.open(method, url);
   xhr.setRequestHeader("Content-Type", "application/json");
 
   if (csrftoken) {
-    // xhr.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest")
-    // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest")
+    xhr.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest");
+    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     xhr.setRequestHeader("X-CSRFToken", csrftoken);
   }
 
