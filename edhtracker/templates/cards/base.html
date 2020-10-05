@@ -1,106 +1,127 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    {% block bootstrap %} {% endblock bootstrap %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"
+      media="all"
+    />
+    {% block extra_styles %} {% endblock extra_styles %} {% if title %}
+    <title>COMMANDER REC- {{ title }}</title>
+    {% else %}
+    <title>COMMANDER REC</title>
+    {% endif %}
+  </head>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  {% block bootstrap %} {% endblock bootstrap %}
-  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link type="text/css" rel="stylesheet"
-    href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"
-    media="all" />
-  {% block extra_styles %} {% endblock extra_styles %} 
-  {% if title %}
-  <title>COMMANDER REC- {{ title }}</title>
-  {% else %}
-  <title>COMMANDER REC</title>
-  {% endif %}
-</head>
-
-<body>
-  <div id="overlay"></div>
-  <div class='nav-container'>
-    <nav>
-      <a class="logo" href="#">
-        <img class="avatar" src="{% static 'img/placeholder-logo.png' %}" alt="" />
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-links" href="{% url 'home' %}">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-links" href="{% url 'all_sets' %}">SETS</a>
-          <ul class="mega-menu">
-            {% for set in nav_sets %}
-            <li class='sets-item'>
-              <img class="nav-sets-svg" src="{% static 'set_svgs/'%}{{ set.img_url }}.svg" alt="{{ set.name }}" />
+  <body>
+    <div id="overlay"></div>
+    <div class="nav-container">
+      <nav>
+        <a class="logo" href="#">
+          <img
+            class="avatar"
+            src="{% static 'img/placeholder-logo.png' %}"
+            alt=""
+          />
+        </a>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-links" href="{% url 'home' %}">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-links" href="{% url 'all_sets' %}">SETS</a>
+            <ul class="mega-menu">
+              {% for set in nav_sets %}
+              <li class="sets-item">
+                <img
+                  class="nav-sets-svg"
+                  src="set_svgs/{{ set.img_url }}.svg"
+                  alt="{{ set.name }}"
+                />
                 <a href="{% url 'cards' set.code %}">{{set.name}}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </li>
-      </ul>
-      <div id="searchbar"></div>
-      <div class="site-user">
-        {% if user.is_authenticated %}
-        <a id="user-image" href="#"><span>{{user.username}}</span> <img class="avatar" src="{% static '/img/puppy.jpg'%}" alt="user-image" /></a>
-        <div class="user-submenu">
-          <ul class="menu-ul">
-            <li>
-              <a href="{% url 'user_cards' user.username %}">MY CARDS</a>
-            </li>
-            <li><a href="{% url 'decks_rec' %}">COMMANDER REC</a></li>
-            <li>        
-              <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                <button class="logout" type="submit">LOG OUT</button>
-              </form>
-            </li>
-          </ul>
+              </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+        <div id="searchbar"></div>
+        <div class="site-user">
+          {% if user.is_authenticated %}
+          <a id="user-image" href="#"
+            ><span>{{user.username}}</span>
+            <img
+              class="avatar"
+              src="{% static '/img/puppy.jpg'%}"
+              alt="user-image"
+          /></a>
+          <div class="user-submenu">
+            <ul class="menu-ul">
+              <li>
+                <a href="{% url 'user_cards' user.username %}">MY CARDS</a>
+              </li>
+              <li><a href="{% url 'decks_rec' %}">COMMANDER REC</a></li>
+              <li>
+                <form method="post" action="{% url 'account_logout' %}">
+                  {% csrf_token %}
+                  <button class="logout" type="submit">LOG OUT</button>
+                </form>
+              </li>
+            </ul>
+          </div>
+          {% else %}
+          <a class="btn" href="{% url 'account_login' %}"
+            ><span class="inner">LOG IN</span></a
+          >
+          {% endif %}
         </div>
+        <div id="burger">
+          <span class="bars"></span>
+          <span class="bars"></span>
+          <span class="bars"></span>
+        </div>
+      </nav>
+    </div>
+    <div id="responsive-menu" class="">
+      <ul class="menu-ul">
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'all_sets' %}">SETS</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'user_cards' user.username %}">MY CARDS</a></li>
+        <li><a href="{% url 'decks_rec' %}">COMMANDER REC</a></li>
+        <li>
+          <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <button class="logout" type="submit">LOG OUT</button>
+          </form>
+        </li>
         {% else %}
-        <a class="btn" href="{% url 'account_login' %}"><span class="inner">LOG IN</span></a>
+        <li><a href="{% url 'account_login' %}">LOGIN</a></li>
+        <li><a href="{% url 'account_signup' %}">REGISTER</a></li>
         {% endif %}
-      </div>
-      <div id="burger">
-        <span class="bars"></span>
-        <span class="bars"></span>
-        <span class="bars"></span>
-      </div>
-    </nav>
-  </div >
-  <div id="responsive-menu" class="">
-    <ul class="menu-ul">
-      <li><a href="{% url 'home' %}">HOME</a></li>
-      <li><a href="{% url 'all_sets' %}">SETS</a></li>
-      {% if user.is_authenticated %}
-      <li><a href="{% url 'user_cards' user.username %}">MY CARDS</a></li>
-      <li><a href="{% url 'decks_rec' %}">COMMANDER REC</a></li>
-      <li>
-        <form method="post" action="{% url 'account_logout' %}">
-          {% csrf_token %}
-          <button class="logout" type="submit">LOG OUT</button>
-        </form>
-      </li>
-      {% else %}
-      <li><a href="{% url 'account_login' %}">LOGIN</a></li>
-      <li><a href="{% url 'account_signup' %}">REGISTER</a></li>
-      {% endif %}
-    </ul>
-  </div>
-  <div class='site-banner'></div>
-  <main class="main-content">
-    {% block content %} {% endblock %}
-    {% block pagination %}
-    {% endblock pagination %}
-  </main>
-  {% block widgets %} {% endblock widgets %}
-</body>
-<script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'jsdist/searchBar.js' %}"></script>
-{% block extra_scripts %} {% endblock extra_scripts %}
-
+      </ul>
+    </div>
+    <div class="site-banner"></div>
+    <main class="main-content">
+      {% block content %} {% endblock %} {% block pagination %} {% endblock
+      pagination %}
+    </main>
+    {% block widgets %} {% endblock widgets %}
+  </body>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'jsdist/searchBar.js' %}"></script>
+  {% block extra_scripts %} {% endblock extra_scripts %}
 </html>

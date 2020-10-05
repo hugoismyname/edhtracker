@@ -29468,12 +29468,12 @@ var allCardsElement = document.getElementById("allCards");
 function Card(props) {
   // ['card_id], ['card_count'] refers to cards in a users inventory, both usercards and normal cards have
   // ['id'] values. important to check first for card_id to determine wether its usercard or not
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.card['card_id'] ? props.card['card_id'] : props.card['id']),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.card["card_id"] ? props.card["card_id"] : props.card["id"]),
       _useState2 = _slicedToArray(_useState, 2),
       cardId = _useState2[0],
       setCardId = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.card['card_count'] ? props.card['card_count'] : 1),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.card["card_count"] ? props.card["card_count"] : 1),
       _useState4 = _slicedToArray(_useState3, 2),
       cardAmount = _useState4[0],
       setCardAmount = _useState4[1];
@@ -29486,12 +29486,12 @@ function Card(props) {
   var addCard = function addCard() {
     var handleBackend = function handleBackend(response, status) {
       if (status === 201) {
-        setMessage('Card added to your inventory');
+        setMessage("Card added to your inventory");
         setTimeout(function () {
           setMessage(false);
         }, 5000);
       } else {
-        setMessage('An error occured');
+        setMessage("An error occured");
         setTimeout(function () {
           setMessage(false);
         }, 5000);
@@ -29499,14 +29499,14 @@ function Card(props) {
     };
 
     Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiAddCard"])(handleBackend, {
-      "card": cardId,
-      "card_count": cardAmount
+      card: cardId,
+      card_count: cardAmount
     });
   };
 
   var deleteCard = function deleteCard() {
-    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiUserCardsDelete"])(props.callbackHandler, props.card['id']);
-    props.onDelete(props.card['id']);
+    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiUserCardsDelete"])(props.callbackHandler, props.card["id"]);
+    props.onDelete(props.card["id"]);
   };
 
   var updateCard = function updateCard(cardAmount) {
@@ -29514,32 +29514,32 @@ function Card(props) {
 
     var handleBackendUpdate = function handleBackendUpdate(response, status) {
       if (status === 204) {} else {
-        setMessage('An error occured');
+        setMessage("An error occured");
         setTimeout(function () {
           setMessage(false);
         }, 5000);
       }
     };
 
-    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiUserCardsUpdate"])(handleBackendUpdate, props.card['id'], {
-      "card_count": cardAmount
+    Object(_userCards__WEBPACK_IMPORTED_MODULE_3__["apiUserCardsUpdate"])(handleBackendUpdate, props.card["id"], {
+      card_count: cardAmount
     });
   };
 
   var changeInput = function changeInput(event) {
-    if (event.target.innerText == '+') {
+    if (event.target.innerText == "+") {
       var newCardAmount = parseInt(cardAmount) + 1;
       setCardAmount(parseInt(cardAmount) + 1);
 
-      if (props.card['card_id']) {
+      if (props.card["card_id"]) {
         updateCard(newCardAmount);
       }
-    } else if (event.target.innerText == '-' && cardAmount != 1) {
+    } else if (event.target.innerText == "-" && cardAmount != 1) {
       var _newCardAmount = parseInt(cardAmount) - 1;
 
       setCardAmount(parseInt(cardAmount) - 1);
 
-      if (props.card['card_id']) {
+      if (props.card["card_id"]) {
         updateCard(_newCardAmount);
       }
     }
@@ -29547,7 +29547,7 @@ function Card(props) {
 
   var editCard;
 
-  if (props.card['card_id']) {
+  if (props.card["card_id"]) {
     editCard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.userQty
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -29592,13 +29592,13 @@ function Card(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.cardWrapper
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/static/card_images/".concat(props.card['img_url'], ".jpg"),
-    alt: props.card['name']
+    src: "".concat(props.card["img_url"], ".jpg"),
+    alt: props.card["name"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.editCard
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/card_detail/".concat(cardId)
-  }, props.card['name']), editCard)));
+  }, props.card["name"]), editCard)));
 }
 
 function CardList(props) {
@@ -29613,8 +29613,8 @@ function CardList(props) {
       setCardsDidSet = _useState10[1];
 
   var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    'color': 'ALL CARDS',
-    'cards': 9
+    color: "ALL CARDS",
+    cards: 9
   }),
       _useState12 = _slicedToArray(_useState11, 2),
       color = _useState12[0],
@@ -29623,8 +29623,8 @@ function CardList(props) {
   var changeColorDisplayedHandler = function changeColorDisplayedHandler(event, color, index) {
     event.preventDefault();
     setColor({
-      'color': color,
-      'cards': index
+      color: color,
+      cards: index
     });
   };
 
@@ -29652,44 +29652,44 @@ function CardList(props) {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "BLUE", 1);
     }
-  }, "BLUE "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "BLUE", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "BLACK", 2);
     }
-  }, "BLACK "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "BLACK", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "RED", 3);
     }
-  }, "RED "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "RED", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "GREEN", 4);
     }
-  }, "GREEN "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "GREEN", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "MULTICOLORED", 5);
     }
-  }, "MULTICOLORED "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "MULTICOLORED", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "COLORLESS", 6);
     }
-  }, "COLORLESS "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "COLORLESS", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "ARTIFACT", 7);
     }
-  }, "ARTIFACT "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "ARTIFACT", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "LANDS", 8);
     }
-  }, "LANDS "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "LANDS", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     onClick: function onClick(e) {
       changeColorDisplayedHandler(e, "ALL CARDS", 9);
     }
   }, "ALL CARDS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.colorTitle
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, color['color'])), cards.map(function (list, index) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, color["color"])), cards.map(function (list, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: index,
-      className: index === color['cards'] ? _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.cardsContainer : _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.hidden,
+      className: index === color["cards"] ? _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.cardsContainer : _cards_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.hidden,
       children: list.map(function (item, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
           card: item,
