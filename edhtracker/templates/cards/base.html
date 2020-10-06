@@ -49,7 +49,7 @@
               <li class="sets-item">
                 <img
                   class="nav-sets-svg"
-                  src="set_svgs/{{ set.img_url }}.svg"
+                  src="{{ STATIC_URL }}set_svgs/{{ set.img_url }}.svg"
                   alt="{{ set.name }}"
                 />
                 <a href="{% url 'cards' set.code %}">{{set.name}}</a>
@@ -116,9 +116,8 @@
     </div>
     <div class="site-banner"></div>
     <main class="main-content">
-      {% block content %} {% endblock %} 
-      {% block pagination %} 
-      {% endblock pagination %}
+      {% block content %} {% endblock %} {% block pagination %} {% endblock
+      pagination %}
     </main>
     {% block widgets %} {% endblock widgets %}
   </body>
