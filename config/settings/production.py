@@ -59,8 +59,6 @@ AWS_HEADERS = {
     "Expires": expires,
     "Cache-Control": "max-age=%d" % (int(two_months.total_seconds()),),
 }
-# https://github.com/antonagestam/collectfast#upload-strategies
-COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 
 # MEDIA
 # ------------------------------------------------------------------------------
