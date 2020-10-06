@@ -1,5 +1,6 @@
 from .base import *  # noqa
 from .base import env
+from .aws.conf import *
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -31,22 +32,33 @@ CACHES = {
 
 # AWS
 # ------------------------------------------------------------------------------
+
+import datetime
+
 AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY")
+AWS_FILE_EXPIRE = 200
+AWS_PRELOAD_METADATA = True
+AWS_QUERYSTRING_AUTH = True
+
+DEFAULT_FILE_STORAGE = "edhtracker.config.settings.aws.utils.MediaRootS3BotoStorage"
+STATICFILES_STORAGE = "edhtracker.config.settings.aws.utils.StaticRootS3BotoStorage"
 AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+S3DIRECT_REGION = "us-east-2"
+S3_URL = "//%s.s3.amazonaws.com/" % AWS_STORAGE_BUCKET_NAME
+MEDIA_URL = "//%s.s3.amazonaws.com/media/" % AWS_STORAGE_BUCKET_NAME
+MEDIA_ROOT = MEDIA_URL
+STATIC_URL = S3_URL + "static/"
+ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
 
-AWS_S3_OBJECT_PARAMETERS = {
-    "CacheControl": "max-age=86400",
+two_months = datetime.timedelta(days=61)
+date_two_months_later = datetime.date.today() + two_months
+expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
+
+AWS_HEADERS = {
+    "Expires": expires,
+    "Cache-Control": "max-age=%d" % (int(two_months.total_seconds()),),
 }
-
-AWS_LOCATION = "static"
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-AWS_S3_FILE_OVERWRITE = None
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
 # https://github.com/antonagestam/collectfast#upload-strategies
 COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 
