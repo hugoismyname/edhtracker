@@ -4,8 +4,8 @@ from .aws.conf import *
 
 # GENERAL
 # ------------------------------------------------------------------------------
-DEBUG = env("DEBUG")
-SECRET_KEY = env("DJANGO_SECRET_KEY")
+DEBUG = env.bool("DEBUG")
+SECRET_KEY = env.str("DJANGO_SECRET_KEY")
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["*"])
 
 # DATABASES
@@ -79,13 +79,13 @@ TEMPLATES[-1]["OPTIONS"]["loaders"] = [  # type: ignore[index] # noqa: F405
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
-DEFAULT_FROM_EMAIL = env(
+DEFAULT_FROM_EMAIL = env.str(
     "DJANGO_DEFAULT_FROM_EMAIL", default="edhtracker <noreply@edhtracker.com>",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
-SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
+SERVER_EMAIL = env.str("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default="[edhtracker]")
+EMAIL_SUBJECT_PREFIX = env.str("DJANGO_EMAIL_SUBJECT_PREFIX", default="[edhtracker]")
 
 # Anymail (Mailgun)
 # ------------------------------------------------------------------------------
