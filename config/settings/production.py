@@ -32,8 +32,7 @@ CACHES = {
 # AWS
 # ------------------------------------------------------------------------------
 
-# https://github.com/antonagestam/collectfast#upload-strategies
-COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+
 # MEDIA
 # ------------------------------------------------------------------------------
 
@@ -74,10 +73,6 @@ ANYMAIL = {
 }
 
 
-# Collectfast
-# ------------------------------------------------------------------------------
-# https://github.com/antonagestam/collectfast#installation
-INSTALLED_APPS = ["collectfast"] + INSTALLED_APPS  # noqa: F405
 # LOGGING
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#logging

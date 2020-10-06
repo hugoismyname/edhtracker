@@ -69,6 +69,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.sites",
     "django.contrib.messages",
+    "collectfast",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
@@ -135,7 +136,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
@@ -257,7 +257,7 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_ADAPTER = "edhtracker.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "edhtracker.users.adapters.SocialAccountAdapter"
-
+COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 # Your stuff...
 # ------------------------------------------------------------------------------
 
@@ -294,8 +294,11 @@ MEDIA_ROOT = str(APPS_DIR / "media")
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 
+# https://docs.djangoproject.com/en/dev/ref/settings/#static-root
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
 
 STATICFILES_DIRS = [str(APPS_DIR / "static")]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
@@ -309,13 +312,18 @@ AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+# https://github.com/antonagestam/collectfast#upload-strategies
+
 
 AWS_S3_HOST = "s3.us-east-2.amazonaws.com"
 AWS_S3_REGION_NAME = "us-east-2"
+
+STATIC_URL = "https://edhtracker.s3.amazonaws.com/"
+ADMIN_MEDIA_PREFIX = "https://edhtracker.s3.amazonaws.com/static/admin/"
+
 S3_URL = "//%s.s3.amazonaws.com/" % AWS_STORAGE_BUCKET_NAME
-# https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = S3_URL
-STATIC_URL = S3_URL
 MEDIA_URL = "//%s.s3.amazonaws.com/media/" % AWS_STORAGE_BUCKET_NAME
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
