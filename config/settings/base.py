@@ -290,7 +290,7 @@ REST_FRAMEWORK = {
 # MEDIA
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR / "media")
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
@@ -323,6 +323,7 @@ STATIC_URL = "https://edhtracker.s3.amazonaws.com/"
 ADMIN_MEDIA_PREFIX = "https://edhtracker.s3.amazonaws.com/static/admin/"
 
 S3_URL = "//%s.s3.amazonaws.com/" % AWS_STORAGE_BUCKET_NAME
+MEDIA_ROOT = "//%s.s3.amazonaws.com/media/" % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = "//%s.s3.amazonaws.com/media/" % AWS_STORAGE_BUCKET_NAME
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
