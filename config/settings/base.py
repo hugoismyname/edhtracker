@@ -1,7 +1,3 @@
-"""
-Base settings to build other settings files upon.
-"""
-
 from pathlib import Path
 
 import environ
@@ -257,7 +253,7 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_ADAPTER = "edhtracker.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "edhtracker.users.adapters.SocialAccountAdapter"
-COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+
 # Your stuff...
 # ------------------------------------------------------------------------------
 
@@ -287,44 +283,64 @@ REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": DEFAULT_RENDERER_CLASSES,
     "DEFAULT_AUTHENTICATION_CLASSES": DEFAULT_AUTHENTICATION_CLASSES,
 }
-# MEDIA
-# ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 
-# https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+# STATIC_URL = "/static/"
+# MEDIA_URL = "/media/"
 
-# https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-STATIC_URL = "/static/"
-# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+# MEDIA_ROOT = str(APPS_DIR / "media")
+# MEDIA_URL = "//%s.s3.amazonaws.com/media/" % AWS_STORAGE_BUCKET_NAME
 
-# https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = str(BASE_DIR / "staticfiles")
-
-STATICFILES_DIRS = [str(APPS_DIR / "static")]
-# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
-STATICFILES_FINDERS = [
-    "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-]
-AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
-
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-
-# https://github.com/antonagestam/collectfast#upload-strategies
+# STATIC_ROOT = str(BASE_DIR / "staticfiles")
+# STATIC_URL = "https://edhtracker.s3.amazonaws.com/"
+# STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# STATICFILES_DIRS = [str(APPS_DIR / "static")]
 
 
-AWS_S3_HOST = "s3.us-east-2.amazonaws.com"
-AWS_S3_REGION_NAME = "us-east-2"
+# # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
+# STATICFILES_FINDERS = [
+#     "django.contrib.staticfiles.finders.FileSystemFinder",
+#     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+# ]
 
-STATIC_URL = "https://edhtracker.s3.amazonaws.com/"
-ADMIN_MEDIA_PREFIX = "https://edhtracker.s3.amazonaws.com/static/admin/"
 
-S3_URL = "//%s.s3.amazonaws.com/" % AWS_STORAGE_BUCKET_NAME
-MEDIA_ROOT = "//%s.s3.amazonaws.com/media/" % AWS_STORAGE_BUCKET_NAME
-MEDIA_URL = "//%s.s3.amazonaws.com/media/" % AWS_STORAGE_BUCKET_NAME
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
+
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+
+# AWS_S3_REGION_NAME = "us-east-2"
+# AWS_S3_HOST = "s3.us-east-2.amazonaws.com"
+# AWS_S3_CUSTOM_DOMAIN = "//%s.s3.amazonaws.com/" % AWS_STORAGE_BUCKET_NAME
+# S3_URL = "//%s.s3.amazonaws.com/" % AWS_STORAGE_BUCKET_NAME
+
+# # ADMIN_MEDIA_PREFIX = "https://edhtracker.s3.amazonaws.com/static/admin/"
+
+# DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+
+
+USE_S3 = bool("USE_S3" / True)
+
+if USE_S3:
+    # aws settings
+    AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
+    AWS_DEFAULT_ACL = "public-read"
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
+    # s3 static settings
+    AWS_LOCATION = "static"
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/"
+    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+else:
+    STATIC_URL = "/staticfiles/"
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+MEDIA_URL = "/mediafiles/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
