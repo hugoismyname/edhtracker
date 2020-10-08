@@ -296,11 +296,12 @@ REST_FRAMEWORK = {
 # STATICFILES_DIRS = [str(APPS_DIR / "static")]
 
 
-# # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
-# STATICFILES_FINDERS = [
-#     "django.contrib.staticfiles.finders.FileSystemFinder",
-#     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-# ]
+# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
+STATICFILES_FINDERS = [
+    os.path.join(PROJECT_ROOT, "static"),
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
 
 
 # AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
@@ -339,7 +340,6 @@ else:
     STATIC_URL = "/staticfiles/"
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
