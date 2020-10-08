@@ -321,7 +321,7 @@ REST_FRAMEWORK = {
 # COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 
 
-USE_S3 = bool("USE_S3" / True)
+USE_S3 = env.bool("USE_S3", True)
 
 if USE_S3:
     # aws settings
