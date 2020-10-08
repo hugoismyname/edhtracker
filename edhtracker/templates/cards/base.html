@@ -37,7 +37,7 @@
         <a class="logo" href="#">
           <img
             class="avatar"
-            src="{% static 'img/placeholder-logo.png' %}"
+            src="https://.s3.amazonaws.com/edhtracker/img/placeholder-logo.png"
             alt=""
           />
         </a>
@@ -50,11 +50,7 @@
             <ul class="mega-menu">
               {% for set in nav_sets %}
               <li class="sets-item">
-                <img
-                  class="nav-sets-svg"
-                  src="{{ STATIC_URL }}set_svgs/{{ set.img_url }}.svg"
-                  alt="{{ set.name }}"
-                />
+                <img class="nav-sets-svg" src="" alt="{{ set.name }}" />
                 <a href="{% url 'cards' set.code %}">{{set.name}}</a>
               </li>
               {% endfor %}
@@ -123,7 +119,6 @@
     </main>
     {% block widgets %} {% endblock widgets %}
   </body>
-  <script src="{% static 'js/main.js' %}"></script>
-  <script src="{% static 'jsdist/searchBar.js' %}"></script>
+
   {% block extra_scripts %} {% endblock extra_scripts %}
 </html>
