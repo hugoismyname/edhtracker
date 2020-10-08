@@ -306,7 +306,8 @@ STATICFILES_FINDERS = [
 # # ADMIN_MEDIA_PREFIX = "https://edhtracker.s3.amazonaws.com/static/admin/"
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
+MEDIA_ROOT = "/media/"
+STATIC_ROOT = "/static/"
 USE_S3 = env.bool("USE_S3", True)
 
 if USE_S3:
