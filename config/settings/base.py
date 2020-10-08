@@ -304,6 +304,7 @@ if USE_S3:
     # s3 static settings
     STATIC_URL = "https://edhtracker.s3.us-east-2.amazonaws.com/"
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
 else:
     STATIC_URL = "/static/"
     MEDIA_URL = "/media/"
@@ -311,4 +312,4 @@ else:
 MEDIA_ROOT = "/media/"
 MEDIA_URL = "/media/"
 
-STATIC_ROOT = "/static/"
+STATIC_ROOT = "/staticrooojfod/"
