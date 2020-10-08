@@ -9,10 +9,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     {% block bootstrap %} {% endblock bootstrap %}
-    <link
-      rel="stylesheet"
-      href="https://edhtracker.s3.us-east-2.amazonaws.com/css/main.css"
-    />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -37,7 +34,7 @@
         <a class="logo" href="#">
           <img
             class="avatar"
-            src="https://.s3.amazonaws.com/edhtracker/img/placeholder-logo.png"
+            src="{% static 'img/placeholder-logo.png' %}"
             alt=""
           />
         </a>
@@ -50,7 +47,11 @@
             <ul class="mega-menu">
               {% for set in nav_sets %}
               <li class="sets-item">
-                <img class="nav-sets-svg" src="" alt="{{ set.name }}" />
+                <img
+                  class="nav-sets-svg"
+                  src="{% static %}set_svgs/{{ set.img_url }}.svg"
+                  alt="{{ set.name }}"
+                />
                 <a href="{% url 'cards' set.code %}">{{set.name}}</a>
               </li>
               {% endfor %}
@@ -119,6 +120,7 @@
     </main>
     {% block widgets %} {% endblock widgets %}
   </body>
-
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'jsdist/searchBar.js' %}"></script>
   {% block extra_scripts %} {% endblock extra_scripts %}
 </html>
