@@ -284,8 +284,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": DEFAULT_AUTHENTICATION_CLASSES,
 }
 
-STATIC_URL = "/static/"
-MEDIA_URL = "/media/"
+
 
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
@@ -325,3 +324,7 @@ if USE_S3:
     AWS_LOCATION = "static"
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/"
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+else{
+    STATIC_URL = "/static/"
+    MEDIA_URL = "/media/"
+}
