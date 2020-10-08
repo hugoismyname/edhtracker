@@ -2,6 +2,7 @@ from pathlib import Path
 
 import environ
 import django_heroku
+import os
 
 # edhtracker/
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
@@ -65,7 +66,6 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.sites",
     "django.contrib.messages",
-    "collectfast",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
@@ -284,21 +284,11 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": DEFAULT_AUTHENTICATION_CLASSES,
 }
 
-# STATIC_URL = "/static/"
-# MEDIA_URL = "/media/"
-
-# MEDIA_ROOT = str(APPS_DIR / "media")
-# MEDIA_URL = "//%s.s3.amazonaws.com/media/" % AWS_STORAGE_BUCKET_NAME
-
-# STATIC_ROOT = str(BASE_DIR / "staticfiles")
-# STATIC_URL = "https://edhtracker.s3.amazonaws.com/"
-# STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-# STATICFILES_DIRS = [str(APPS_DIR / "static")]
-
+STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
 
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
-    os.path.join(PROJECT_ROOT, "static"),
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
@@ -318,8 +308,7 @@ STATICFILES_FINDERS = [
 
 # # ADMIN_MEDIA_PREFIX = "https://edhtracker.s3.amazonaws.com/static/admin/"
 
-# DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-# COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
 
 USE_S3 = env.bool("USE_S3", True)
@@ -336,4 +325,3 @@ if USE_S3:
     AWS_LOCATION = "static"
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/"
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
