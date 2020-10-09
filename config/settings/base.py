@@ -1,7 +1,6 @@
 from pathlib import Path
 
 import environ
-import django_heroku
 import os
 
 # edhtracker/
